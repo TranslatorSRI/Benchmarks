@@ -14,7 +14,7 @@ with open('DrugCondition.txt','r') as inf:
         cond = (x[5],x[4])
         cond2drug[cond].append( (x[1],x[0]) )
 
-with open('../ConditionToTopDrugs.txt','w') as outf:
+with open('../Data/ConditionToTopDrugs.txt','w') as outf:
     outf.write('ConditionID\tConditionName\tDrugID\tDrugName\tRank\tCount\n')
     for cid,cname in cond2drug:
         for i,(drugid,drugname) in enumerate(cond2drug[(cid,cname)]):

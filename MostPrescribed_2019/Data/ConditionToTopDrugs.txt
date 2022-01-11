@@ -1,7 +1,7 @@
 ConditionID	ConditionName	DrugID	DrugName	Rank	Count
-HP:0003124	Hypercholesteremia	PUBCHEM.COMPOUND:60823	Atorvastatin	1	3
-HP:0003124	Hypercholesteremia	PUBCHEM.COMPOUND:446157	Rosuvastatin	2	3
-HP:0003124	Hypercholesteremia	PUBCHEM.COMPOUND:54687	Pravastatin	3	3
+MONDO:0021187	Hyperlipidemia	PUBCHEM.COMPOUND:60823	Atorvastatin	1	3
+MONDO:0021187	Hyperlipidemia	PUBCHEM.COMPOUND:446157	Rosuvastatin	2	3
+MONDO:0021187	Hyperlipidemia	PUBCHEM.COMPOUND:54687	Pravastatin	3	3
 MONDO:0005420	Hypothyroidism	PUBCHEM.COMPOUND:25201348	Levothyroxine	1	1
 MONDO:0005044	Hypertension	PUBCHEM.COMPOUND:11865407	Lisinopril	1	6
 MONDO:0005044	Hypertension	PUBCHEM.COMPOUND:3961	Losartan	2	6

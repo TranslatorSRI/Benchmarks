@@ -1,5 +1,5 @@
 OriginalName	ID	RoundtripName	Match	Condition	ConditionID
-Atorvastatin	PUBCHEM.COMPOUND:60823	Atorvastatin	True	Hypercholesteremia	HP:0003124
+Atorvastatin	PUBCHEM.COMPOUND:60823	Atorvastatin	True	Hyperlipidemia	MONDO:0021187
 Levothyroxine	PUBCHEM.COMPOUND:25201348	Levothyroxine	True	Hypothyroidism	MONDO:0005420
 Lisinopril	PUBCHEM.COMPOUND:11865407	Lisinopril	True	Hypertension	MONDO:0005044
 Metformin	PUBCHEM.COMPOUND:4091	Metformin	True	Diabetes mellitus type 2	MONDO:0005148
@@ -19,7 +19,7 @@ Furosemide	PUBCHEM.COMPOUND:3440		Fixed	Edema	HP:0000969
 Fluticasone	PUBCHEM.COMPOUND:5311101	Fluticasone	True	Rhinitis	MONDO:0003014
 Escitalopram	PUBCHEM.COMPOUND:146570	Escitalopram	True	Depression	MONDO:0002050
 Fluoxetine	CHEBI:5118	Fluoxetine	True	Depression	MONDO:0002050
-Rosuvastatin	PUBCHEM.COMPOUND:446157	Rosuvastatin	True	Hypercholesteremia	HP:0003124
+Rosuvastatin	PUBCHEM.COMPOUND:446157	Rosuvastatin	True	Hyperlipidemia	MONDO:0021187
 Bupropion	PUBCHEM.COMPOUND:444	Bupropion	True	Depression	MONDO:0002050
 Amoxicillin	PUBCHEM.COMPOUND:33613	Amoxicillin	True	Bacterial Infection	MONDO:0005113
 Dextroamphetamine; Dextroamphetamine Saccharate; Amphetamine; Amphetamine Aspartate	UMLS:C0290795	Adderall	Fixed	ADHD	MONDO:0007743
@@ -30,7 +30,7 @@ Tamsulosin	PUBCHEM.COMPOUND:129211	Tamsulosin	True	Benign Prostatic Hypoplasia	M
 Ibuprofen	PUBCHEM.COMPOUND:3672	Ibuprofen	True	Pain	MONDO:0021668
 Citalopram	CHEBI:3723	Citalopram	True	Depression	MONDO:0002050
 Meloxicam	PUBCHEM.COMPOUND:54677470	Meloxicam	True	Osteoarthritis	MONDO:0005178
-Pravastatin	PUBCHEM.COMPOUND:54687	Pravastatin	True	Hypercholesteremia	HP:0003124
+Pravastatin	PUBCHEM.COMPOUND:54687	Pravastatin	True	Hyperlipidemia	MONDO:0021187
 Carvedilol	PUBCHEM.COMPOUND:2585	Carvedilol	True	Hypertension	MONDO:0005044
 Potassium	PUBCHEM.COMPOUND:5462222	Potassium	True	Hypokalemia	MONDO:0003019
 Tramadol	CHEBI:9648	Tramadol	True	Pain	MONDO:0021668
