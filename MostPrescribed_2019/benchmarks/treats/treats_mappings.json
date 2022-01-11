@@ -1,0 +1,13 @@
+{
+  "node_mappings":
+  {
+    "input":
+    {
+      "n0": "ConditionID"
+    },
+    "output":
+    {
+      "n1": "DrugID"
+    }
+  }
+}

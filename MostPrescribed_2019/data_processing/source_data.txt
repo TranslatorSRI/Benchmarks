@@ -1,0 +1,301 @@
+Rank	Drug Name	Total Prescriptions (2019)	Total Patients (2019)	Annual Change
+1	Atorvastatin	112,104,359	24,493,971	0
+2	Levothyroxine	102,595,103	19,698,087	0
+3	Lisinopril	91,862,708	19,990,170	0
+4	Metformin	85,739,443	17,430,765	0
+5	Metoprolol	74,578,817	15,177,787	 1
+6	Amlodipine	73,542,114	16,419,181	 1
+7	Albuterol	60,679,987	19,085,418	0
+8	Omeprazole	52,546,641	12,869,290	0
+9	Losartan	51,773,869	11,760,646	0
+10	Gabapentin	47,149,505	9,818,634	 1
+11	Hydrochlorothiazide	38,609,803	9,358,879	 2
+12	Sertraline	37,157,933	7,723,122	 2
+13	Simvastatin	36,812,966	8,543,612	 3
+14	Montelukast	32,154,358	7,429,725	 1
+15	Acetaminophen; Hydrocodone	30,355,778	10,409,764	 3
+16	Pantoprazole	28,880,217	6,777,996	 2
+17	Furosemide	28,352,226	6,640,042	0
+18	Fluticasone	27,893,102	9,564,147	 1
+19	Escitalopram	27,510,958	6,016,820	 2
+20	Fluoxetine	27,110,302	5,143,421	 2
+21	Rosuvastatin	27,041,319	6,129,254	 7
+22	Bupropion	25,722,873	5,520,278	 5
+23	Amoxicillin	25,702,634	20,368,921	 7
+24	Dextroamphetamine; Dextroamphetamine Saccharate; Amphetamine; Amphetamine Aspartate	24,600,698	3,576,687	0
+25	Trazodone	23,934,213	5,066,449	 5
+26	Duloxetine	23,821,965	4,296,613	 9
+27	Prednisone	22,889,929	10,999,246	 7
+28	Tamsulosin	21,934,065	5,309,654	 3
+29	Ibuprofen	21,746,702	10,951,995	 3
+30	Citalopram	21,546,700	4,050,776	 4
+31	Meloxicam	21,459,849	6,484,210	 2
+32	Pravastatin	20,683,277	4,875,694	 3
+33	Carvedilol	20,602,256	4,553,133	 1
+34	Potassium	20,001,670	4,589,222	 5
+35	Tramadol	19,838,715	5,496,843	 10
+36	Clopidogrel	19,447,746	4,256,662	 1
+37	Insulin Glargine	19,211,653	3,708,654	 14
+38	Aspirin	18,143,138	4,646,616	0
+39	Atenolol	18,091,488	3,788,125	 2
+40	Venlafaxine	17,713,653	3,035,802	 9
+41	Alprazolam	17,533,262	3,925,013	 5
+42	Ethinyl Estradiol; Norethindrone	16,505,642	3,462,531	 15
+43	Allopurinol	15,900,788	3,637,367	 5
+44	Hydrochlorothiazide; Lisinopril	15,709,833	3,277,894	 6
+45	Cyclobenzaprine	15,597,385	5,379,870	 3
+46	Clonazepam	15,578,495	2,347,398	0
+47	Zolpidem	15,419,648	3,013,103	 13
+48	Azithromycin	15,300,433	11,577,286	 3
+49	Oxycodone	14,669,103	4,730,687	 2
+50	Warfarin	14,632,370	2,789,155	 1
+51	Methylphenidate	14,233,405	2,173,470	 7
+52	Apixaban	14,042,889	3,037,557	 13
+53	Ranitidine	13,586,751	3,781,812	 13
+54	Glipizide	13,424,610	2,939,354	 11
+55	Ergocalciferol	13,273,652	4,124,239	 6
+56	Quetiapine	13,114,560	1,966,742	 3
+57	Budesonide; Formoterol	12,473,902	2,754,790	 5
+58	Estradiol	12,393,425	2,860,475	 2
+59	Acetaminophen; Oxycodone	11,962,650	3,850,554	 6
+60	Ondansetron	11,856,066	5,284,836	 4
+61	Naproxen	11,762,233	4,575,857	 6
+62	Glimepiride	11,504,531	2,277,208	 8
+63	Spironolactone	11,432,027	2,985,578	0
+64	Clonidine	11,418,367	2,178,697	 9
+65	Insulin Lispro	11,389,229	2,433,328	 28
+66	Loratadine	11,374,226	3,311,472	 9
+67	Cetirizine	11,110,560	3,439,020	 12
+68	Topiramate	10,927,224	2,035,700	 23
+69	Lorazepam	10,875,212	2,837,061	 11
+70	Ethinyl Estradiol; Norgestimate	10,860,083	2,372,165	 10
+71	Lamotrigine	10,690,317	1,818,670	 3
+72	Diltiazem	10,604,813	2,159,158	 4
+73	Hydrochlorothiazide; Losartan	10,268,139	2,318,012	 19
+74	Diclofenac	10,115,975	4,025,423	 7
+75	Hydroxyzine	9,898,263	2,977,526	 2
+76	Buspirone	9,881,603	2,172,778	 19
+77	Latanoprost	9,800,569	2,454,924	 7
+78	Paroxetine	9,783,755	2,043,795	 6
+79	Lisdexamfetamine	9,775,262	1,485,285	 3
+80	Fluticasone; Salmeterol	9,762,036	2,315,744	 14
+81	Pregabalin	9,625,189	1,731,352	 12
+82	Propranolol	9,277,061	2,421,089	 30
+83	Cephalexin	9,246,463	6,267,878	 2
+84	Cholecalciferol	9,068,152	2,424,272	 15
+85	Insulin Aspart	9,067,406	1,854,475	 11
+86	Finasteride	8,986,897	2,314,978	 2
+87	Fenofibrate	8,970,219	2,057,889	 16
+88	Sitagliptin	8,866,811	1,649,524	 5
+89	Folic Acid	8,860,645	2,096,607	 18
+90	Doxycycline	8,809,374	5,335,777	 11
+91	Rivaroxaban	8,799,404	1,988,539	 11
+92	Tizanidine	8,729,694	2,243,428	 5
+93	Amoxicillin; Clavulanate	8,372,244	6,468,086	 1
+94	Amitriptyline	8,178,156	1,861,683	 16
+95	Lovastatin	8,091,735	1,897,500	 5
+96	Alendronate	7,811,899	2,010,715	 10
+97	Levetiracetam	7,560,850	1,443,028	 1
+98	Sumatriptan	7,050,329	1,839,891	 14
+99	Hydralazine	6,655,156	1,694,706	 1
+100	Sulfamethoxazole; Trimethoprim	6,630,866	4,339,439	 6
+101	Aripiprazole	6,625,791	1,370,773	 2
+102	Celecoxib	6,595,236	1,905,201	 29
+103	Ferrous Sulfate	6,417,568	2,135,927	 14
+104	Famotidine	6,355,768	2,287,703	 11
+105	Benzonatate	6,354,434	3,974,773	 9
+106	Mirtazapine	6,332,488	1,231,211	 5
+107	Triamcinolone	6,320,751	4,026,933	 1
+108	Ezetimibe	6,221,674	1,427,468	 21
+109	Fluticasone; Vilanterol	6,098,161	1,248,072	 11
+110	Valacyclovir	5,987,835	2,824,569	 34
+111	Methotrexate	5,937,198	1,082,328	 17
+112	Oxybutynin	5,901,953	1,476,858	 8
+113	Ciprofloxacin	5,878,441	4,027,141	 6
+114	Valproate	5,824,937	910,407	 21
+115	Triamterene; Hydrochlorothiazide	5,792,730	1,313,745	 3
+116	Thyroid	5,729,895	1,015,144	 7
+117	Diazepam	5,711,206	1,600,062	 1
+118	Nifedipine	5,638,841	1,235,265	 6
+119	Clindamycin	5,588,597	3,047,976	 17
+120	Donepezil	5,538,291	1,432,688	 14
+121	Insulin Detemir	5,534,526	1,114,545	 8
+122	Hydroxychloroquine	5,440,844	1,220,122	 11
+123	Isosorbide	5,420,352	1,196,717	 12
+124	Ethinyl Estradiol; Levonorgestrel	5,372,880	1,462,023	 14
+125	Baclofen	5,366,102	1,428,051	0
+126	Testosterone	5,339,785	1,225,167	 1
+127	Esomeprazole	5,305,918	1,296,630	 22
+128	Desogestrel; Ethinyl Estradiol	5,264,389	1,110,114	 44
+129	Oseltamivir	5,214,926	4,417,445	 33
+130	Benazepril	5,180,063	1,334,128	 9
+131	Dexmethylphenidate	5,179,401	714,477	 29
+132	Tiotropium	5,177,802	1,174,965	 22
+133	Fluconazole	5,149,547	3,048,599	 3
+134	Dulaglutide	5,095,034	1,115,444	 20
+135	Chlorthalidone	4,986,853	1,195,004	 29
+136	Methocarbamol	4,888,933	1,764,142	 13
+137	Enalapril	4,669,056	958,638	 3
+138	Metronidazole	4,664,907	2,898,583	 16
+139	Prednisolone	4,638,327	2,547,930	0
+140	Guanfacine	4,608,026	690,784	 8
+141	Verapamil	4,593,421	927,301	 8
+142	Liraglutide	4,524,862	973,972	 5
+143	Norethindrone	4,514,574	1,096,191	 1
+144	Ropinirole	4,487,533	997,625	 27
+145	Acetaminophen	4,483,857	2,536,254	 59
+146	Empagliflozin	4,459,539	914,424	 70
+147	Hydrocortisone	4,382,981	2,143,789	 1
+148	Drospirenone; Ethinyl Estradiol	4,348,309	943,259	 20
+149	Risperidone	4,285,907	663,688	 12
+150	Meclizine	4,258,968	1,439,405	 7
+151	Albuterol; Ipratropium	4,231,364	1,046,066	 6
+152	Adalimumab	4,208,358	553,816	 27
+153	Nortriptyline	4,190,832	788,683	 1
+154	Valsartan	4,158,666	1,072,224	 57
+155	Cyanocobalamin	4,061,263	1,191,271	 29
+156	Etonogestrel; Ethinyl Estradiol	4,050,295	834,116	 11
+157	Acyclovir	3,950,520	1,308,357	 1
+158	Phentermine	3,842,226	1,017,109	 11
+159	Cefdinir	3,839,266	3,008,107	 8
+160	Timolol	3,833,125	1,052,388	 7
+161	Methylprednisolone	3,812,202	2,834,344	 4
+162	Oxcarbazepine	3,796,002	632,006	0
+163	Morphine	3,756,696	636,123	 26
+164	Olmesartan	3,742,011	1,000,776	 78
+165	Dicyclomine	3,730,730	1,156,286	 32
+166	Pramipexole	3,685,677	735,018	 32
+167	Azelastine	3,669,768	1,247,976	 56
+168	Insulin Degludec	3,632,525	773,441	 18
+169	Memantine	3,631,969	831,395	 22
+170	Prazosin	3,624,710	616,417	 39
+171	Ketoconazole	3,573,982	1,796,305	 16
+172	Rizatriptan	3,514,594	857,676	 2
+173	Acetaminophen; Codeine	3,508,582	1,971,731	 23
+174	Promethazine	3,392,438	1,547,216	 19
+175	Metformin; Sitagliptin	3,363,543	668,951	 17
+176	Anastrozole	3,338,664	811,943	 56
+177	Desvenlafaxine	3,283,561	590,830	 36
+178	Ramipril	3,271,102	853,882	 19
+179	Pioglitazone	3,241,839	858,233	 38
+180	Clobetasol	3,226,423	1,688,723	 35
+181	Irbesartan	3,220,533	896,653	 6
+182	Levofloxacin	3,202,649	1,995,684	 19
+183	Amiodarone	3,185,474	714,249	 7
+184	Nitroglycerin	3,165,204	1,274,921	 4
+185	Olanzapine	3,165,180	528,975	 42
+186	Sucralfate	3,161,187	892,843	 16
+187	Docusate	3,136,752	1,377,989	 41
+188	Progesterone	3,070,724	722,137	 15
+189	Mirabegron	3,065,676	742,152	 46
+190	Mupirocin	3,064,118	2,172,326	 24
+191	Nebivolol	3,061,887	667,364	 8
+192	Nitrofurantoin	2,957,359	1,608,563	 12
+193	Levocetirizine	2,913,554	805,527	 35
+194	Methimazole	2,901,300	544,953	 49
+195	Cyclosporine	2,889,776	904,132	 34
+196	Sildenafil	2,877,293	973,315	 12
+197	Carbamazepine	2,864,887	478,023	 8
+198	Labetalol	2,825,281	653,627	 33
+199	Calcium; Cholecalciferol	2,777,842	621,965	 29
+200	Lansoprazole	2,772,218	632,804	 17
+201	Budesonide	2,749,945	886,015	 20
+202	Colchicine	2,741,108	911,816	 1
+203	Terazosin	2,736,027	607,817	 3
+204	Umeclidinium; Vilanterol	2,697,882	467,017	 56
+205	Lithium	2,643,601	425,396	 9
+206	Digoxin	2,607,773	580,966	 22
+207	Dorzolamide; Timolol	2,590,909	657,541	 44
+208	Melatonin	2,586,637	694,786	 64
+209	Insulin Human; Insulin Isophane Human	2,528,165	538,930	 5
+210	Doxazosin	2,515,836	648,593	 34
+211	Ranolazine	2,501,299	405,880	 39
+212	Gemfibrozil	2,367,670	545,798	 6
+213	Amlodipine; Benazepril	2,332,425	570,960	 31
+214	Temazepam	2,324,388	628,800	 25
+215	Flecainide	2,318,516	461,028	 51
+216	Ticagrelor	2,299,436	402,097	 46
+217	Brimonidine	2,290,788	675,178	 5
+218	Dexlansoprazole	2,290,526	482,099	 3
+219	Lidocaine	2,273,902	1,085,302	 17
+220	Lurasidone	2,258,860	337,130	 27
+221	Benztropine	2,238,056	352,987	 47
+222	Nystatin	2,185,148	1,101,946	 15
+223	Eszopiclone	2,166,392	518,564	 46
+224	Sacubitril; Valsartan	2,165,813	435,484	 76
+225	Calcium Citrate	2,130,298	590,726	 63
+226	Sodium	2,117,733	792,775	 8
+227	Torsemide	2,117,192	476,144	 46
+228	Butalbital; Acetaminophen; Caffeine	2,116,128	694,354	 43
+229	Mesalamine	2,109,084	538,910	 4
+230	Liothyronine	2,083,234	439,905	 35
+231	Buprenorphine	2,072,033	273,376	 17
+232	Ofloxacin	2,051,823	1,422,882	 6
+233	Erythromycin	2,041,420	1,373,882	 14
+234	Doxepin	2,033,456	550,406	 43
+235	Semaglutide	2,021,060	610,492	 162
+236	Hydromorphone	2,013,469	541,502	 12
+237	Penicillin V	2,005,184	1,455,073	 3
+238	Valsartan; Hydrochlorothiazide	1,993,866	465,719	 55
+239	Beclomethasone	1,993,298	742,497	 29
+240	Brimonidine; Timolol	1,990,438	470,874	 62
+241	Bumetanide	1,990,418	420,604	 21
+242	Letrozole	1,981,574	368,191	 17
+243	Linagliptin	1,941,245	380,780	 65
+244	Tretinoin	1,937,920	948,930	 53
+245	Minocycline	1,925,676	609,265	 35
+246	Ipratropium	1,898,297	686,638	 1
+247	Polyethylene Glycol 3350	1,874,075	799,097	 21
+248	Umeclidinium	1,869,725	317,557	 13
+249	Bisoprolol	1,863,725	307,090	 37
+250	Calcitriol	1,847,312	430,582	 1
+251	Varenicline	1,836,461	663,856	 72
+252	Epinephrine	1,756,817	1,369,809	 8
+253	Estrogens, Conjugated	1,748,939	398,483	0
+254	Glyburide	1,743,041	460,726	 50
+255	Guaifenesin	1,716,663	1,136,061	 63
+256	Magnesium Acetate	1,712,179	533,710	 15
+257	Ethinyl Estradiol; Norgestrel	1,704,321	300,727	 33
+258	Sotalol	1,698,717	353,633	 5
+259	Bimatoprost	1,697,723	410,702	 17
+260	Insulin Isophane	1,674,609	372,003	 4
+261	Medroxyprogesterone	1,661,971	644,481	 58
+262	Tamoxifen	1,656,753	405,119	 16
+263	Mometasone	1,638,401	463,974	 41
+264	Sulfasalazine	1,632,254	375,613	 79
+265	Dorzolamide	1,615,872	463,403	 48
+266	Ketorolac	1,602,923	1,110,598	 72
+267	Indomethacin	1,574,456	770,570	 28
+268	Atomoxetine	1,563,862	375,184	 103
+269	Olopatadine	1,561,992	719,835	 24
+270	Telmisartan	1,553,265	383,898	 25
+271	Phenytoin	1,536,389	298,537	0
+272	Buprenorphine; Naloxone	1,514,317	180,019	 80
+273	Raloxifene	1,510,334	340,374	 74
+274	Tobramycin; Dexamethasone	1,486,152	797,964	 97
+275	Naltrexone	1,465,584	349,282	 28
+276	Polymyxin B; Trimethoprim	1,450,395	1,019,455	 6
+277	Terbinafine	1,441,827	677,406	 54
+278	Fentanyl	1,440,011	237,302	 16
+279	Diphenhydramine	1,433,911	506,643	 20
+280	Bisoprolol; Hydrochlorothiazide	1,433,172	294,136	 1
+281	Pancrelipase Lipase; Pancrelipase Protease; Pancrelipase Amylase	1,433,033	355,077	 20
+282	Zonisamide	1,432,118	222,847	0
+283	Fexofenadine	1,428,320	468,086	 25
+284	Erenumab	1,416,499	237,083	0
+285	Linaclotide	1,399,268	335,650	 74
+286	Brompheniramine; Dextromethorphan; Pseudoephedrine	1,396,531	845,363	 18
+287	Omega-3-acid Ethyl Esters	1,391,748	421,905	 110
+288	Dimethyl	1,386,389	227,231	0
+289	Tadalafil	1,379,014	411,977	 34
+290	Canagliflozin	1,373,539	304,908	 97
+291	Emtricitabine; Tenofovir Disoproxil	1,345,532	189,668	 36
+292	Tolterodine	1,340,859	387,878	 17
+293	Etanercept	1,320,548	235,493	 15
+294	Quinapril	1,318,428	300,038	 41
+295	Senna; Docusate	1,313,539	610,326	 78
+296	Betamethasone	1,311,106	914,208	 42
+297	Solifenacin	1,307,159	317,209	 32
+298	Insulin, Regular, Human	1,298,682	213,288	 1
+299	Chlorhexidine	1,295,645	793,562	 10
+300	Fluocinonide	1,290,749	595,456	 22
