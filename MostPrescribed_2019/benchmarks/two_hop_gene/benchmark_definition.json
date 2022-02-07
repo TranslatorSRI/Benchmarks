@@ -4,6 +4,4 @@
   "constructor_type": "query",
   "query_file": "two_hop_gene.json",
   "mapping_file": "two_hop_gene_mappings.json",
-  "score_type": "topN",
-  "N": 20
 }

@@ -4,6 +4,6 @@
   "constructor_type": "query",
   "query_file": "treats.json",
   "mapping_file": "treats_mappings.json",
-  "score_type": "topN_variable",
-  "N_source_column": "Rank"
+  "score_type": "topN",
+  "N": 20
 }
