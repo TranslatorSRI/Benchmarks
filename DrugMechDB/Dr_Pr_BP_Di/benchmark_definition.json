@@ -1,0 +1,9 @@
+{
+  "name": "DrugMechDB_Drug-Protein_BiologicalProcess_Disease",
+  "case_file": "Dr_Pr_BP_Di.txt",
+  "constructor_type": "query",
+  "query_file": "Dr_Pr_BP_Di.json",
+  "mapping_file": "Dr_Pr_BP_Di_mappings.json",
+  "score_type": "topN",
+  "N": 20
+}
