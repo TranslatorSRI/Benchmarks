@@ -1,0 +1,27 @@
+{
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "Drug": {
+            "ids": [],
+            "categories": [
+              "biolink:SmallMolecule"
+            ]
+          },
+          "Disease": {
+            "categories": [
+              "biolink:Disease"
+            ]
+          }
+        },
+        "edges": {
+          "e01": {
+            "object": "Disease",
+            "subject": "Drug",
+            "predicates": ["biolink:treats"]
+          }
+        }
+      }
+    }
+  }
+  

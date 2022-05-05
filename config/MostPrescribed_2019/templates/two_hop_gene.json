@@ -2,7 +2,7 @@
   "message": {
     "query_graph": {
       "nodes": {
-        "n0": {
+        "ConditionID": {
           "ids": []
         },
         "n1": {
@@ -10,7 +10,7 @@
             "biolink:Gene"
           ]
         },
-        "n2": {
+        "DrugID": {
           "categories": [
             "biolink:SmallMolecule"
           ]
@@ -18,13 +18,13 @@
       },
       "edges": {
         "e01": {
-          "object": "n0",
+          "object": "ConditionID",
           "subject": "n1",
           "predicates": ["biolink:genetic_association"]
         },
         "e02": {
           "subject":"n1",
-          "object": "n2",
+          "object": "DrugID",
           "predicates": ["biolink:decreases_activity_of"]
         }
       }

@@ -1,0 +1,39 @@
+{
+    "aragorn": {
+        "get": {
+            "url": "https://aragorn.renci.org/1.2/query",
+            "workflow": [
+                {"id": "lookup"},
+                {"id": "overlay_connect_knodes"},
+                {"id": "score"}
+            ]
+        },
+        "get_unscored": {
+            "url": "https://aragorn.renci.org/1.2/query",
+            "workflow": [
+                {"id": "lookup"},
+                {"id": "overlay_connect_knodes"}
+            ]
+        },
+        "score": {
+            "url": "https://aragorn.renci.org/1.2/query",
+            "workflow": [
+                {"id": "score"}
+            ]
+        }
+    },
+    "aragorn-dev": {
+        "get": {
+            "url": "http://aragorn-dev.apps.renci.org/1.2",
+            "workflow": []
+        },
+        "get_unscored": {
+            "url": "http://aragorn-dev.apps.renci.org/1.2",
+            "workflow": []
+        },
+        "score": {
+            "url": "http://aragorn-dev.apps.renci.org/1.2",
+            "workflow": []
+        }
+    }
+}

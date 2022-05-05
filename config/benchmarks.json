@@ -1,0 +1,50 @@
+{
+    "DrugMechDB": [
+        {
+            "source": "DrugMechDB",
+            "templates": ["disease_process"]
+        }
+    ],
+    "MostPrescribed_2019": [
+        {
+            "source": "MostPrescribed_2019",
+            "templates": ["treats", "two_hop_gene"]
+        }
+    ],
+    "one_hops": [
+        {
+            "source": "DrugMechDB",
+            "templates": ["disease_process"]
+        },
+        {
+            "source": "MostPrescribed_2019",
+            "templates": ["treats"]
+        }
+    ],
+    "two_hops": [
+        {
+            "source": "DrugMechDB",
+            "templates": ["disease_process"]
+        },
+        {
+            "source": "MostPrescribed_2019",
+            "templates": ["two_hop_gene"]
+        }
+    ],
+    "all": [
+        {
+            "source": "DrugMechDB",
+            "templates": ["disease_process"]
+        },
+        {
+            "source": "MostPrescribed_2019",
+            "templates": ["treats", "two_hop_gene"]
+        }
+    ],
+    "test": [
+        {
+            "source": "TestSource",
+            "templates": ["test_template"]
+        }
+    ]
+}
