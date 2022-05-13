@@ -1,12 +1,14 @@
 import asyncio
 import json
-import httpx
 from pathlib import Path
+
+import httpx
 from tqdm import tqdm
 
 from .utils.asyncio import gather
 from .utils.benchmark import benchmark_messages
 from .utils.constants import CONFIG_DIR
+
 
 def get_results(
     benchmark,

@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 
 from benchmarks.runner import score_results
 
+
 def main():
     parser = ArgumentParser(description="Fetches results for a specific benchmark.")
     parser.add_argument(

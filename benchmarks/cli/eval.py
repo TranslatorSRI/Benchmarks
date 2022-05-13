@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
-from matplotlib import pyplot as plt
 from pathlib import Path
+
+from matplotlib import pyplot as plt
 
 from benchmarks.scoring import evaluate_results
 

@@ -1,6 +1,7 @@
 import asyncio
 from typing import Coroutine, Sequence
 
+
 async def gather(*coroutines: Sequence[Coroutine], limit: int = None):
     """
     Extension of asyncio.gather with a limit on the number of concurrent
