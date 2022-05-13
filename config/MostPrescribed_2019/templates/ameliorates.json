@@ -16,7 +16,7 @@
           "object": "ConditionID",
           "subject": "DrugID",
           "predicates": [
-            "biolink:treats"
+            "biolink:ameliorates"
           ]
         }
       }

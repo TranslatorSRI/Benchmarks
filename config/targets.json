@@ -22,18 +22,14 @@
             ]
         }
     },
-    "aragorn-dev": {
+    "arax": {
         "get": {
-            "url": "http://aragorn-dev.apps.renci.org/1.2",
-            "workflow": []
-        },
-        "get_unscored": {
-            "url": "http://aragorn-dev.apps.renci.org/1.2",
-            "workflow": []
-        },
-        "score": {
-            "url": "http://aragorn-dev.apps.renci.org/1.2",
-            "workflow": []
+            "url": "https://arax.ncats.io/api/arax/v1.2/query"
+        }
+    },
+    "bte": {
+        "get": {
+            "url": "https://api.bte.ncats.io/v1/query"
         }
     }
 }

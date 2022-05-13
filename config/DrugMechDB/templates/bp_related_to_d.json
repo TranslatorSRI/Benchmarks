@@ -8,15 +8,15 @@
             "biolink:BiologicalProcess"
           ]
         },
-        "Disease": {
+        "Drug": {
           "categories": [
-            "biolink:Disease"
+            "biolink:SmallMolecule"
           ]
         }
       },
       "edges": {
         "e01": {
-          "object": "Disease",
+          "object": "Drug",
           "subject": "BiologicalProcess",
           "predicate": "biolink:related_to"
         }
