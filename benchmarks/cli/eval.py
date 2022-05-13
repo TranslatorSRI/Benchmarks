@@ -58,7 +58,7 @@ def main():
         results.plot_top_k_accuracy()
         plt.gcf().savefig(plots_dir / 'top_k_accuracy.png')
 
-    ks = [1, 5, 10, 20, 50]
+    ks = [1, 5, 10, 20, 50, 100, 200, 500]
     while ks[-1] >= args.k:
         ks.pop()
     ks.append(args.k)
@@ -74,7 +74,7 @@ def main():
     for name, fn_name in metrics_at_k.items():
         output.append("{}{}".format(
             name,
-            '\t'.join([f'{getattr(results, fn_name)(k):.4}' for k in ks])
+            '\t'.join([f'{getattr(results, fn_name)(k):.4f}' for k in ks])
         ))
     output.append('')
 

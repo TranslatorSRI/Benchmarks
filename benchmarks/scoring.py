@@ -1,14 +1,16 @@
 
 import collections.abc
-from itertools import zip_longest
 import json
+from itertools import zip_longest
 from pathlib import Path
-from matplotlib import pyplot as plt
-from matplotlib.axes import Axes
-import numpy as np
 from typing import Sequence, Tuple, Union
 
+import numpy as np
+from matplotlib import pyplot as plt
+from matplotlib.axes import Axes
+
 from benchmarks.utils.benchmark import benchmark_ground_truth
+
 
 def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'BenchmarkResults':
     """
@@ -25,7 +27,7 @@ def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'Benchmar
     Returns:
         BenchmarkResults object with functions for getting and plotting metrics.
     """
-    uids, gts = benchmark_ground_truth(benchmark)
+    uids, gts, normalizer = benchmark_ground_truth(benchmark)
     results_dir = Path(results_dir)
 
     total_num_relevant = 0
@@ -60,8 +62,10 @@ def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'Benchmar
             if result is not None:
                 # Check if result is relevant
                 node_bindings = result['node_bindings']
-                pred = tuple(sorted([(slot_id, node_bindings[slot_id][0]['id']) for slot_id in slot_ids])) # [0] only considers first CURIE bound to slot_id
-                if pred in gt:
+                # For now, only considers first CURIE bound to slot_id
+                pred = [(slot_id, node_bindings[slot_id][0]['id']) for slot_id in slot_ids]
+                normalized_pred = tuple(sorted((slot_id, normalizer.get(curie, curie)) for slot_id, curie in pred))
+                if normalized_pred in gt:
                     tp_count += 1
                     ap_numerator += tp_count / (index + 1)
 
@@ -69,7 +73,7 @@ def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'Benchmar
                         rr = 1 / (index + 1)
 
                     # Remove result from gt to prevent double counting
-                    gt.remove(pred)
+                    gt.remove(normalized_pred)
 
             # Update once per result
             tp_k[index] += tp_count

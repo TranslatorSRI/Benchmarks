@@ -58,9 +58,9 @@ def score_results(
             uids.append(file_path.stem)
             with open(file_path, 'r') as file:
                 message = json.load(file)
-                if workflow is not None:
-                    message['workflow'] = workflow
-                messages.append(message)
+            if workflow is not None:
+                message['workflow'] = workflow
+            messages.append(message)
 
     send_requests_store_results(
         uids,
@@ -98,7 +98,19 @@ async def send_request_store_result(
 ):
     # Make network call
     async with httpx.AsyncClient(timeout=None) as client:
-        response = await client.post(url, json=msg)
+        while True:
+            response = None
+            try:
+                response = await client.post(url, json=msg)
+                response.raise_for_status()
+            except:
+                if response is not None:
+                    print(f'{response.status_code} {response.reason_phrase}')
+                    print(uid)
+                print(f'Retrying in 5 seconds...')
+                await asyncio.sleep(5)
+                continue
+            break
 
     # Store results
     with open(f'{results_dir}/{uid}.json', 'w') as file:

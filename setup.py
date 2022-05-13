@@ -13,11 +13,11 @@ setup(
     install_requires=[],
     entry_points={
         'console_scripts': [
-            'benchmarks_eval_results = '
+            'benchmarks_eval = '
             'benchmarks.cli.eval:main',
-            'benchmarks_get_results = '
+            'benchmarks_get = '
             'benchmarks.cli.get:main',
-            'benchmarks_score_results = '
+            'benchmarks_score = '
             'benchmarks.cli.score:main',
         ]
     }

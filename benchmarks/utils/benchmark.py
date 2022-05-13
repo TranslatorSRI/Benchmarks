@@ -5,6 +5,7 @@ import csv
 import json
 from typing import Dict, List, Sequence, Tuple
 from benchmarks.utils.constants import BENCHMARKS, CONFIG_DIR
+from .normalize import get_normalizer
 
 def get_uid(source: str, template: str, datum: Dict[str, str], message: dict):
     """
@@ -109,12 +110,15 @@ def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict]]:
             `benchmark.json`.
     
     Returns
-        (uids, gts)
+        (uids, gts, normalizer)
             uids: UIDs of each query in the benchmark.
             gts: set of a list of tuple pairs (qnode_id, CURIE) that represent
                 the set of relevant results.
+            normalizer: Map from CURIEs to the equivalent, preferred CURIE
+                representing the same entity (from Node Normalizer).
     """
-    uid_gts = defaultdict(set)
+    uid_gts = defaultdict(list)
+    curies = []
     for source in BENCHMARKS[benchmark]:
         source_dir = CONFIG_DIR / source['source']
 
@@ -132,7 +136,6 @@ def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict]]:
                 templates.append((template, json.load(file)))
 
         # Prepare messages using data and templates
-        # NOTE: If memory ever becomes an issue, make this a generator that yields messages
         for template, template_dict in templates:
             qnodes = template_dict['message']['query_graph']['nodes']
             slot_ids = [
@@ -146,6 +149,17 @@ def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict]]:
                 }
                 uid = get_uid(source['source'], template, datum_dict, template_dict)
                 gt = [(slot_id, datum_dict[slot_id]) for slot_id in slot_ids]
-                uid_gts[uid].add(tuple(sorted(gt)))
+                uid_gts[uid].append(gt)
+                curies.extend([datum_dict[slot_id] for slot_id in slot_ids])
 
-    return list(uid_gts.keys()), list(uid_gts.values())
+    # Normalize CURIEs and put the results in a set (for quick contains check)
+    normalizer = get_normalizer(curies)
+    uids, gts = [], []
+    for uid, gt in uid_gts.items():
+        uids.append(uid)
+        results = set()
+        for result in gt:
+            results.add(tuple(sorted([(slot_id, normalizer.get(curie, curie)) for slot_id, curie in result])))
+        gts.append(results)
+
+    return uids, gts, normalizer
