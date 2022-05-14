@@ -1,6 +1,6 @@
 {
     "aragorn": {
-        "get": {
+        "fetch": {
             "url": "https://aragorn.renci.org/1.2/query",
             "workflow": [
                 {"id": "lookup"},
@@ -8,7 +8,7 @@
                 {"id": "score"}
             ]
         },
-        "get_unscored": {
+        "fetch_unscored": {
             "url": "https://aragorn.renci.org/1.2/query",
             "workflow": [
                 {"id": "lookup"},
@@ -23,12 +23,12 @@
         }
     },
     "arax": {
-        "get": {
+        "fetch": {
             "url": "https://arax.ncats.io/api/arax/v1.2/query"
         }
     },
     "bte": {
-        "get": {
+        "fetch": {
             "url": "https://api.bte.ncats.io/v1/query"
         }
     }

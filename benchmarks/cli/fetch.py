@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from benchmarks.runner import get_results
+from benchmarks.request import fetch_results
 
 
 def main():
@@ -33,7 +33,7 @@ def main():
     )
     args = parser.parse_args()
 
-    get_results(
+    fetch_results(
         args.benchmark,
         args.target,
         args.results_dir,

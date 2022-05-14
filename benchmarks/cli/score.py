@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from benchmarks.runner import score_results
+from benchmarks.request import score_results
 
 
 def main():

@@ -1,7 +1,58 @@
 # Translator Benchmarks
 
-A repository for Translator benchmarks.   
+This repository provides a set of benchmarks as well as the code to send the queries and evaluate the returned results of a benchmark.
 
-Each subdirectory contains a particular benchmark data set, along with any associated benchmark definitions.
+`benchmarks` contains the code to query targets and evaluate results.
 
-Additionally, the BenchmarkRunner executes the benchmarks against ARA targets.
+`config` contains the data sets, query templates, targets, and benchmark definitions necessary to run a benchmark. See `config/README.md` for details about targets and benchmarks.
+
+## Usage
+Running a benchmark is a two-step process:
+1. Execute the queries of a benchmark and store the scored results.
+2. Evaluate the scored results against the set of ground-truth relevant results.
+
+Installation of the `benchmarks` package (see Installation below) provides access to the functions and command-line interface necessary to run benchmarks.
+### CLI
+The command-line interface is the easiest way to run a benchmark.
+
+- `benchmarks_fetch`
+    - Fetches (un)scored results given the name of a benchmark (specified in `config/benchmarks.json`), target (specified in `config/targets.json`), and a directory to store results.
+    - By default, `benchmarks_fetch` fetches scored results using 5 concurrent requests. Run `benchmarks_fetch --help` for more details.
+
+- `benchmarks_score`
+    - Scores results given the name of a benchmark (specified in `config/benchmarks.json`), target (specified in `config/targets.json`), a directory containing unscored results, and a directory to store scored results.
+    - By default, `benchmarks_score` uses 5 concurrent requests. Run `benchmarks_score --help` for more details.
+
+- `benchmarks_eval`
+    - Evaluates a set of scored results given the name of a benchmark (specified in `config/benchmarks.json`) and a directory containing scored results.
+    - By default, the evaluation considers the top 20 results of each query, and plots are not generated. Run `benchmarks_eval --help` for more details.
+
+### Functions
+The CLI functionality is also available by importing functions from the `benchmarks` package.
+
+```python
+from benchmarks.request import fetch_results, score_results
+from benchmarks.eval import evaluate_results
+
+# Fetch unscored results
+fetch_results('benchmark_name', 'target_name', 'unscored_results_dir', scored=False)
+
+# Score unscored results
+score_results('unscored_results_dir', 'target_name', 'results_dir')
+
+# Evaluate scored results
+evaluate_results('benchmark_name', 'results_dir')
+
+```
+See the documentation of each function for more information.
+
+
+## Installation
+
+Install the repository as an editable package using `pip`.
+
+`pip install -e .`
+
+
+
+

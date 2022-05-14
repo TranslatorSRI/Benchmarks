@@ -10,10 +10,11 @@ from .utils.benchmark import benchmark_messages
 from .utils.constants import CONFIG_DIR
 
 
-def get_results(
+def fetch_results(
     benchmark,
     target,
     results_dir,
+    overwrite=True,
     scored=True,
     num_concurrent_requests=5,
     progress=True
@@ -23,12 +24,21 @@ def get_results(
     with open(CONFIG_DIR / 'targets.json') as file:
         targets_json = json.load(file)
 
-    config = targets_json[target]['get' if scored else 'get_unscored']
+    config = targets_json[target]['fetch' if scored else 'fetch_unscored']
     url = config['url']
     workflow = config.get('workflow', None)
     if workflow is not None:
         for message in messages:
             message['workflow'] = workflow
+
+    if not overwrite:
+        dir = Path(results_dir)
+        uid_msgs = [
+            (uid, msg) 
+            for uid, msg in zip(uids, messages)
+            if not (dir / f'{uid}.json').exists()
+        ]
+        uids, messages = tuple(zip(*uid_msgs))
                 
     send_requests_store_results(
         uids,

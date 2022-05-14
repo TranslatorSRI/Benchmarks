@@ -3,7 +3,7 @@ from pathlib import Path
 
 from matplotlib import pyplot as plt
 
-from benchmarks.scoring import evaluate_results
+from benchmarks.eval import evaluate_results
 
 metrics_at_k = {
     'Precision @ k\t\t': 'precision_at_k',
