@@ -45,7 +45,7 @@ Each entry in `targets.json` describes a query target - e.g., ARAGORN, ARAX, BTE
 ## Add a Source
 1. Create a directory in `config`
 2. Create `data.tsv` inside this directory. The first row should contain named column headers. Every other row should containsets of related CURIEs.
-3. Create a directory named `templates` inside this directory. Add query templates following [Add a Query Template](##add-a-query-template).
+3. Create a directory named `templates` inside this directory. Add query templates following [Add a Query Template](#add-a-query-template).
 
 ## Add a Query Template
 Create a TRAPI-compliant message containing a query graph without CURIEs, and store it in the `templates` directory. For the query runner to populate the query template, each query graph node identifier (qnode ID) must match a column header in `data.tsv`. For each pinned node, add the `ids` key mapped to an empty list. For each unpinned node, exclude the `ids` key.
