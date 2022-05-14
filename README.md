@@ -11,7 +11,7 @@ Running a benchmark is a two-step process:
 1. Execute the queries of a benchmark and store the scored results.
 2. Evaluate the scored results against the set of ground-truth relevant results.
 
-Installation of the `benchmarks` package (see Installation below) provides access to the functions and command-line interface necessary to run benchmarks.
+[Installation](##installation) of the `benchmarks` package provides access to the functions and command-line interface necessary to run benchmarks.
 ### CLI
 The command-line interface is the easiest way to run a benchmark.
 
@@ -41,7 +41,7 @@ fetch_results('benchmark_name', 'target_name', 'unscored_results_dir', scored=Fa
 score_results('unscored_results_dir', 'target_name', 'results_dir')
 
 # Evaluate scored results
-evaluate_results('benchmark_name', 'results_dir')
+evaluate_results('benchmark_name', 'results_dir OR results_dict')
 
 ```
 See the documentation of each function for more information.

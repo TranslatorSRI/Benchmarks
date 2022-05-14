@@ -12,7 +12,7 @@ from matplotlib.axes import Axes
 from benchmarks.utils.benchmark import benchmark_ground_truth
 
 
-def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'BenchmarkResults':
+def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 'BenchmarkResults':
     """
     Computes metrics on the query results associated with the specified
     benchmark. See BenchmarkResults for the complete list of metrics.
@@ -20,15 +20,19 @@ def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'Benchmar
     Args:
         benchmark: (str) Name of the benchmark to run; see benchmarks.json for a
             complete list of benchmarks.
-        reuslts_dir: (str) Path to the directory containing scored results to
-            to the queries associated with the specified benchmark.
+        results: (str or dict) Scored results to the queries associated with
+            the specified benchmark. If str, path to the directory containing
+            results. If dict, map from query UID to TRAPI-compliant message
+            containing results.
         k: (int) Maximum number of results to consider for scoring.
 
     Returns:
         BenchmarkResults object with functions for getting and plotting metrics.
     """
     uids, gts, normalizer = benchmark_ground_truth(benchmark)
-    results_dir = Path(results_dir)
+
+    if type(results) is str:
+        results_dir = Path(results)
 
     total_num_relevant = 0
     tp_k = np.zeros(k)
@@ -41,14 +45,18 @@ def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'Benchmar
         linked/matched to a list of (qnode_id, CURIE) pairs iff the bound
         CURIE equals the ground truth CURIE for each (qnode_id, CURIE) pair.
         """
-        # Load precomputed result for this query
-        result_path = results_dir / f'{uid}.json'
-        if not result_path.exists():
-            raise Exception(
-                f'Results for query {uid} were not found in {results_dir}'
-            )
-        with open(result_path) as file:
-            results = json.load(file)['message']['results'][:k]
+        if type(results) is str:
+            # Load precomputed result for this query
+            result_path = results_dir / f'{uid}.json'
+            if not result_path.exists():
+                raise Exception(
+                    f'Results for query {uid} were not found in {results_dir}'
+                )
+            with open(result_path) as file:
+                results_k = json.load(file)['message']['results'][:k]
+        elif type(results) is dict:
+            # Grab message from dict
+            results_k = results[uid]['message']['results'][:k]
 
         # Compute unpinned qnode_ids (aka template slot_ids)
         slot_ids = [slot_id for slot_id, _ in next(iter(gt))]
@@ -58,7 +66,7 @@ def evaluate_results(benchmark: str, results_dir: str, k: int = 50) -> 'Benchmar
         num_relevant = len(gt)
         ap_k = np.zeros(k)
         rr = 0
-        for index, result in zip_longest(range(k), results):
+        for index, result in zip_longest(range(k), results_k):
             if result is not None:
                 # Check if result is relevant
                 node_bindings = result['node_bindings']
