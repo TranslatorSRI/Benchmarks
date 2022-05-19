@@ -21,6 +21,11 @@ def main():
         help='Directory containing results of the benchmark queries.'
     )
     parser.add_argument(
+        '--overwrite',
+        action='store_true',
+        help='If true, overwrites existing query results in results_dir.'
+    )
+    parser.add_argument(
         '--unscored',
         action='store_true',
         help='If true, fetches and stores unscored results.'
@@ -37,6 +42,7 @@ def main():
         args.benchmark,
         args.target,
         args.results_dir,
+        overwrite=args.overwrite,
         scored=not args.unscored,
         num_concurrent_requests=args.n
     )

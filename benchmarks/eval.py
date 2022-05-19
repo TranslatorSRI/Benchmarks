@@ -1,6 +1,7 @@
 
 import collections.abc
 import json
+import os
 from itertools import zip_longest
 from pathlib import Path
 from typing import Sequence, Tuple, Union
@@ -34,6 +35,24 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
     if type(results) is str:
         results_dir = Path(results)
 
+    output_dict = {
+        'k': k,
+        'benchmark': {
+            'name': benchmark,
+            'num_queries': len(uids)
+        },
+        'metrics': {},
+        'queries': {
+            uid: {
+                'precision_at_k': [],
+                'recall_at_k': [],
+                'average_precision_at_k': [],
+                'relevant_result_ranks': []
+            } 
+            for uid in uids
+        }
+    }
+
     total_num_relevant = 0
     tp_k = np.zeros(k)
     map_k = np.zeros(k)
@@ -53,15 +72,25 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
                     f'Results for query {uid} were not found in {results_dir}'
                 )
             with open(result_path) as file:
-                results_k = json.load(file)['message']['results'][:k]
+                results_k = sorted(
+                    json.load(file)['message']['results'],
+                    key=lambda r: r['score'],
+                    reverse=True
+                )[:k]
         elif type(results) is dict:
             # Grab message from dict
-            results_k = results[uid]['message']['results'][:k]
+            results_k = sorted(
+                results[uid]['message']['results'],
+                key=lambda r: r['score'],
+                reverse=True
+            )[:k]
+
+        uid_info = output_dict['queries'][uid]
 
         # Compute unpinned qnode_ids (aka template slot_ids)
         slot_ids = [slot_id for slot_id, _ in next(iter(gt))]
 
-        # Compute metrics for each result
+        # Compute metrics for each query
         tp_count, ap_numerator = 0, 0
         num_relevant = len(gt)
         ap_k = np.zeros(k)
@@ -80,6 +109,8 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
                     if rr == 0:
                         rr = 1 / (index + 1)
 
+                    uid_info['relevant_result_ranks'].append(index + 1)
+
                     # Remove result from gt to prevent double counting
                     gt.remove(normalized_pred)
 
@@ -87,16 +118,35 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
             tp_k[index] += tp_count
             ap_k[index] = ap_numerator / min(index + 1, num_relevant)
 
+            # Update output dict
+            uid_info['precision_at_k'].append(tp_count / (index + 1))
+            uid_info['recall_at_k'].append(tp_count / num_relevant)
+            uid_info['average_precision_at_k'].append(ap_k[index])
+
         # Update once per UID
         total_num_relevant += num_relevant
         map_k += ap_k
         mrr += rr
     
-    # Convert sums to means
+    # Convert mAP @ k and MRR sums to means
     map_k /= len(uids)
     mrr /= len(uids)
+    
+    # Compute precision @ k and recall @ k
+    k = np.arange(1, len(tp_k) + 1)
+    p_k = tp_k / (k * len(uids))
+    r_k = tp_k / num_relevant
 
-    return BenchmarkResults(tp_k, map_k, mrr, total_num_relevant, len(uids)) 
+    # Update output_dict
+    metrics =  output_dict['metrics']
+    metrics['precision_at_k'] = p_k.tolist()
+    metrics['recall_at_k'] = r_k.tolist()
+    metrics['mean_average_precision_at_k'] = map_k.tolist()
+    metrics['top_k_accuracy'] = r_k.tolist()
+    metrics['mean_reciprocal_rank'] = mrr
+    output_dict['benchmark']['num_relevant_results'] = total_num_relevant
+
+    return BenchmarkResults(k, p_k, r_k, map_k, r_k, mrr, output_dict) 
 
 
 class BenchmarkResults:
@@ -143,13 +193,14 @@ class BenchmarkResults:
         Equivalently, MRR is the reciprocal of the harmonic mean (across all
         queries) of the rank of the first relevant result.
     """
-    def __init__(self, tp_k, map_k, mrr, num_relevant, num_queries):
-        self.k = np.arange(1, len(tp_k) + 1)
-        self.p_k = tp_k / (self.k * num_queries)
-        self.r_k = tp_k / num_relevant
+    def __init__(self, k, p_k, r_k, map_k, top_k_acc,  mrr, output_dict):
+        self.k = k
+        self.p_k = p_k
+        self.r_k = r_k
         self.map_k = map_k
-        self.top_k_acc = self.r_k
+        self.top_k_acc = top_k_acc
         self.mrr = mrr
+        self.output_dict = output_dict
 
     def _metric_at_k(self, metric: str, k: Union[int, Sequence[int]]) -> float:
         if isinstance(k, collections.abc.Sequence):
@@ -215,7 +266,7 @@ class BenchmarkResults:
 
         ax.grid(which="both", alpha=0.4)
         if label is not None:
-            ax.legend(loc="lower right")
+            ax.legend()
         ax.autoscale(True)
 
         if xlabel is not None:
@@ -241,6 +292,10 @@ class BenchmarkResults:
 
     def plot_top_k_accuracy(self, ax: Axes = None, label: str = None) -> Axes:
         self._plot_metric('k', 'top_k_acc', ax, label=label, xlabel='$k$', ylabel='Top-$k$ Accuracy', ylim=(0,1))
+
+    def to_json(self, path):
+        with open(path, 'w') as file:
+            json.dump(self.output_dict, file)
 
     @property
     def mean_reciprocal_rank(self):
