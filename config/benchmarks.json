@@ -5,24 +5,16 @@
             "templates": ["ameliorates"]
         }
     ],
-    "one_hops": [
-        {
-            "source": "DrugMechDB",
-            "templates": ["bp_related_to_d"]
-        },
+    "treats": [
         {
             "source": "MostPrescribed_2019",
-            "templates": ["ameliorates"]
+            "templates": ["treats"]
         }
     ],
-    "all": [
+    "three_hop": [
         {
             "source": "DrugMechDB",
-            "templates": ["bp_related_to_d"]
-        },
-        {
-            "source": "MostPrescribed_2019",
-            "templates": ["ameliorates"]
+            "templates": ["three_hop"]
         }
     ]
 }
