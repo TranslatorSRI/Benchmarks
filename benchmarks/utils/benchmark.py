@@ -47,7 +47,45 @@ def get_uid(source: str, template: str, datum: Dict[str, str], message: dict):
         if 'ids' in qnodes.get(qnode_id, tuple())
     ]
     return f'{source}.{template}.{".".join(curies)}'
+
+def benchmark_uids(benchmark: str) -> List[str]:
+    """
+    For each query in the specified benchmark, compute its UID.
+
+    Args:
+        benchmark: (str) Name of the benchmark. Benchmark names are listed in
+            `benchmark.json`.
     
+    Returns:
+        UIDs of each query in the benchmark.
+    """
+    uids = set()
+    for source_dict in BENCHMARKS[benchmark]:
+        source_dir = CONFIG_DIR / source_dict['source']
+
+        # Load data
+        with open(source_dir / 'data.tsv' ,'r') as file:
+            reader = csv.reader(file, delimiter='\t')
+            qnode_ids = next(reader)
+            data = list(reader)
+
+        # Load query templates
+        templates = []
+        templates_dir = source_dir / 'templates'
+        for template in source_dict['templates']:
+            with open(templates_dir / f'{template}.json', 'r') as file:
+                templates.append((template, json.load(file)))
+
+        # Prepare messages using data and templates
+        for template, template_dict in templates:
+            for datum in data:
+                datum_dict = {
+                    qnode_id: curie for qnode_id, curie in zip(qnode_ids, datum)
+                }
+                uid = get_uid(source_dict['source'], template, datum_dict, template_dict)
+                uids.add(uid)
+
+    return sorted(uids)
 
 def benchmark_messages(benchmark: str) -> Tuple[List[str], List[dict]]:
     """

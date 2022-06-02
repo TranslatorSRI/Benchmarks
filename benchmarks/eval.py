@@ -1,7 +1,6 @@
 
 import collections.abc
 import json
-import os
 from itertools import zip_longest
 from pathlib import Path
 from typing import Sequence, Tuple, Union
@@ -73,14 +72,14 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
                 )
             with open(result_path) as file:
                 results_k = sorted(
-                    json.load(file)['message']['results'],
+                    json.load(file)['message'].get('results', []),
                     key=lambda r: r['score'],
                     reverse=True
                 )[:k]
         elif type(results) is dict:
             # Grab message from dict
             results_k = sorted(
-                results[uid]['message']['results'],
+                results[uid]['message'].get('results', []),
                 key=lambda r: r['score'],
                 reverse=True
             )[:k]
@@ -135,7 +134,7 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
     # Compute precision @ k and recall @ k
     k = np.arange(1, len(tp_k) + 1)
     p_k = tp_k / (k * len(uids))
-    r_k = tp_k / num_relevant
+    r_k = tp_k / total_num_relevant
 
     # Update output_dict
     metrics =  output_dict['metrics']

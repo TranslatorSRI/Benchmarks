@@ -39,6 +39,12 @@ def main():
         type=str,
         help='Directory to save plots that visualize the results.'
     )
+
+    parser.add_argument(
+        '--json',
+        type=str,
+        help='Path to save a JSON file summarizing evaluation.'
+    )
     args = parser.parse_args()
 
     results = evaluate_results(args.benchmark, args.results_dir, k=args.k)
@@ -63,6 +69,9 @@ def main():
     while ks[-1] >= args.k:
         ks.pop()
     ks.append(args.k)
+
+    if args.json is not None:
+        results.to_json(args.json)
 
     output = [
         '',

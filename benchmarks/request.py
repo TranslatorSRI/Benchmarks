@@ -1,5 +1,6 @@
 import asyncio
 import json
+from copy import deepcopy
 from pathlib import Path
 from typing import Optional, Sequence
 
@@ -15,7 +16,7 @@ def fetch_results(
     benchmark: str,
     target: str,
     results_dir: str,
-    overwrite: bool = True,
+    overwrite: bool = False,
     scored: bool = True,
     num_concurrent_requests: int = 5,
     progress:bool = True
@@ -30,7 +31,7 @@ def fetch_results(
         target (str): Name of the target to run the queries against; see
             targets.json for a complete list of known targets.
         results_dir (str): Path to the directory to store query results.
-        overwrite: (bool, default True) Whether or not to overwrite existing
+        overwrite: (bool, default False) Whether or not to overwrite existing
             query results.
         scored (bool, default True): Whether or not to fetch scored or unscored
             results. Note that scored=True uses the "fetch" entry in
@@ -51,15 +52,24 @@ def fetch_results(
     if workflow is not None:
         for message in messages:
             message['workflow'] = workflow
-
+    
     if not overwrite:
         dir = Path(results_dir)
-        uid_msgs = [
-            (uid, msg) 
-            for uid, msg in zip(uids, messages)
-            if not (dir / f'{uid}.json').exists()
-        ]
-        uids, messages = tuple(zip(*uid_msgs))
+
+        u, m = [], []
+        for uid, msg in zip(uids, messages):
+            path = dir / f'{uid}.json'
+            if path.exists():
+                with open(path, 'r') as file:
+                    msg_json = json.load(file)
+                if 'benchmarks' not in msg_json:
+                    continue
+            
+            u.append(uid)
+            m.append(msg)
+        
+        uids = u
+        messages = m
                 
     send_requests_store_results(
         uids,
@@ -146,15 +156,24 @@ async def send_request_store_result(
 ):
     # Make network call
     async with httpx.AsyncClient(timeout=None) as client:
+        attempts = 0
         while True:
             response = None
             try:
                 response = await client.post(url, json=msg)
                 response.raise_for_status()
+                response_json = response.json()
             except:
                 if response is not None:
                     print(f'{response.status_code} {response.reason_phrase}')
                     print(uid)
+
+                attempts += 1
+                if attempts >= 3:
+                    response_json = deepcopy(msg)
+                    response_json['benchmarks'] = f'Fetch request failed {attempts} times.'
+                    break
+
                 print(f'Retrying in 5 seconds...')
                 await asyncio.sleep(5)
                 continue
@@ -162,7 +181,7 @@ async def send_request_store_result(
 
     # Store results
     with open(f'{results_dir}/{uid}.json', 'w') as file:
-        json.dump(response.json(), file)
+        json.dump(response_json, file)
 
     if pbar:
         pbar.update()
