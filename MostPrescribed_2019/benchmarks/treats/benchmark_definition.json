@@ -1,9 +1,0 @@
-{
-  "name": "MostPrescribed_2019_treatsquery",
-  "case_file": "ConditionToTopDrugs.txt",
-  "constructor_type": "query",
-  "query_file": "treats.json",
-  "mapping_file": "treats_mappings.json",
-  "score_type": "topN",
-  "N": 20
-}

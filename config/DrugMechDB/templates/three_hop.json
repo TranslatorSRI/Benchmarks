@@ -1,0 +1,42 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "Drug": {
+          "ids": []
+        },
+        "Protein": {
+          "ids": [],
+          "categories": [
+            "biolink:Protein"
+          ]
+        },
+        "BiologicalProcess": {
+          "categories": [
+            "biolink:BiologicalProcess"
+          ]
+        },
+        "Disease": {
+          "ids": []
+        }
+      },
+      "edges": {
+        "e01": {
+          "object": "Drug",
+          "subject": "Protein",
+          "predicate": "biolink:related_to"
+        },
+        "e02": {
+          "object": "Protein",
+          "subject": "BiologicalProcess",
+          "predicate": "biolink:related_to"
+        },
+        "e03": {
+          "object": "BiologicalProcess",
+          "subject": "Disease",
+          "predicate": "biolink:related_to"
+        }
+      }
+    }
+  }
+}

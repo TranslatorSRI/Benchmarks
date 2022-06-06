@@ -1,0 +1,20 @@
+{
+    "ameliorates": [
+        {
+            "source": "MostPrescribed_2019",
+            "templates": ["ameliorates"]
+        }
+    ],
+    "treats": [
+        {
+            "source": "MostPrescribed_2019",
+            "templates": ["treats"]
+        }
+    ],
+    "three_hop": [
+        {
+            "source": "DrugMechDB",
+            "templates": ["three_hop"]
+        }
+    ]
+}
