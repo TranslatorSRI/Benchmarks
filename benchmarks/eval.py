@@ -12,7 +12,7 @@ from matplotlib.axes import Axes
 from benchmarks.utils.benchmark import benchmark_ground_truth
 
 
-def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 'BenchmarkResults':
+def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use_xref=True) -> 'BenchmarkResults':
     """
     Computes metrics on the query results associated with the specified
     benchmark. See BenchmarkResults for the complete list of metrics.
@@ -33,6 +33,33 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50) -> 
 
     if type(results) is str:
         results_dir = Path(results)
+
+    if use_xref:
+        # Use the biolink:xref attribute to add additional aliases to the normalizer
+        for uid in uids:
+            if type(results) is str:
+                result_path = results_dir / f'{uid}.json'
+                with open(result_path) as file:
+                    knowledge_graph = json.load(file)['message'].get('knowledge_graph', None)
+            else:
+                knowledge_graph = results[uid]['message'].get('knowledge_graph', None)
+
+            if knowledge_graph is None:
+                continue
+
+            for curie, curie_info in knowledge_graph['nodes'].items():
+                for attribute in curie_info.get('attributes', []):
+                    if attribute.get('attribute_type_id', None) != 'biolink:xref':
+                        continue
+                    
+                    aliases = set([curie] + [alias for alias in attribute.get('value', [])])
+                    for alias in aliases:
+                        if alias not in normalizer:
+                            continue
+
+                        for a in aliases:
+                            normalizer[a] = normalizer[alias]
+                        break
 
     output_dict = {
         'k': k,
