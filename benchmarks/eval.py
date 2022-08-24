@@ -4,6 +4,7 @@ import json
 from itertools import zip_longest
 from pathlib import Path
 from typing import Sequence, Tuple, Union
+import warnings
 
 import numpy as np
 from matplotlib import pyplot as plt
@@ -39,10 +40,13 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
         for uid in uids:
             if type(results) is str:
                 result_path = results_dir / f'{uid}.json'
-                with open(result_path) as file:
-                    knowledge_graph = json.load(file)['message'].get('knowledge_graph', None)
+                if result_path.exists():
+                    with open(result_path) as file:
+                        knowledge_graph = json.load(file).get('message', {}).get('knowledge_graph', None)
+                else:
+                    knowledge_graph = None
             else:
-                knowledge_graph = results[uid]['message'].get('knowledge_graph', None)
+                knowledge_graph = results.get(uid, {}).get('message', {}).get('knowledge_graph', None)
 
             if knowledge_graph is None:
                 continue
@@ -94,22 +98,26 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
             # Load precomputed result for this query
             result_path = results_dir / f'{uid}.json'
             if not result_path.exists():
-                raise Exception(
-                    f'Results for query {uid} were not found in {results_dir}'
-                )
-            with open(result_path) as file:
+                warnings.warn(f'Results for query {uid} were not found in {results_dir}.')
+                results_k = []
+            else:
+                with open(result_path) as file:
+                    results_k = sorted(
+                        json.load(file).get('message', {}).get('results', []),
+                        key=lambda r: r['score'],
+                        reverse=True
+                    )[:k]
+        elif type(results) is dict:
+            if uid not in results:
+                warnings.warn(f'Results for query {uid} were not found.')
+                results_k = []
+            else:
+                # Grab message from dict
                 results_k = sorted(
-                    json.load(file)['message'].get('results', []),
+                    results.get(uid, {}).get('message', {}).get('results', []),
                     key=lambda r: r['score'],
                     reverse=True
                 )[:k]
-        elif type(results) is dict:
-            # Grab message from dict
-            results_k = sorted(
-                results[uid]['message'].get('results', []),
-                key=lambda r: r['score'],
-                reverse=True
-            )[:k]
 
         uid_info = output_dict['queries'][uid]
 
@@ -319,9 +327,9 @@ class BenchmarkResults:
     def plot_top_k_accuracy(self, ax: Axes = None, label: str = None) -> Axes:
         self._plot_metric('k', 'top_k_acc', ax, label=label, xlabel='$k$', ylabel='Top-$k$ Accuracy', ylim=(0,1))
 
-    def to_json(self, path):
+    def to_json(self, path, indent=4):
         with open(path, 'w') as file:
-            json.dump(self.output_dict, file)
+            json.dump(self.output_dict, file, indent=indent)
 
     @property
     def mean_reciprocal_rank(self):
