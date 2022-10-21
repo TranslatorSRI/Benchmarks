@@ -1,7 +1,6 @@
 OriginalCondition	ConditionID	ConditionNames	OriginalDrug	DrugID	DrugNames
-Aminoacid Disorders	MONDO:0006944	"[""Aminoaciduria (disorder)"",""renal tubular disorder aminoaciduria"",""AMINOACIDURIA""]"			
 Urea cycle disorders	MONDO:0004739	"['Urea Cycle Disorders', 'cycle disorders urea', 'urea cycle disorders']"	Benzoate and phenylacetate	PUBCHEM.COMPOUND:24847771	['Sodium phenylacetate and sodium benzoate']
-			Sodium phenylbutyrate	PUBCHEM.COMPOUND:5258	"['sodium phenylbutyrate', 'Sodium phenylbutyrate', 'sodium 4-phenylbutanoate']"
+Urea cycle disorders	MONDO:0004740	"['Urea Cycle Disorders', 'cycle disorders urea', 'urea cycle disorders']"	Sodium phenylbutyrate	PUBCHEM.COMPOUND:5258	"['sodium phenylbutyrate', 'Sodium phenylbutyrate', 'sodium 4-phenylbutanoate']"
 N-acetylglutamate synthetase deficiency	MONDO:0009377	"[""N-acetylglutamate synthetase deficiency"",""hyperammonemia due to N-acetylglutamate synthetase deficiency"",""NAGSD""]"	Carglumic acid	PUBCHEM.COMPOUND:121396	"['carglumic acid', 'Carglumic acid', 'N-carbamylglutamate']"
 Homocystinuria	MONDO:0004737	"['HOMOCYSTINURIA', 'Homocystinuria', 'homocystinuria']"	Betaine	PUBCHEM.COMPOUND:247	"['Betaine', 'Glycine betaine', 'glycine betaine']"
 Hyperphenylalaninemia	MONDO:0016543	"['Hyperphenylalaninemia', 'hyperphenylalaninemia', 'hyperphenylalaninemia']"	Sapropterin	PUBCHEM.COMPOUND:135398654	"['Sapropterin', 'sapropterin', '(6R)-2-amino-6-[(1R,2S)-1,2-dihydroxypropyl]-5,6,7,8-tetrahydropteridin-4(3H)-one']"
@@ -9,43 +8,40 @@ Tetrahydrobiopterin deficiency	MONDO:0016543	"['Tetrahydrobiopterin Deficiency',
 Phenylketonuria	MONDO:0009861	"['Phenylketonuria', 'phenylketonuria', 'PHENYLKETONURIA']"	Pegvaliase	PUBCHEM.COMPOUND:86278362	['Pegvaliase']
 Tyrosinemia type 1	MONDO:0010161	"['tyrosinemia type 1', 'tyrosinemia, type 1', 'TYRSN1']"	Nitisinone	PUBCHEM.COMPOUND:115355	"['Nitisinone', 'nitisinone', '2-[2-nitro-4-(trifluoromethyl)benzoyl]cyclohexane-1,3-dione']"
 Alkaptonuria	MONDO:0008753	"['alkaptonuria', 'Alkaptonuria', 'ALKAPTONURIA']"	Nitisinone	PUBCHEM.COMPOUND:115355	"['Nitisinone', 'nitisinone', '2-[2-nitro-4-(trifluoromethyl)benzoyl]cyclohexane-1,3-dione']"
-Lysosomal Storage Diseases	MONDO:0002561	"['Lysosomal Storage Diseases', 'Lysosomal storage diseases', 'lysosomal storage diseases']"			
 Gaucher disease	MONDO:0018150	"['GAUCHER DISEASE', 'gaucher disease', 'Gaucher disease']"	Miglustat	PUBCHEM.COMPOUND:51634	"['miglustat', 'Miglustat', '(2R,3R,4R,5S)-1-butyl-2-(hydroxymethyl)piperidine-3,4,5-triol']"
-			Eliglustat	PUBCHEM.COMPOUND:23652731	"['eliglustat', 'Eliglustat', 'N-[(1R,2R)-1-(2,3-dihydro-1,4-benzodioxin-6-yl)-1-hydroxy-3-(pyrrolidin-1-yl)propan-2-yl]octanamide']"
-			Velaglucerase alfa	MESH:C550184	"['Velaglucerase alfa, human']"
-			Imiglucerase	UNII:Q6U6J48BWY	['imiglucerase']
-			Taliglucerase	MESH:C582473	['taliglucerase alfa']
+Gaucher disease	MONDO:0018151	"['GAUCHER DISEASE', 'gaucher disease', 'Gaucher disease']"	Eliglustat	PUBCHEM.COMPOUND:23652731	"['eliglustat', 'Eliglustat', 'N-[(1R,2R)-1-(2,3-dihydro-1,4-benzodioxin-6-yl)-1-hydroxy-3-(pyrrolidin-1-yl)propan-2-yl]octanamide']"
+Gaucher disease	MONDO:0018152	"['GAUCHER DISEASE', 'gaucher disease', 'Gaucher disease']"	Velaglucerase alfa	MESH:C550184	"['Velaglucerase alfa, human']"
+Gaucher disease	MONDO:0018153	"['GAUCHER DISEASE', 'gaucher disease', 'Gaucher disease']"	Imiglucerase	UNII:Q6U6J48BWY	['imiglucerase']
+Gaucher disease	MONDO:0018154	"['GAUCHER DISEASE', 'gaucher disease', 'Gaucher disease']"	Taliglucerase	MESH:C582473	['taliglucerase alfa']
 Fabry disease (alphagalactosidase A deficiency)	MONDO:0010526	"[""Fabry Disease"",""FABRY DISEASE"",""disease fabry""]"	Agalsidase beta	UNII:RZD65TSM9U	['agalsidase beta']
-			Agalsidase alfa	UNII:2HLC17MX9G	"['agalsidase alfa', '[OBSOLETE] agalsidase alfa']"
-			Migalastat	PUBCHEM.COMPOUND:176077	"['migalastat', 'Migalastat', '1,5-dideoxy-1,5-iminogalactitol']"
+Fabry disease (alphagalactosidase A deficiency)	MONDO:0010527	"[""Fabry Disease"",""FABRY DISEASE"",""disease fabry""]"	Agalsidase alfa	UNII:2HLC17MX9G	"['agalsidase alfa', '[OBSOLETE] agalsidase alfa']"
+Fabry disease (alphagalactosidase A deficiency)	MONDO:0010528	"[""Fabry Disease"",""FABRY DISEASE"",""disease fabry""]"	Migalastat	PUBCHEM.COMPOUND:176077	"['migalastat', 'Migalastat', '1,5-dideoxy-1,5-iminogalactitol']"
 "Lysosomal acid lipase deficiency, Wolman disease, Cholesteryl ester storage disease"	MONDO:0010204	"[""lysosomal acid lipase deficiency"",""Lysosomal acid lipase deficiency"",""Wolman disease""]"	Sebelipase alfa	UNII:K4YTU42T8G	['Sebelipase alfa']
-Pompe disease	MONDO:0009290	"['POMPE DISEASE', 'pompe disease', 'Pompe disease']"	Alglucosidase alfa	UNII:DTI67O9503	
-Alpha mannosidosis	MONDO:0009561	"['Alpha-Mannosidosis', 'alpha-mannosidosis', 'alpha Mannosidosis']"	Velmanase alfa	UNII:M91TG242P2	
-Mucopolysaccharidosis I (Iduronidase deficiency)	MONDO:0001586	"[""i mucopolysaccharidosis"",""MUCOPOLYSACCHARIDOSIS I"",""Mucopolysaccharidosis I""]"	Laronidase	UNII:WP58SVM6R4	
+Pompe disease	MONDO:0009290	"['POMPE DISEASE', 'pompe disease', 'Pompe disease']"	Alglucosidase alfa	UNII:DTI67O9503	['Alglucosidase alfa']
+Alpha mannosidosis	MONDO:0009561	"['Alpha-Mannosidosis', 'alpha-mannosidosis', 'alpha Mannosidosis']"	Velmanase alfa	UNII:M91TG242P2	['Velmanase alfa']
+Mucopolysaccharidosis I (Iduronidase deficiency)	MONDO:0001586	"[""i mucopolysaccharidosis"",""MUCOPOLYSACCHARIDOSIS I"",""Mucopolysaccharidosis I""]"	Laronidase	UNII:WP58SVM6R4	['Laronidase']
 Hunter syndrome (Mucopolysaccharidosis II)	MONDO:0010674	"['mucopolysaccharidosis type II: Hunter syndrome', 'mucopolysaccharidosis type II: Hunter syndrome (diagnosis)', 'MPS2']"	Idursulfase	MESH:C517982	['idursulfase']
-Mucopolysaccharidosis IV (Morquio A syndrome)	UMLS:C0086651	"['mucopolysaccharidosis type iv: morquio syndrome type a', 'mucopolysaccharidosis type iv: morquio syndrome type a (diagnosis)', 'MPS4A']"	Elosulfase alfa	UNII:ODJ69JZG85	
+Mucopolysaccharidosis IV (Morquio A syndrome)	UMLS:C0086651	"['mucopolysaccharidosis type iv: morquio syndrome type a', 'mucopolysaccharidosis type iv: morquio syndrome type a (diagnosis)', 'MPS4A']"	Elosulfase alfa	UNII:ODJ69JZG85	['Elosulfase alfa']
 Mucopolysaccharidosis VI (Maroteaux-Lamy syndrome)	MONDO:0009661	"[""MUCOPOLYSACCHARIDOSIS VI"",""mucopolysaccharidosis VI"",""mucopolysaccharidosis VI""]"	Galsulfase	MESH:C508864	['galsulfase']
 Mucopolysaccharidosis VII (Sly syndrome)	MONDO:0009662	"[""Mucopolysaccharidosis VII"",""MUCOPOLYSACCHARIDOSIS VII"",""mucopolysaccharidosis VII""]"	Vestronidase alfa	UNII:7XZ4062R17	['vestronidase alfa']
 Neuronal ceroid lipofuscinosis type 2	MONDO:0008769	"['neuronal ceroid lipofuscinosis type 2', 'Neuronal Ceroid Lipofuscinosis Type 2', 'ceroid lipofuscinosis, neuronal, type 2']"	Cerliponase alfa	MESH:C000621431	['cerliponase alfa']
 Nephropathic cystinosis	MONDO:0001083	"['Nephropathic cystinosis', 'nephropathic cystinosis', 'infantile nephropathic cystinosis']"	Cysteamine	PUBCHEM.COMPOUND:118985556	"['Cysteamine', 'cysteamine', '2-aminoethanethiol']"
-			Cysteamine (enteric coated)	PUBCHEM.COMPOUND:118985556	"['Cysteamine', 'cysteamine', '2-aminoethanethiol']"
-			Cysteamine hydrochloride eyedrops	PUBCHEM.COMPOUND:10953464	"[""Cysteamine hydrochloride"",""2-Mercaptoethanaminium chloride"",""2-Aminoethanethiol;hydron;chloride""]"
-"Cholesterol, Lipid, Fatty Acid Disorders"	MONDO:0019256	"[""sterol metabolism disorder"",""inborn sterol metabolic process disorder"",""inborn error of sterol metabolic process""]"			
+Nephropathic cystinosis	MONDO:0001084	"['Nephropathic cystinosis', 'nephropathic cystinosis', 'infantile nephropathic cystinosis']"	Cysteamine (enteric coated)	PUBCHEM.COMPOUND:118985556	"['Cysteamine', 'cysteamine', '2-aminoethanethiol']"
+Nephropathic cystinosis	MONDO:0001085	"['Nephropathic cystinosis', 'nephropathic cystinosis', 'infantile nephropathic cystinosis']"	Cysteamine hydrochloride eyedrops	PUBCHEM.COMPOUND:10953464	"[""Cysteamine hydrochloride"",""2-Mercaptoethanaminium chloride"",""2-Aminoethanethiol;hydron;chloride""]"
 Homozygous familial hypercholesterolemia	HP:0003141	"['Homozygous familial hypercholesterolemia', 'homozygous familial hypercholesterolemia', 'Familial homozygous hypercholesterolemia']"	Evolocumab	UNII:LKC0U3A8NJ	['evolocumab']
-			Rosuvastatin calcium	PUBCHEM.COMPOUND:12086784	"['Rosuvastatin calcium', 'Rosuvastatin Calcium', 'rosuvastatin calcium']"
-			Lomitapide	PUBCHEM.COMPOUND:9853053	"['Lomitapide', 'lomitapide', 'BMS201038']"
+Homozygous familial hypercholesterolemia	HP:0003142	"['Homozygous familial hypercholesterolemia', 'homozygous familial hypercholesterolemia', 'Familial homozygous hypercholesterolemia']"	Rosuvastatin calcium	PUBCHEM.COMPOUND:12086784	"['Rosuvastatin calcium', 'Rosuvastatin Calcium', 'rosuvastatin calcium']"
+Homozygous familial hypercholesterolemia	HP:0003143	"['Homozygous familial hypercholesterolemia', 'homozygous familial hypercholesterolemia', 'Familial homozygous hypercholesterolemia']"	Lomitapide	PUBCHEM.COMPOUND:9853053	"['Lomitapide', 'lomitapide', 'BMS201038']"
 Cholesterol and bile acid synthesis defects	MONDO:0018841	"[""BASD"",""CBA"",""congenital bile acid synthesis defect"",""bile acid synthesis defect""]"	Cholic acid	PUBCHEM.COMPOUND:221493	"['cholic acid', 'Cholic acid', 'CHOLIC ACID']"
 Cerebrotendinous xanthomatosis	MONDO:0008948	"['Cerebrotendinous Xanthomatosis', 'cerebrotendinous xanthomatosis', 'CEREBROTENDINOUS XANTHOMATOSIS']"	Chenodeoxycholic acid	PUBCHEM.COMPOUND:10133	"['Chenodeoxycholic Acid', 'chenodeoxycholic acid', 'Chenodeoxycholic acid']"
-Familial chylomicronemia syndrome	MONDO:0018637	['familial chylomicronemia syndrome']	Volanesorsen	UNII:2O4BE0K238	
-Congenital or hereditary chronic cholestasis	OMIM:MTHU038420	":[""CHOLESTASIS CHRONIC"",""chronic cholestasis"",""cholestasis chronic""]"	Tocofersolan	DRUGBANK:DB11635	
-Other Metabolic Disorders	MONDO:0005066	"[""Metabolic Disorder"",""metabolic disorder"",""Disorder;metabolic"",""Metabolic disorder""]"			
+Familial chylomicronemia syndrome	MONDO:0018637	['familial chylomicronemia syndrome']	Volanesorsen	UNII:2O4BE0K238	['Volanesorsen']
+Congenital or hereditary chronic cholestasis	OMIM:MTHU038420	":[""CHOLESTASIS CHRONIC"",""chronic cholestasis"",""cholestasis chronic""]"	Tocofersolan	DRUGBANK:DB11635	['Tocofersolan']
 Pediatric onset hypophosphatasia	MONDO:0018570	"[""HYPOPHOSPHATASIA"",""hypophosphatasia"",""Hypophosphatasia""]"	Asfotase alfa	UNII:Z633861EIM	['asfotase alfa']
-Hypophosphatemic rickets (x-Linked)	MONDO:0000044	"[""hypophosphatemic rickets"",""Hypophosphatemic Rickets"",""Hypophosphatemic rickets""]"	Burosumab-twza	UNII:G9WJT6RD29	
+Hypophosphatemic rickets (x-Linked)	MONDO:0000044	"[""hypophosphatemic rickets"",""Hypophosphatemic Rickets"",""Hypophosphatemic rickets""]"	Burosumab-twza	UNII:G9WJT6RD29	['Burosumab-twza']
 Hyperphosphatemia in renal failure	MONDO:0000328	"[""hyperphosphatemia"",""Hyperphosphatemia"",""HYPERPHOSPHATEMIA""]"	Calcium acetate	PUBCHEM.COMPOUND:21226482	['Calcium;acetate']
 Osteogenesis imperfecta	MONDO:0019019	"['Osteogenesis imperfecta', 'osteogenesis imperfecta', 'OSTEOGENESIS IMPERFECTA']"	Alendronate	PUBCHEM.COMPOUND:2088	"['Alendronate', 'alendronic acid', 'Alendronic acid']"
 Scurvy	MONDO:0009412	"['scurvy', 'Scurvy', 'SCURVY']"	Ascorbic acid	CHEBI:22652	['ascorbic acid']
 Metabolic acidosis	MONDO:0000440	"['Metabolic acidosis', 'ACIDOSIS METABOLIC', 'Acidosis metabolic']"	Thiamine	CHEBI:26948	['thiamine']
-			Trisodium citrate	MESH:C514290	['trisodium citrate']
+Metabolic acidosis	MONDO:0000441	"['Metabolic acidosis', 'ACIDOSIS METABOLIC', 'Acidosis metabolic']"	Trisodium citrate	MESH:C514290	['trisodium citrate']
 Genetic carnitine deficiency	HP:0003234	"[""carnitine deficiency"",""Carnitine deficiency"",""Carnitine deficiency""]"	Levocarnitine	PUBCHEM.COMPOUND:10917	"['Levocarnitine', '(R)-Carnitine', '(R)-carnitine']"
 Fatty acid oxidation disorders	UMLS:C1456270	"['Disorders of fatty-acid oxidation', 'Disorders of fatty acid oxidation', 'Disorders acid oxidation']"	Triheptanoin	PUBCHEM.COMPOUND:69286	"['Triheptanoin', 'triheptanoin']"
 Acyl Coenzyme A dehydrogenase deficiency	MONDO:0017714	"['Acyl-coenzyme A dehydrogenase deficiency', 'Acyl-coenzyme A dehydrogenase deficiency (disorder)', 'Acyl-CoA dehydrogenase deficiency']"	Riboflavin	PUBCHEM.COMPOUND:493570	"['riboflavin', 'Riboflavin', '5-deoxy-5-(7,8-dimethyl-2,4-dioxo-3,4-dihydrobenzo[g]pteridin-10(2H)-yl)-D-ribitol']"
@@ -53,80 +49,72 @@ Hereditary orotic aciduria	MONDO:0009797	"['Hereditary orotic aciduria', 'Heredi
 Prevention of uric acid nephrolithiasis	MONDO:0003652	"[""Uric acid nephrolithiasis"",""uric acid nephrolithiasis"",""Uric Acid Nephrolithiasis""]"	Potassium citrate	PUBCHEM.COMPOUND:13344	"['Potassium citrate', 'potassium citrate (anhydrous)', 'tripotassium 2-hydroxypropane-1,2,3-tricarboxylate']"
 Prevention of cystine nephrolithiasis (cystinuria)	MONDO:0009067	"[""CYSTINURIA"",""cystinuria"",""Cystinuria""]"	Tiopronin	PUBCHEM.COMPOUND:5483	['Tiopronin']
 Wilson disease	MONDO:0010200	"['Wilson disease', 'wilson disease', 'WILSON DISEASE']"	Penicillamine	PUBCHEM.COMPOUND:3799362	"['penicillamine', 'DL-Penicillamine', '3-sulfanylvaline']"
-			Trientine HCl	PUBCHEM.COMPOUND:5458180	['Trientine HCl']
-			Zinc acetate	PUBCHEM.COMPOUND:11192	"['Zinc acetate', 'zinc acetate', 'zinc diacetate']"
+Wilson disease	MONDO:0010201	"['Wilson disease', 'wilson disease', 'WILSON DISEASE']"	Trientine HCl	PUBCHEM.COMPOUND:5458180	['Trientine HCl']
+Wilson disease	MONDO:0010202	"['Wilson disease', 'wilson disease', 'WILSON DISEASE']"	Zinc acetate	PUBCHEM.COMPOUND:11192	"['Zinc acetate', 'zinc acetate', 'zinc diacetate']"
 Cobalamin defects	MONDO:0010183	"[""cobalamin F defect"",""cobalamin, defect in lysosomal release of"",""MAHCF""]"	Hydroxocobalamin	PUBCHEM.COMPOUND:44475014	"['hydroxocobalamin', 'Hydroxocobalamin', 'Cyanokit']"
-					
-General	HP:0012837	"['general', 'GENERAL', 'General']"			
 Transthyretin amyloidosis	HP:0030843	"['amyloidosis transthyretin', 'transthyretin amyloidosis', 'AS transthyretin amyloidosis']"	Inotersen	UNII:0IEO0F56LV	['Inotersen']
-			Tafamidis	PUBCHEM.COMPOUND:11001318	"['tafamidis', 'Tafamidis', '2-(3,5-dichlorophenyl)-1,3-benzoxazole-6-carboxylic acid']"
-			Patisiran sodium	UNII:WO0YM16LKG	
+Transthyretin amyloidosis	HP:0030844	"['amyloidosis transthyretin', 'transthyretin amyloidosis', 'AS transthyretin amyloidosis']"	Tafamidis	PUBCHEM.COMPOUND:11001318	"['tafamidis', 'Tafamidis', '2-(3,5-dichlorophenyl)-1,3-benzoxazole-6-carboxylic acid']"
+Transthyretin amyloidosis	HP:0030845	"['amyloidosis transthyretin', 'transthyretin amyloidosis', 'AS transthyretin amyloidosis']"	Patisiran sodium	UNII:WO0YM16LKG	['Patisiran sodium']
 Multiple Sclerosis	MONDO:0005301	"['multiple sclerosis', 'Multiple Sclerosis', 'Multiple sclerosis']"	Teriflunomide	PUBCHEM.COMPOUND:54684141	"['Teriflunomide', 'teriflunomide', 'A 771726']"
-			Fingolimod HCl	PUBCHEM.COMPOUND:107969	
-			Siponimod	PUBCHEM.COMPOUND:44599207	"['Siponimod', 'siponimod']"
+Multiple Sclerosis	MONDO:0005302	"['multiple sclerosis', 'Multiple Sclerosis', 'Multiple sclerosis']"	Fingolimod HCl	PUBCHEM.COMPOUND:107969	
+Multiple Sclerosis	MONDO:0005303	"['multiple sclerosis', 'Multiple Sclerosis', 'Multiple sclerosis']"	Siponimod	PUBCHEM.COMPOUND:44599207	"['Siponimod', 'siponimod']"
 Parkinson Disease (Young and Early-onset)	MONDO:0005180	"[""Parkinson Disease"",""Parkinson disease"",""PARKINSON DISEASE""]"	Rasagiline	PUBCHEM.COMPOUND:3052776	"['rasagiline', 'Rasagiline', '(1R)-N-(prop-2-yn-1-yl)indan-1-amine']"
-			Selegiline	PUBCHEM.COMPOUND:26757	"['Selegiline', '(-)-selegiline', 'N-methyl-N-[(2R)-1-phenylpropan-2-yl]prop-2-yn-1-amine']"
-			Pramipexole	PUBCHEM.COMPOUND:119570	"['Pramipexole', 'pramipexole', '[OBSOLETE] pramipexole']"
-			Carbidopa/Levodopa	PUBCHEM.COMPOUND:28082766	"[""Carbidopa"",""carbidopa (anhydrous)"",""(2S)-3-(3,4-dihydroxyphenyl)-2-hydrazinyl-2-methylpropanoic acid""]"
+Parkinson Disease (Young and Early-onset)	MONDO:0005181	"[""Parkinson Disease"",""Parkinson disease"",""PARKINSON DISEASE""]"	Selegiline	PUBCHEM.COMPOUND:26757	"['Selegiline', '(-)-selegiline', 'N-methyl-N-[(2R)-1-phenylpropan-2-yl]prop-2-yn-1-amine']"
+Parkinson Disease (Young and Early-onset)	MONDO:0005182	"[""Parkinson Disease"",""Parkinson disease"",""PARKINSON DISEASE""]"	Pramipexole	PUBCHEM.COMPOUND:119570	"['Pramipexole', 'pramipexole', '[OBSOLETE] pramipexole']"
+Parkinson Disease (Young and Early-onset)	MONDO:0005183	"[""Parkinson Disease"",""Parkinson disease"",""PARKINSON DISEASE""]"	Carbidopa/Levodopa	PUBCHEM.COMPOUND:28082766	"[""Carbidopa"",""carbidopa (anhydrous)"",""(2S)-3-(3,4-dihydroxyphenyl)-2-hydrazinyl-2-methylpropanoic acid""]"
 Narcolepsy with cataplexy	MONDO:0016158	"['Narcolepsy with cataplexy', 'narcolepsy with cataplexy', 'Narcolepsy, with cataplexy']"	Pitolisant	PUBCHEM.COMPOUND:9948102	"['Pitolisant', 'pitolisant']"
-			Sodium oxybate	PUBCHEM.COMPOUND:23663870	"['Sodium oxybate', 'Sodium Oxybate']"
+Narcolepsy with cataplexy	MONDO:0016159	"['Narcolepsy with cataplexy', 'narcolepsy with cataplexy', 'Narcolepsy, with cataplexy']"	Sodium oxybate	PUBCHEM.COMPOUND:23663870	"['Sodium oxybate', 'Sodium Oxybate']"
 Huntington Disease	MONDO:0007739	"['Huntington disease', 'HUNTINGTON DISEASE', 'Huntington Disease']"	Deutetrabenazine	PUBCHEM.COMPOUND:73437646	['Deutetrabenazine']
-			Tetrabenazine	CHEBI:9467	"['tetrabenazine', 'Tetrabenazine', 'rac-(3S,11bS)-9,10-dimethoxy-3-(2-methylpropyl)-1,3,4,6,7,11b-hexahydro-2H-pyrido[2,1-a]isoquinolin-2-one']"
+Huntington Disease	MONDO:0007740	"['Huntington disease', 'HUNTINGTON DISEASE', 'Huntington Disease']"	Tetrabenazine	CHEBI:9467	"['tetrabenazine', 'Tetrabenazine', 'rac-(3S,11bS)-9,10-dimethoxy-3-(2-methylpropyl)-1,3,4,6,7,11b-hexahydro-2H-pyrido[2,1-a]isoquinolin-2-one']"
 "Dystonia, Spasticity"	MONDO:0012444	"['early-onset progressive cerebellar ataxia dystonia spasticity and intellectual decline', 'NBIA2b', 'NBIA2B']"	Baclofen	PUBCHEM.COMPOUND:2284	"['baclofen', 'Baclofen', '4-amino-3-(4-chlorophenyl)butanoic acid']"
 Tuberous Sclerosis Complex	GO:0033596	"['tuberous sclerosis complex', 'TSC1-TSC2 complex', 'tuberin-hamartin complex']"	Everolimus	PUBCHEM.COMPOUND:6442177	"['Everolimus', 'everolimus', '[OBSOLETE] everolimus']"
 Spina bifida (prevention)	HP:0002414	"[""Spina bifida"",""Split spine""]"	Folic acid	PUBCHEM.COMPOUND:135398658	"['Folic Acid', 'folic acid', 'FOLIC ACID']"
 Biotinidase deficiency	MONDO:0009665	"['biotinidase deficiency', 'BIOTINIDASE DEFICIENCY', 'Biotinidase deficiency']"	Biotin	PUBCHEM.COMPOUND:171548	"['biotin', 'BIOTIN', 'Biotin']"
-Epilepsy	MONDO:0005027	"['epilepsy', 'EPILEPSY', 'Epilepsy']"			
 Infantile spasms	HP:0012469	"['Infantile spasms', 'Infantile Spasms', 'Infantile spasm']"	Vigabatrin	PUBCHEM.COMPOUND:25202592	"['vigabatrin', 'Vigabatrin', '4-aminohex-5-enoic acid']"
 Lennox-Gastaut syndrome	MONDO:0007874	"[""LGS"",""TRPS2"",""TRPS2""]"	Rufinamide	PUBCHEM.COMPOUND:129228	"['rufinamide', 'Rufinamide']"
-			Cannabidiol	PUBCHEM.COMPOUND:644019	"['Cannabidiol', 'cannabidiol', ""(1'R,2'R)-5'-methyl-4-pentyl-2'-(prop-1-en-2-yl)-1',2',3',4'-tetrahydrobiphenyl-2,6-diol""]"
+Lennox-Gastaut syndrome	MONDO:0007875	"[""LGS"",""TRPS2"",""TRPS2""]"	Cannabidiol	PUBCHEM.COMPOUND:644019	"['Cannabidiol', 'cannabidiol', ""(1'R,2'R)-5'-methyl-4-pentyl-2'-(prop-1-en-2-yl)-1',2',3',4'-tetrahydrobiphenyl-2,6-diol""]"
 Severe myoclonic epilepsy in infancy (Dravet syndrome)	MONDO:0010396	"[""Dravet Syndrome"",""DEE2"",""ISSX2""]"	Stiripentol	PUBCHEM.COMPOUND:5311454	['Stiripentol']
 Status epilepticus	MONDO:0002125	"['status epilepticus', 'STATUS EPILEPTICUS', 'Status Epilepticus']"	Midazolam	PUBCHEM.COMPOUND:4192	"['Midazolam', 'midazolam', '8-chloro-6-(2-fluorophenyl)-1-methyl-4H-imidazo[1,5-a][1,4]benzodiazepine']"
 "Juvenile myoclonic epilepsy, Generalized epilepsy"	MONDO:0005027	"[""epilepsy"",""EPILEPSY"",""Epilepsy""]"	Levetiracetam	PUBCHEM.COMPOUND:5284583	"['levetiracetam', 'Levetiracetam', '(2S)-2-(2-oxopyrrolidin-1-yl)butanamide']"
 Complex and rare disease epilepsy	MONDO:0005027	"[""epilepsy"",""EPILEPSY"",""Epilepsy""]"	Clobazam	PUBCHEM.COMPOUND:2789	"['Clobazam', 'CLOBAZAM', 'clobazam']"
-			Lamotrigine	PUBCHEM.COMPOUND:3878	"['lamotrigine', 'Lamotrigine', '[OBSOLETE] lamotrigine']"
-			Topiramate	PUBCHEM.COMPOUND:5284627	"['Topiramate', 'topiramate', '[OBSOLETE] topiramate']"
-Neuromuscular Diseases	MONDO:0019056	"['neuromuscular diseases', 'diseases neuromuscular', 'Neuromuscular diseases']"			
+Complex and rare disease epilepsy	MONDO:0005028	"[""epilepsy"",""EPILEPSY"",""Epilepsy""]"	Lamotrigine	PUBCHEM.COMPOUND:3878	"['lamotrigine', 'Lamotrigine', '[OBSOLETE] lamotrigine']"
+Complex and rare disease epilepsy	MONDO:0005029	"[""epilepsy"",""EPILEPSY"",""Epilepsy""]"	Topiramate	PUBCHEM.COMPOUND:5284627	"['Topiramate', 'topiramate', '[OBSOLETE] topiramate']"
 Amyotrophic lateral sclerosis	MONDO:0004976	"['AMYOTROPHIC LATERAL SCLEROSIS', 'Amyotrophic lateral sclerosis', 'Amyotrophic Lateral Sclerosis']"	Gabapentin	PUBCHEM.COMPOUND:3446	"['gabapentin', 'Gabapentin', '[OBSOLETE] gabapentin']"
-			Riluzole	PUBCHEM.COMPOUND:5070	['Riluzole']
-			Radicava	UNII:S798V6YJRP	
+Amyotrophic lateral sclerosis	MONDO:0004977	"['AMYOTROPHIC LATERAL SCLEROSIS', 'Amyotrophic lateral sclerosis', 'Amyotrophic Lateral Sclerosis']"	Riluzole	PUBCHEM.COMPOUND:5070	['Riluzole']
+Amyotrophic lateral sclerosis	MONDO:0004978	"['AMYOTROPHIC LATERAL SCLEROSIS', 'Amyotrophic lateral sclerosis', 'Amyotrophic Lateral Sclerosis']"	Radicava	UNII:S798V6YJRP	['Radicava']
 Myasthenia gravis	MONDO:0009688	"['Myasthenia gravis', 'Myasthenia Gravis', 'MYASTHENIA GRAVIS']"	Pyridostigmine Bromide	PUBCHEM.COMPOUND:7550	"['Pyridostigmine Bromide', 'Pyridostigmine bromide', 'Mestinon']"
 Lambert-Eaton myasthenic syndrome	MONDO:0018556	"[""LEMS"",""LEMS - Lambrt-Eatn myasth synd"",""LEMS - Lambert-Eaton myasthenic syndrome""]"	Amifampridine	PUBCHEM.COMPOUND:5918	"['Amifampridine', 'amifampridine', '3,4-Diaminopyridine']"
-Non-dystrophic myotonic disorders	MONDO:0016120	"[""myotonic disorders"",""Myotonic disorders"",""Myotonic Disorders"""	Mexiletine hcl	PUBCHEM.COMPOUND:21467	
-5q Spinal Muscular Atrophy	MONDO:0001516	"['Spinal muscular atrophy non-5q', 'SMA', 'SMA4']"	Nusinersen sodium	PUBCHEM.COMPOUND:124037382	
-					
-Coagulation Defects	HP:0003256	"['coagulation defects', 'Coagulation defects', 'Other coagulation defects']"			
-Hemophilia A (Factor VIII deficiency)	UMLS:C0472801	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Octocog alpha	UNII:P89DR4NY54	
-			Rurioctocog alfa pegol	PUBCHEM.COMPOUND:86278357	['Rurioctocog alfa pegol']
-			Lonoctocog alfa	UNII:VQ723R7O8R	
-			Emicizumab	UNII:7NL2E3F6K3	['emicizumab']
-			Damoctocog alfa pegol	PUBCHEM.COMPOUND:86278352	['Damoctocog alfa pegol']
-			Turoctocog alpha	UNII:969NZA3X9T	
-			Simoctocog alfa	UNII:U50VWW6XH6	
-			Moroctocog alpha	UNII:113E3Z3CJJ	
-			Desmopressin acetate	PUBCHEM.COMPOUND:9833407	['Desmopressin acetate']
-			Recombinant Factor VIII	MESH:C577506	['recombinant factor VIII N8']
-			Efmoroctocog alfa	UNII:7PCM518YLR	
+Non-dystrophic myotonic disorders	MONDO:0016120	"[""myotonic disorders"",""Myotonic disorders"",""Myotonic Disorders"""	Mexiletine hcl	PUBCHEM.COMPOUND:21467	['Mexiletine hcl']
+5q Spinal Muscular Atrophy	MONDO:0001516	"['Spinal muscular atrophy non-5q', 'SMA', 'SMA4']"	Nusinersen sodium	PUBCHEM.COMPOUND:124037382	['Nusinersen sodium']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472801	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Octocog alpha	UNII:P89DR4NY54	['Octocog alpha']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472802	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Rurioctocog alfa pegol	PUBCHEM.COMPOUND:86278357	['Rurioctocog alfa pegol']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472803	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Lonoctocog alfa	UNII:VQ723R7O8R	['Lonoctocog alfa']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472804	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Emicizumab	UNII:7NL2E3F6K3	['emicizumab']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472805	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Damoctocog alfa pegol	PUBCHEM.COMPOUND:86278352	['Damoctocog alfa pegol']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472806	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Turoctocog alpha	UNII:969NZA3X9T	['Turoctocog alpha']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472807	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Simoctocog alfa	UNII:U50VWW6XH6	['Simoctocog alfa']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472808	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Moroctocog alpha	UNII:113E3Z3CJJ	['Moroctocog alpha']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472809	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Desmopressin acetate	PUBCHEM.COMPOUND:9833407	['Desmopressin acetate']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472810	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Recombinant Factor VIII	MESH:C577506	['recombinant factor VIII N8']
+Hemophilia A (Factor VIII deficiency)	UMLS:C0472811	"['carrier of hemophilia A (factor VIII deficiency)', 'hemophilia A, carrier state (factor VIII deficiency)', 'carrier of hemophilia A (factor VIII deficiency) (history)']"	Efmoroctocog alfa	UNII:7PCM518YLR	['Efmoroctocog alfa']
 von Willebrand disease	MONDO:0019565	"['von Willebrand disease', 'von Willebrand disease', 'VON WILLEBRAND DISEASE']"	Factor VIII/ von Willebrand factor	MESH:C473097	['factor VIII-von Willebrand factor concentrate 8Y']
-			Vonicog alfa	UNII:5PKM8P0G5I	
-Hemophilia B (Factor IX deficiency)	MONDO:0010604	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Eftrenonacog alfa	UNII:02E00T2QDE	
-			Albutrepenonacog alfa	UNII:A57KX1VL5P	['albutrepenonacog alfa']
-			Nonacog alpha	UNII:382L14738L	
-			Human coagulation factor IX	UNII:6U90Y1795T	
-			Nonacog beta pegol	UNII:27Y83O992Q	['nonacog beta pegol']
-			Nonacog gamma	UNII:382L14738L	
-			Recombinant Factor IX	UNII:382L14738L	
-Hemophilia (Factor VII deficiency)	MONDO:0010602	"['factor VIII deficiency (hemophilia)', 'HEMA', 'HEMA']"	Eptacog alpha (activated)	UNII:3Q26I70P3I	
-			Recombinant Factor VIIa	UNII:AC71R787OV	
+von Willebrand disease	MONDO:0019566	"['von Willebrand disease', 'von Willebrand disease', 'VON WILLEBRAND DISEASE']"	Vonicog alfa	UNII:5PKM8P0G5I	['Vonicog alfa']
+Hemophilia B (Factor IX deficiency)	MONDO:0010604	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Eftrenonacog alfa	UNII:02E00T2QDE	['Eftrenonacog alfa']
+Hemophilia B (Factor IX deficiency)	MONDO:0010605	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Albutrepenonacog alfa	UNII:A57KX1VL5P	['albutrepenonacog alfa']
+Hemophilia B (Factor IX deficiency)	MONDO:0010606	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Nonacog alpha	UNII:382L14738L	['Nonacog alpha']
+Hemophilia B (Factor IX deficiency)	MONDO:0010607	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Human coagulation factor IX	UNII:6U90Y1795T	['Human coagulation factor IX']
+Hemophilia B (Factor IX deficiency)	MONDO:0010608	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Nonacog beta pegol	UNII:27Y83O992Q	['nonacog beta pegol']
+Hemophilia B (Factor IX deficiency)	MONDO:0010609	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Nonacog gamma	UNII:382L14738L	['Nonacog gamma']
+Hemophilia B (Factor IX deficiency)	MONDO:0010610	"['factor IX deficiency (hemophilia B)', 'HEMB', 'HEMB']"	Recombinant Factor IX	UNII:382L14738L	['Recombinant Factor IX']
+Hemophilia (Factor VII deficiency)	MONDO:0010602	"['factor VIII deficiency (hemophilia)', 'HEMA', 'HEMA']"	Eptacog alpha (activated)	UNII:3Q26I70P3I	['Eptacog alpha (activated)']
+Hemophilia (Factor VII deficiency)	MONDO:0010603	"['factor VIII deficiency (hemophilia)', 'HEMA', 'HEMA']"	Recombinant Factor VIIa	UNII:AC71R787OV	['Recombinant Factor VIIa']
 Factor X deficiency	MONDO:0002247	"['Factor X deficiency', 'FACTOR X DEFICIENCY', 'Factor X Deficiency']"	Human coagulation factor X	MESH:C077868	"['coagulation factor XIa receptor, human']"
-Factor XIII A-subunit deficiency	MONDO:0002241	"[""factor XIII deficiency"",""FXIIID""]"	Catridecacog	UNII:NU23Q531G1	
+Factor XIII A-subunit deficiency	MONDO:0002241	"[""factor XIII deficiency"",""FXIIID""]"	Catridecacog	UNII:NU23Q531G1	['Catridecacog']
 Protein C deficiency	EFO:0009316	"['protein c deficiency', 'protein C (PC) deficiency', 'Protein C deficiency (PCD)']"	Human protein c	MESH:C112398	"['protein C Nagoya, human']"
-Anemias	HP:0001903	"['anemias', 'Anemias', 'anemias dimorphic']"			
 Sickle cell anemia	MONDO:0011382	"['SICKLE CELL ANEMIA', 'Anemia sickle cell', 'Anemia;sickle cell']"	Hydroxyurea	PUBCHEM.COMPOUND:3657	"['hydroxyurea', 'Hydroxyurea', 'N-hydroxyurea']"
 Anemia of end-stage renal disease	HP:0003774	"[""ESRD"",""ESRD, End Stage Renal Disease""]"	Epoetin alfa	UNII:64FS3BFH5W	"['Epoetin Alfa', '[OBSOLETE] epoetin alfa']"
 "Idiopathic thrombocytopenic purpura, Aplastic anemia"	MONDO:0008558	"[""Idiopathic Thrombocytopenic Purpura"",""idiopathic thrombocytopenic purpura"",""Idiopathic thrombocytopenic purpura""]"	Eltrombopag	CHEMBL.COMPOUND:CHEMBL461101	"['eltrombopag', ""3'-{(2Z)-2-[1-(3,4-dimethylphenyl)-3-methyl-5-oxo-1,5-dihydro-4H-pyrazol-4-ylidene]hydrazinyl}-2'-hydroxy[1,1'-biphenyl]-3-carboxylic acid""]"
 Beta thalassemia major	MONDO:0016486	"['beta-thalassemia major', 'Beta thalassemia Major', 'Cooley anemia']"	Deferasirox	PUBCHEM.COMPOUND:214348	"['deferasirox', 'Deferasirox', '[OBSOLETE] deferasirox']"
-Other Hematologic Disorders	MONDO:0005570	"[""Hematologic Disorders"",""hematologic disorders"",""HEMATOLOGIC DISORDERS""]"			
 Congenital and acquired methemoglobinemia	MONDO:0001117	"[""Methemoglobinemia"",""methemoglobinemia"",""METHEMOGLOBINEMIA""]"	Methylene blue injection	PUBCHEM.COMPOUND:104827	"[""Methylene Blue"",""Methylene Blue trihydrate""]"
 Acute intermittent porphyria	MONDO:0008294	"['Intermittent acute porphyria', 'Acute Intermittent Porphyria', 'porphyria intermittent acute']"	Hemin	UNII:743LRP9S7N	"['hemin', 'Hemin', 'chlorido(protoporphyrinato)iron(III)']"
 Erythropoietic protoporphyria	MONDO:0001676	"['erythropoietic protoporphyria', 'Protoporphyria, Erythropoietic', 'EPP (erythropoietic protoporphyria porphyria)']"	Afamelanotide	PUBCHEM.COMPOUND:16132139	"['afamelanotide', 'Melanotan I', 'Msh, 4-nle-alpha-']"
@@ -135,41 +123,36 @@ Essential thrombocythemia	MONDO:0005029	"['thrombocythemia essential', 'ESSENTIA
 Paroxysmal nocturnal hemoglobinuria	MONDO:0100245	"['Paroxysmal nocturnal hemoglobinuria', 'Paroxysmal Nocturnal Hemoglobinuria', 'paroxysmal nocturnal hemoglobinuria']"	Ravulizumab	UNII:C3VX249T6L	['ravulizumab']
 Severe congenital neutropenia	MONDO:0018542	"['severe congenital neutropenia', 'Severe congenital neutropenia', 'neutropenia, severe congenital']"	Macapegfilgrastim	UNII:3A58010674	"[""pegfilgrastim""]"
 Conditioning for hematopoietic stem cell transplant	UMLS:C3807254	"[""Fatal without hematopoietic stem cell transplantation""]"	Busulfan	PUBCHEM.COMPOUND:2478	"['Busulfan', 'busulfan', 'butane-1,4-diyl dimethanesulfonate']"
-			Thiotepa	PUBCHEM.COMPOUND:5453	['Thiotepa']
+Conditioning for hematopoietic stem cell transplant	UMLS:C3807255	"[""Fatal without hematopoietic stem cell transplantation""]"	Thiotepa	PUBCHEM.COMPOUND:5453	['Thiotepa']
 Iron overload	NCIT:C55993	"['Iron Overload', 'Iron overload', 'Iron Overload, CTCAE']"	Deferiprone	PUBCHEM.COMPOUND:2972	"['Deferiprone', 'deferiprone', '[OBSOLETE] deferiprone']"
 Acquired thrombotic thrombocytopenic purpura	MONDO:0019740	"['Acquired thrombotic thrombocytopenic purpura', 'Acquired Thrombotic Thrombocytopenic Purpura', 'acquired thrombotic thrombocytopenic purpura']"	Caplacizumab	UNII:2R27AB6766	['caplacizumab']
 Immune (idiopathic) thrombocytopenic purpura	MONDO:0008558	"[""IMMUNE THROMBOCYTOPENIC PURPURA"",""thrombocytopenic purpura immune"",""immune purpura thrombocytopenic""]"	Romiplostim	UNII:GN5XU2DXKV	['romiplostim']
-Polycythemia vera	MONDO:0009891	"['POLYCYTHEMIA VERA', 'polycythemia vera', 'Polycythemia Vera']"	Ropeginterferon alfa-2b	UNII:981TME683S	
-			Ruxolitinib	PUBCHEM.COMPOUND:25126798	"['ruxolitinib', 'Ruxolitinib', 'INCB018424']"
+Polycythemia vera	MONDO:0009891	"['POLYCYTHEMIA VERA', 'polycythemia vera', 'Polycythemia Vera']"	Ropeginterferon alfa-2b	UNII:981TME683S	['Ropeginterferon alfa-2b']
+Polycythemia vera	MONDO:0009892	"['POLYCYTHEMIA VERA', 'polycythemia vera', 'Polycythemia Vera']"	Ruxolitinib	PUBCHEM.COMPOUND:25126798	"['ruxolitinib', 'Ruxolitinib', 'INCB018424']"
 Agammaglobulinemia	MONDO:0015977	"['Agammaglobulinemia', 'agammaglobulinemia', 'Agammaglobulinemias']"	Immunoglobulin infusion	GO:0003823	"[""immunoglobulin"",""antibody"",""antigen binding""]"
-					
-Rheumatoid Arthritis	MONDO:0008383	"['ARTHRITIS RHEUMATOID', 'Arthritis rheumatoid', 'Rheumatoid Arthritis']"			
 Juvenile rheumatoid arthritis	MONDO:0005185	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Methotrexate	PUBCHEM.COMPOUND:126941	"['methotrexate', 'Methotrexate', 'METHOTREXATE']"
-			Etanercept	CHEBI:4875	"['Etanercept', 'etanercept']"
-			Methylprednisolone	PUBCHEM.COMPOUND:6741	"['Methylprednisolone', '6alpha-methylprednisolone', '11beta,17,21-trihydroxy-6alpha-methylpregna-1,4-diene-3,20-dione']"
-			Adalimumab	UNII:FYS6T7F842	"['Adalimumab', '[OBSOLETE] adalimumab']"
-			Infliximab	UNII:B72HH48FLU	"['Infliximab', '[OBSOLETE] infliximab']"
-			Tocilizumab	UNII:I031V2H011	['tocilizumab']
-			Abatacept	UNII:7D0YB67S97	"['Abatacept', '[OBSOLETE] abatacept']"
-			Golimumab	UNII:91X1KLU43E	['golimumab']
-Gastrointestinal Inflammation	MONDO:0000888	"['Gastrointestinal inflammation', 'gastrointestinal system mucosa inflammation', 'inflammation of gastrointestinal system mucosa']"			
+Juvenile rheumatoid arthritis	MONDO:0005186	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Etanercept	CHEBI:4875	"['Etanercept', 'etanercept']"
+Juvenile rheumatoid arthritis	MONDO:0005187	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Methylprednisolone	PUBCHEM.COMPOUND:6741	"['Methylprednisolone', '6alpha-methylprednisolone', '11beta,17,21-trihydroxy-6alpha-methylpregna-1,4-diene-3,20-dione']"
+Juvenile rheumatoid arthritis	MONDO:0005188	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Adalimumab	UNII:FYS6T7F842	"['Adalimumab', '[OBSOLETE] adalimumab']"
+Juvenile rheumatoid arthritis	MONDO:0005189	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Infliximab	UNII:B72HH48FLU	"['Infliximab', '[OBSOLETE] infliximab']"
+Juvenile rheumatoid arthritis	MONDO:0005190	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Tocilizumab	UNII:I031V2H011	['tocilizumab']
+Juvenile rheumatoid arthritis	MONDO:0005191	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Abatacept	UNII:7D0YB67S97	"['Abatacept', '[OBSOLETE] abatacept']"
+Juvenile rheumatoid arthritis	MONDO:0005192	"['Juvenile Rheumatoid Arthritis', 'Juvenile rheumatoid arthritis', 'Juvenile rheumatoid arthritis']"	Golimumab	UNII:91X1KLU43E	['golimumab']
 Pediatric Crohn's disease	MONDO:0005011	"[""Crohns Disease"",""CROHN DIS"",""CROHNS DIS""]"	Adalimumab	UNII:FYS6T7F842	"['Adalimumab', '[OBSOLETE] adalimumab']"
-			Infliximab	UNII:B72HH48FLU	"['Infliximab', '[OBSOLETE] infliximab']"
+Pediatric Crohn's disease	MONDO:0005012	"[""Crohns Disease"",""CROHN DIS"",""CROHNS DIS""]"	Infliximab	UNII:B72HH48FLU	"['Infliximab', '[OBSOLETE] infliximab']"
 Pediatric ulcerative colitis	MONDO:0009960	"['pediatric ulcerative colitis', 'ulcerative colitis, pediatric', 'IBD1']"	Mesalamine	PUBCHEM.COMPOUND:4075	"['Mesalamine', 'mesalamine', '5-amino-2-hydroxybenzoic acid']"
-			5-aminosalicylic acid	PUBCHEM.COMPOUND:4075	"[""Mesalamine"",""mesalamine"",""5-amino-2-hydroxybenzoic acid""]"
-			Adalimumab	UNII:FYS6T7F842	"['Adalimumab', '[OBSOLETE] adalimumab']"
-			Infliximab	UNII:B72HH48FLU	"['Infliximab', '[OBSOLETE] infliximab']"
+Pediatric ulcerative colitis	MONDO:0009961	"['pediatric ulcerative colitis', 'ulcerative colitis, pediatric', 'IBD1']"	5-aminosalicylic acid	PUBCHEM.COMPOUND:4075	"[""Mesalamine"",""mesalamine"",""5-amino-2-hydroxybenzoic acid""]"
+Pediatric ulcerative colitis	MONDO:0009962	"['pediatric ulcerative colitis', 'ulcerative colitis, pediatric', 'IBD1']"	Adalimumab	UNII:FYS6T7F842	"['Adalimumab', '[OBSOLETE] adalimumab']"
+Pediatric ulcerative colitis	MONDO:0009963	"['pediatric ulcerative colitis', 'ulcerative colitis, pediatric', 'IBD1']"	Infliximab	UNII:B72HH48FLU	"['Infliximab', '[OBSOLETE] infliximab']"
 Primary biliary cholangitis	MONDO:0005388	"['Primary Biliary Cholangitis', 'primary biliary cholangitis', 'Primary biliary cholangitis']"	Obeticholic acid	PUBCHEM.COMPOUND:447715	"['Obeticholic acid', 'obeticholic acid', '6alpha-ethyl-3alpha,7alpha-dihydroxy-5beta-cholan-24-oic acid']"
-Hereditary chronic cholestasis	OMIM:MTHU038420	"[""CHOLESTASIS CHRONIC"",""chronic cholestasis"",""cholestasis chronic""]"	Tocofersolan	UNII:O03S90U1F2	
-Angioedema	MONDO:0010481	"['Angioedema', 'ANGIOEDEMA', 'angioedema']"			
+Hereditary chronic cholestasis	OMIM:MTHU038420	"[""CHOLESTASIS CHRONIC"",""chronic cholestasis"",""cholestasis chronic""]"	Tocofersolan	UNII:O03S90U1F2	['Tocofersolan']
 Hereditary angioedema	MONDO:0019623	"['hereditary angioedema', 'Hereditary Angioedema', 'angioedema, hereditary']"	C1 inhibitor(human)	MONDO:0015053	"[""C1-inhibitor"",""plasma protease C1 inhibitor"",""Deficiency of C1 Esterase Inhibitor""]"
-			Icatibant acetate	CHEBI:68564	['icatibant acetate']
-			Lanadelumab	UNII:2372V1TKXK	['lanadelumab']
-			Danazol	PUBCHEM.COMPOUND:28417	"['Danazol', 'danazol', ""[1,2]oxazolo[4',5':2,3]-17alpha-pregn-4-en-20-yn-17-ol""]"
-			Tranexamic acid	CHEMBL.COMPOUND:CHEMBL877	"['Tranexamic acid', 'Tranexamic Acid', 'tranexamic acid']"
-Angioedema due to C1 esterase inhibitor deficiency	MONDO:0015053	"[""C1-inhibitor"",""plasma protease C1 inhibitor"",""Deficiency of C1 Esterase Inhibitor""]"	"C1-esterase-inhibitor, human"	UNII:6KIC4BB60G	
-			Conestat alfa	UNII:5QS67N4551	['conestat alfa']
-Other Inflammatory Disorders	MONDO:0021166	"[""disorders inflammatory"",""Inflammatory Disease"",""Inflammatory disease""]"			
+Hereditary angioedema	MONDO:0019624	"['hereditary angioedema', 'Hereditary Angioedema', 'angioedema, hereditary']"	Icatibant acetate	CHEBI:68564	['icatibant acetate']
+Hereditary angioedema	MONDO:0019625	"['hereditary angioedema', 'Hereditary Angioedema', 'angioedema, hereditary']"	Lanadelumab	UNII:2372V1TKXK	['lanadelumab']
+Hereditary angioedema	MONDO:0019626	"['hereditary angioedema', 'Hereditary Angioedema', 'angioedema, hereditary']"	Danazol	PUBCHEM.COMPOUND:28417	"['Danazol', 'danazol', ""[1,2]oxazolo[4',5':2,3]-17alpha-pregn-4-en-20-yn-17-ol""]"
+Hereditary angioedema	MONDO:0019627	"['hereditary angioedema', 'Hereditary Angioedema', 'angioedema, hereditary']"	Tranexamic acid	CHEMBL.COMPOUND:CHEMBL877	"['Tranexamic acid', 'Tranexamic Acid', 'tranexamic acid']"
+Angioedema due to C1 esterase inhibitor deficiency	MONDO:0015053	"[""C1-inhibitor"",""plasma protease C1 inhibitor"",""Deficiency of C1 Esterase Inhibitor""]"	"C1-esterase-inhibitor, human"	UNII:6KIC4BB60G	['C1-esterase-inhibitor']
+Angioedema due to C1 esterase inhibitor deficiency	MONDO:0015054	"[""C1-inhibitor"",""plasma protease C1 inhibitor"",""Deficiency of C1 Esterase Inhibitor""]"	Conestat alfa	UNII:5QS67N4551	['conestat alfa']
 "Multiple sclerosis, Behcet's disease, Familial Mediterranean fever"	MONDO:0005301	"[""multiple sclerosis"",""Multiple Sclerosis"",""Multiple sclerosis""]"	Colchicine	PUBCHEM.COMPOUND:2833	"['colchicine', 'N-(1,2,3,10-Tetramethoxy-9-oxo-5,6,7,9-tetrahydrobenzo[a]heptalen-7-yl)acetamide', 'N-(1,2,3,10-tetramethoxy-9-oxo-5,6,7,9-tetrahydrobenzo[a]heptalen-7-yl)acetamide']"
 "Dermatomyositis, Atypical hemolytic uremic syndrome, Neuromyelitis Optica, Paroxysmal nocturnal hemoglobinuria, Myasthenia gravis"	MONDO:0016367	"[""dermatomyositis"",""DERMATOMYOSITIS"",""Dermatomyositis""]"	Eculizumab	UNII:A3ULP0F556	['eculizumab']
 "Anti-neutrophil vasculitis, Wegener’s granulomatosis, Churg-Strauss Syndrome"	UMLS:C4542821	"[""Antineutrophil cytoplasmic antibody positive vasculitis"",""Antineutrophil cytoplasmic antibody (ANCA) positive vasculitis"",""Antineutrophil cytoplasmic antibody positive vasculitis (disorder)""]"	Rituximab	UNII:4F4X42SYQ6	"['Rituximab', '[OBSOLETE] rituximab']"
@@ -179,55 +162,51 @@ Neurotrophic keratitis	MONDO:0015290	"['Neurotrophic keratitis', 'neurotrophic k
 Vernal keratoconjunctivitis	MONDO:0019085	"['Vernal Keratoconjunctivitis', 'vernal keratoconjunctivitis', 'Vernal keratoconjunctivitis']"	Ciclosporin	PUBCHEM.COMPOUND:71463825	['Ciclosporin A']
 Non-infectious uveitis	MONDO:0017634	"['Noninfectious anterior uveitis', 'non-infectious iridocyclitis', 'non-infectious anterior uveitis']"	Dexamethasone	PUBCHEM.COMPOUND:5743	"['dexamethasone', 'Dexamethasone', '9-fluoro-11beta,17,21-trihydroxy-16alpha-methylpregna-1,4-diene-3,20-dione']"
 Cryopyrin-associated periodic syndromes	MONDO:0016168	"[""caps"",""CAPS"",""Cryopyrinopathy""]"	Rilonacept	UNII:8K80YB5GMG	['rilonacept']
-					
-Growth hormone deficiency in children	MONDO:0006909	"['Isolated deficiency of growth hormone in children', 'Dwarf, asexual', 'Pituitary dwarf']"	Somatropin for injection	UNII:NQX9KB6PCL	
+Growth hormone deficiency in children	MONDO:0006909	"['Isolated deficiency of growth hormone in children', 'Dwarf, asexual', 'Pituitary dwarf']"	Somatropin for injection	UNII:NQX9KB6PCL	['Somatropin for injection']
 Acromegaly	MONDO:0019933	"['ACROMEGALY', 'Acromegaly', 'acromegaly']"	Octreotide	PUBCHEM.COMPOUND:383414	['Octreotide']
-			Lanreotide	PUBCHEM.COMPOUND:122173799	"['lanreotide', '(4R,7S,10S,13R,16S,19R)-10-(4-Aminobutyl)-N-[(2S,3R)-1-amino-3-hydroxy-1-oxobutan-2-yl]-19-[[(2S)-2-amino-3-naphthalen-2-ylpropanoyl]amino]-16-[(4-hydroxyphenyl)methyl]-13-(1H-indol-3-ylmethyl)-6,9,12,15,18-pentaoxo-7-propan-2-yl-1,2-dithia-5,8,11,14,17-pentazacycloicosane-4-carboxamide']"
-			Pegvisomant	UNII:N824AOU5XV	['pegvisomant']
-			Pasireotide	PUBCHEM.COMPOUND:9941444	"['Pasireotide', 'pasireotide', 'cyclo[(2S)-2-phenylglycyl-D-tryptophyl-L-lysyl-O-benzyl-L-tyrosyl-L-phenylalanyl-(4R)-4-{[(2-aminoethyl)carbamoyl]oxy}-L-prolyl]']"
+Acromegaly	MONDO:0019934	"['ACROMEGALY', 'Acromegaly', 'acromegaly']"	Lanreotide	PUBCHEM.COMPOUND:122173799	"['lanreotide', '(4R,7S,10S,13R,16S,19R)-10-(4-Aminobutyl)-N-[(2S,3R)-1-amino-3-hydroxy-1-oxobutan-2-yl]-19-[[(2S)-2-amino-3-naphthalen-2-ylpropanoyl]amino]-16-[(4-hydroxyphenyl)methyl]-13-(1H-indol-3-ylmethyl)-6,9,12,15,18-pentaoxo-7-propan-2-yl-1,2-dithia-5,8,11,14,17-pentazacycloicosane-4-carboxamide']"
+Acromegaly	MONDO:0019935	"['ACROMEGALY', 'Acromegaly', 'acromegaly']"	Pegvisomant	UNII:N824AOU5XV	['pegvisomant']
+Acromegaly	MONDO:0019936	"['ACROMEGALY', 'Acromegaly', 'acromegaly']"	Pasireotide	PUBCHEM.COMPOUND:9941444	"['Pasireotide', 'pasireotide', 'cyclo[(2S)-2-phenylglycyl-D-tryptophyl-L-lysyl-O-benzyl-L-tyrosyl-L-phenylalanyl-(4R)-4-{[(2-aminoethyl)carbamoyl]oxy}-L-prolyl]']"
 Endogenous Cushing’s syndrome	MONDO:0003009	"[""Cushing syndrome"",""Cushing's syndrome"",""Aldosteronism""]"	Osilodrostat	PUBCHEM.COMPOUND:44139752	['Osilodrostat']
-			Ketoconazole	CHEBI:47519	"['ketoconazole', 'rac-1-acetyl-4-(4-{[(2R,4S)-2-(2,4-dichlorophenyl)-2-(1H-imidazol-1-ylmethyl)-1,3-dioxolan-4-yl]methoxy}phenyl)piperazine']"
+Endogenous Cushing’s syndrome	MONDO:0003010	"[""Cushing syndrome"",""Cushing's syndrome"",""Aldosteronism""]"	Ketoconazole	CHEBI:47519	"['ketoconazole', 'rac-1-acetyl-4-(4-{[(2R,4S)-2-(2,4-dichlorophenyl)-2-(1H-imidazol-1-ylmethyl)-1,3-dioxolan-4-yl]methoxy}phenyl)piperazine']"
 Adrenal insufficiency	MONDO:0000004	"['ADRENAL INSUFFICIENCY', 'Insufficiency;adrenal', 'Adrenal insufficiency']"	Hydrocortisone	PUBCHEM.COMPOUND:5754	"['Hydrocortisone', 'cortisol', 'Cortisol']"
 Idiopathic Hypogonadotropic Hypogonadism	MONDO:0007794	"['idiopathic hypogonadotropic hypogonadism', 'HH7', 'hypogonadism, isolated hypogonadotropic']"	Human chorionic gonadotropin	MESH:C019263	['asialo-human chorionic gonadotropin']
-			Gonadotropin-releasing hormone	MONDO:0014273	"[""GNRH"",""GNRH1"",""GNRH1 Gene""]"
+Idiopathic Hypogonadotropic Hypogonadism	MONDO:0007795	"['idiopathic hypogonadotropic hypogonadism', 'HH7', 'hypogonadism, isolated hypogonadotropic']"	Gonadotropin-releasing hormone	MONDO:0014273	"[""GNRH"",""GNRH1"",""GNRH1 Gene""]"
 Primary insulin-like growth factor-1 deficiency	MONDO:0012110	"[""IGF1 DEFICIENCY"",""IGF1 deficiency"",""IGF1 Deficiency""]"	Mecasermin	UNII:7GR9I2683O	['mecasermin']
 Paget's disease (osteitis deformans)	MONDO:0002207	"[""disease pagets vulva"",""Pagets disease of vulva"",""disease paget vulva""]"	Calcitonin-human for injection	NCBIGene:796	"[""calcitonin"",""CALC_HUMAN Calcitonin (sprot)"",""calcitonin related polypeptide alpha""]"
 Hypoparathyroidism	MONDO:0001220	"['hypoparathyroidism', 'Hypoparathyroidism', 'HYPOPARATHYROIDISM']"	Parathyroid hormone	MESH:D010281	['Parathyroid Hormone']
 Non-24-h sleep–wake disorder	UMLS:C0442792	"[""N24"",""N24 (finding)""]"	Tasimelteon	PUBCHEM.COMPOUND:10220503	"['Tasimelteon', 'tasimelteon', 'N-{[(1R,2R)-2-(2,3-dihydro-1-benzofuran-4-yl)cyclopropyl]methyl}propanamide']"
 Leptin deficiency in lipodystrophy patients	MONDO:0013991	"[""Leptin Deficiency"",""LEPTIN DEFICIENCY"",""LEPTIN DEFICIENCY OR DYSFUNCTION""]"	Metreleptin	UNII:TL60C27RLH	['metreleptin']
 Familial partial lipodystrophy	MONDO:0020088	"['Familial Partial Lipodystrophy', 'familial partial lipodystrophy', 'Familial partial lipodystrophy']"	Metreleptin	UNII:TL60C27RLH	['metreleptin']
-					
 Pulmonary arterial hypertension	MONDO:0015924	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Macitentan	PUBCHEM.COMPOUND:16004692	"['Macitentan', 'macitentan', ""N-[5-(4-bromophenyl)-6-{2-[(5-bromopyrimidin-2-yl)oxy]ethoxy}pyrimidin-4-yl]-N'-propylsulfuric diamide""]"
-			Tadalafil	PUBCHEM.COMPOUND:110635	"['Tadalafil', 'tadalafil', '[OBSOLETE] tadalafil']"
-			Ambrisentan	PUBCHEM.COMPOUND:6918493	"['Ambrisentan', 'ambrisentan']"
-			Nitric oxide	PUBCHEM.COMPOUND:145068	"['nitric oxide', 'Nitric Oxide', 'Nitric oxide']"
-			Sildenafil	PUBCHEM.COMPOUND:135398744	"['Sildenafil', 'sildenafil', '[OBSOLETE] sildenafil']"
-			Bosentan monohydrate	PUBCHEM.COMPOUND:185462	
-			Selexipag	PUBCHEM.COMPOUND:9913767	"['Selexipag', 'selexipag', '2-{4-[(5,6-diphenylpyrazin-2-yl)(propan-2-yl)amino]butoxy}-N-(methanesulfonyl)acetamide']"
-			Iloprost	PUBCHEM.COMPOUND:5311181	"['Iloprost', 'iloprost', '(5E)-5-[(3aS,4R,5R,6aS)-5-hydroxy-4-[(1E,3S)-3-hydroxy-4-methyloct-1-en-6-yn-1-yl]hexahydropentalen-2(1H)-ylidene]pentanoic acid']"
-			Parenteral treprostinil	PUBCHEM.COMPOUND:23663413	"[""Remodulin"",""treprostinil sodium"",""sodium ({(1R,2R,3aS,9aS)-2-hydroxy-1-[(3S)-3-hydroxyoctyl]-2,3,3a,4,9,9a-hexahydro-1H-cyclopenta[b]naphthalen-5-yl}oxy)acetate""]"
-			Riociguat	PUBCHEM.COMPOUND:11304743	"['riociguat', 'Riociguat', 'methyl {4,6-diamino-2-[1-(2-fluorobenzyl)-1H-pyrazolo[3,4-b]pyridin-3-yl]pyrimidin-5-yl}methylcarbamate']"
+Pulmonary arterial hypertension	MONDO:0015925	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Tadalafil	PUBCHEM.COMPOUND:110635	"['Tadalafil', 'tadalafil', '[OBSOLETE] tadalafil']"
+Pulmonary arterial hypertension	MONDO:0015926	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Ambrisentan	PUBCHEM.COMPOUND:6918493	"['Ambrisentan', 'ambrisentan']"
+Pulmonary arterial hypertension	MONDO:0015927	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Nitric oxide	PUBCHEM.COMPOUND:145068	"['nitric oxide', 'Nitric Oxide', 'Nitric oxide']"
+Pulmonary arterial hypertension	MONDO:0015928	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Sildenafil	PUBCHEM.COMPOUND:135398744	"['Sildenafil', 'sildenafil', '[OBSOLETE] sildenafil']"
+Pulmonary arterial hypertension	MONDO:0015929	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Bosentan monohydrate	PUBCHEM.COMPOUND:185462	
+Pulmonary arterial hypertension	MONDO:0015930	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Selexipag	PUBCHEM.COMPOUND:9913767	"['Selexipag', 'selexipag', '2-{4-[(5,6-diphenylpyrazin-2-yl)(propan-2-yl)amino]butoxy}-N-(methanesulfonyl)acetamide']"
+Pulmonary arterial hypertension	MONDO:0015931	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Iloprost	PUBCHEM.COMPOUND:5311181	"['Iloprost', 'iloprost', '(5E)-5-[(3aS,4R,5R,6aS)-5-hydroxy-4-[(1E,3S)-3-hydroxy-4-methyloct-1-en-6-yn-1-yl]hexahydropentalen-2(1H)-ylidene]pentanoic acid']"
+Pulmonary arterial hypertension	MONDO:0015932	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Parenteral treprostinil	PUBCHEM.COMPOUND:23663413	"[""Remodulin"",""treprostinil sodium"",""sodium ({(1R,2R,3aS,9aS)-2-hydroxy-1-[(3S)-3-hydroxyoctyl]-2,3,3a,4,9,9a-hexahydro-1H-cyclopenta[b]naphthalen-5-yl}oxy)acetate""]"
+Pulmonary arterial hypertension	MONDO:0015933	"['Pulmonary Arterial Hypertension', 'Pulmonary arterial hypertension', 'pulmonary arterial hypertension']"	Riociguat	PUBCHEM.COMPOUND:11304743	"['riociguat', 'Riociguat', 'methyl {4,6-diamino-2-[1-(2-fluorobenzyl)-1H-pyrazolo[3,4-b]pyridin-3-yl]pyrimidin-5-yl}methylcarbamate']"
 Cystic fibrosis	MONDO:0009061	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Mannitol	CHEBI:29864	['mannitol']
-			Ivacaftor	PUBCHEM.COMPOUND:16220172	"['Ivacaftor', 'ivacaftor', 'N-(2,4-di-tert-butyl-5-hydroxyphenyl)-4-oxo-1,4-dihydroquinoline-3-carboxamide']"
-			Tezacaftor/ivacaftor	PUBCHEM.COMPOUND:72722243	"[""Ivacaftor and Tezacaftor""]"
-			Tobramycin	PUBCHEM.COMPOUND:36294	"['Tobramycin', 'tobramycin', '(1S,2S,3R,4S,6R)-4,6-diamino-3-(2,6-diamino-2,3,6-trideoxy-alpha-D-ribo-hexopyranosyloxy)-2-hydroxycyclohexyl 3-amino-3-deoxy-alpha-D-glucopyranoside']"
-			Aztreonam	PUBCHEM.COMPOUND:135398736	"['aztreonam', 'Aztreonam', 'Azactam']"
-			Colistimethate sodium	CHEBI:34650	"['colistimethate sodium', 'Colistimethate sodium']"
-			Lumacaftor / ivacaftor	MESH:C000599212	"['lumacaftor, ivacaftor drug combination']"
-			Levofloxacin	PUBCHEM.COMPOUND:149096	"['Levofloxacin', 'levofloxacin', '(3S)-9-fluoro-3-methyl-10-(4-methylpiperazin-1-yl)-7-oxo-2,3-dihydro-7H-[1,4]oxazino[2,3,4-ij]quinoline-6-carboxylic acid']"
+Cystic fibrosis	MONDO:0009062	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Ivacaftor	PUBCHEM.COMPOUND:16220172	"['Ivacaftor', 'ivacaftor', 'N-(2,4-di-tert-butyl-5-hydroxyphenyl)-4-oxo-1,4-dihydroquinoline-3-carboxamide']"
+Cystic fibrosis	MONDO:0009063	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Tezacaftor/ivacaftor	PUBCHEM.COMPOUND:72722243	"[""Ivacaftor and Tezacaftor""]"
+Cystic fibrosis	MONDO:0009064	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Tobramycin	PUBCHEM.COMPOUND:36294	"['Tobramycin', 'tobramycin', '(1S,2S,3R,4S,6R)-4,6-diamino-3-(2,6-diamino-2,3,6-trideoxy-alpha-D-ribo-hexopyranosyloxy)-2-hydroxycyclohexyl 3-amino-3-deoxy-alpha-D-glucopyranoside']"
+Cystic fibrosis	MONDO:0009065	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Aztreonam	PUBCHEM.COMPOUND:135398736	"['aztreonam', 'Aztreonam', 'Azactam']"
+Cystic fibrosis	MONDO:0009066	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Colistimethate sodium	CHEBI:34650	"['colistimethate sodium', 'Colistimethate sodium']"
+Cystic fibrosis	MONDO:0009067	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Lumacaftor / ivacaftor	MESH:C000599212	"['lumacaftor, ivacaftor drug combination']"
+Cystic fibrosis	MONDO:0009068	"['Cystic fibrosis', 'Cystic Fibrosis', 'CYSTIC FIBROSIS']"	Levofloxacin	PUBCHEM.COMPOUND:149096	"['Levofloxacin', 'levofloxacin', '(3S)-9-fluoro-3-methyl-10-(4-methylpiperazin-1-yl)-7-oxo-2,3-dihydro-7H-[1,4]oxazino[2,3,4-ij]quinoline-6-carboxylic acid']"
 Idiopathic Pulmonary Fibrosis	MONDO:0008345	"['idiopathic pulmonary fibrosis', 'Idiopathic Pulmonary Fibrosis', 'pulmonary fibrosis, idiopathic']"	Pirfenidone	PUBCHEM.COMPOUND:40632	"['Pirfenidone', 'pirfenidone', '5-methyl-1-phenylpyridin-2(1H)-one']"
-			Nintedanib	CHEMBL.COMPOUND:CHEMBL502835	"['nintedanib', 'methyl (3Z)-3-[(4-{methyl[(4-methylpiperazin-1-yl)acetyl]amino}anilino)(phenyl)methylidene]-2-oxo-2,3-dihydro-1H-indole-6-carboxylate']"
+Idiopathic Pulmonary Fibrosis	MONDO:0008346	"['idiopathic pulmonary fibrosis', 'Idiopathic Pulmonary Fibrosis', 'pulmonary fibrosis, idiopathic']"	Nintedanib	CHEMBL.COMPOUND:CHEMBL502835	"['nintedanib', 'methyl (3Z)-3-[(4-{methyl[(4-methylpiperazin-1-yl)acetyl]amino}anilino)(phenyl)methylidene]-2-oxo-2,3-dihydro-1H-indole-6-carboxylate']"
 Primary apnea of premature newborns	MONDO:0019092	"['Primary apnea of premature newborns', 'apnea infant', 'INFANT APNEA']"	Caffeine citrate	PUBCHEM.COMPOUND:6241	"['Caffeine citrate', 'caffeine citrate']"
 "Lymphangioleiomyomatosis, Tuberous sclerosis"	UMLS:C3873350	"['Lymphangioleiomyomatosis due to tuberous sclerosis syndrome', 'Lymphangioleiomyomatosis due to tuberous sclerosis syndrome (disorder)']"	Sirolimus	PUBCHEM.COMPOUND:5284616	"['Sirolimus', 'sirolimus', '(3S,6R,7E,9R,10R,12R,14S,15E,17E,19E,21S,23S,26R,27R,34aS)-9,27-dihydroxy-3-{(2R)-1-[(1S,3R,4R)-4-hydroxy-3-methoxycyclohexyl]propan-2-yl}-10,21-dimethoxy-6,8,12,14,20,26-hexamethyl-9,10,12,13,14,21,22,23,24,25,26,27,32,33,34,34a-hexadecahydro-3H-23,27-epoxypyrido[2,1-c][1,4]oxazacyclohentriacontine-1,5,11,28,29(4H,6H,31H)-pentone']"
-					
 "Severe combined immunodeficiency, Adenosine deaminase deficiency"	UMLS:C0272230	"['severe combined immunodeficiency - adenosine deaminase deficiency', 'SCID due to absent ADA', 'SCID due to absent adenosine deaminase']"	Pegademase bovine	UNII:HW3H7D91F6	['pegademase bovine']
-			CD34+cells transduced with ADA cDNA	NCIT:C51144	"[""CD34 Positive Neoplastic Cells Present"",""CD34-Positive Neoplastic Cells Present""]"
+"Severe combined immunodeficiency, Adenosine deaminase deficiency"	UMLS:C0272231	"['severe combined immunodeficiency - adenosine deaminase deficiency', 'SCID due to absent ADA', 'SCID due to absent adenosine deaminase']"	CD34+cells transduced with ADA cDNA	NCIT:C51144	"[""CD34 Positive Neoplastic Cells Present"",""CD34-Positive Neoplastic Cells Present""]"
 Chronic granulomatous disease	MONDO:0018305	"['Chronic Granulomatous Disease', 'Chronic granulomatous disease', 'granulomatous chronic disease']"	Interferon gamma 1-b	CHEBI:5939	['Interferon gamma-1b']
-					
 Mastocytosis	MONDO:0007950	"['mastocytosis', 'Mastocytosis', 'MASTOCYTOSIS']"	Cromolyn sodium	PUBCHEM.COMPOUND:27503	"['Cromolyn sodium', 'Cromolyn Sodium', 'disodium cromoglycate']"
 Ventricular tachycardia	MONDO:0005477	"['Tachycardia;ventricular', 'ventricular tachycardia', 'TACHYCARDIA VENTRICULAR']"	Amiodarone	PUBCHEM.COMPOUND:2157	"['amiodarone', 'Amiodarone', '(2-butyl-1-benzofuran-3-yl){4-[2-(diethylamino)ethoxy]-3,5-diiodophenyl}methanone']"
 Limbal stem cell deficiency	HP:0032107	"['Limbal stem cell deficiency', 'Limbal stem cell deficiency (disorder)']"	Autologous human corneal stem cells	UMLS:C0431132	"[""cells lymphoma stem"", ""stem cell lymphoma"", ""Stem cell lymphoma""]"
-Inherited retinal dystrophy	MONDO:0019118	"['inherited retinal dystrophy', 'fundus dystrophy', ""Lauber's disease""]"	Voretigene neparvovec	UNII:2SPI046IKD	
+Inherited retinal dystrophy	MONDO:0019118	"['inherited retinal dystrophy', 'fundus dystrophy', ""Lauber's disease""]"	Voretigene neparvovec	UNII:2SPI046IKD	['Voretigene neparvovec']
 Short bowel syndrome	MONDO:0015183	"['Short Bowel Syndrome', 'bowel short syndrome', 'SHORT-BOWEL SYNDROME']"	Teduglutide	PUBCHEM.COMPOUND:16139605	"['teduglutide', 'Teduglutide', 'Teduglutide recombinant']"
 "Hepatic veno-occlusive disease, Sinusoidal obstruction"	MONDO:0009338	"[""hepatic venoocclusive disease with immunodeficiency"", ""Hepatic venoocclusive disease with immunodeficiency"", ""HEPATIC VENOOCCLUSIVE DISEASE WITH IMMUNODEFICIENCY""]"	Defibrotide	PUBCHEM.COMPOUND:135565962	"['Defibrotide', 'STA-1474']"
 Autosomal dominant polycystic kidney disease	MONDO:0004691	"['autosomal dominant polycystic kidney disease', 'Autosomal dominant polycystic kidney disease', 'Autosomal Dominant Polycystic Kidney Disease']"	Tolvaptan	PUBCHEM.COMPOUND:216237	['Tolvaptan']
