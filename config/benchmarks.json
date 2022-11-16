@@ -16,5 +16,11 @@
             "source": "DrugMechDB",
             "templates": ["three_hop"]
         }
+    ],
+    "treats_rare": [
+        {
+            "source": "OrphanetJournalRareDiseases",
+            "templates": ["treats"]
+        }
     ]
 }

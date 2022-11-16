@@ -1,7 +1,7 @@
 {
     "aragorn": {
         "fetch": {
-            "url": "https://aragorn.renci.org/1.2/query",
+            "url": "https://aragorn.renci.org/1.3/query",
             "workflow": [
                 {"id": "lookup"},
                 {"id": "overlay_connect_knodes"},
@@ -9,14 +9,14 @@
             ]
         },
         "fetch_unscored": {
-            "url": "https://aragorn.renci.org/1.2/query",
+            "url": "https://aragorn.renci.org/1.3/query",
             "workflow": [
                 {"id": "lookup"},
                 {"id": "overlay_connect_knodes"}
             ]
         },
         "score": {
-            "url": "https://aragorn.renci.org/1.2/query",
+            "url": "https://aragorn.renci.org/1.3/query",
             "workflow": [
                 {"id": "score"}
             ]
