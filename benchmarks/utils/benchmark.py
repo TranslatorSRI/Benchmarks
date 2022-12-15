@@ -22,18 +22,19 @@ def get_uid(source: str, template: str, datum: Dict[str, str], message: dict):
     where
 
     `CURIEs_in_template_slots` is a string made up of the CURIEs fitted into the
-    template slots separated by a periods in the order they appear. For example,
-    if `n0` and `n1` are the slots of some template, then
+    template slots separated by a periods in the order they appear with colons
+    replaced by underscores. For example, if `n0` and `n1` are the slots of
+    some template, then
 
     `{ "n0": {ids: ["MONDO:1234"]}, "n1": {ids: ["MONDO:4321"]} }`
 
-    will use `MONDO:1234.MONDO:4321` for `CURIEs_in_template_slots`.
+    will use `MONDO_1234.MONDO_4321` for `CURIEs_in_template_slots`.
 
     Args:
         source: (str) The source of the query - e.g., DrugMechDB,
             MostPrescribed_2019
         template: (str) Name of one of the templates applicable to the source.
-        datum: (dict) map from qnode_ids to CURIEs of this datum 
+        datum: (dict) map from qnode_ids to CURIEs of this datum
         message: (dict) Message containing the query graph. Since `datum`
             contains CURIE information, `message` can also be an empty template.
 
@@ -46,7 +47,7 @@ def get_uid(source: str, template: str, datum: Dict[str, str], message: dict):
         for qnode_id in datum
         if 'ids' in qnodes.get(qnode_id, tuple())
     ]
-    return f'{source}.{template}.{".".join(curies)}'
+    return f'{source}.{template}.{".".join(curies)}'.replace(':', '_')
 
 def benchmark_uids(benchmark: str) -> List[str]:
     """
