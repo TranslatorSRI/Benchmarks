@@ -1,0 +1,25 @@
+{
+    "message": {
+      "query_graph": {
+        "nodes": {
+          "GENE_CURIES": {
+            "ids": []
+          },
+          "DISEASE_CURIES": {
+            "categories": [
+                "biolink:Disease"
+            ]
+          }
+        },
+        "edges": {
+          "e01": {
+            "object": "GENE_CURIES",
+            "subject": "DISEASE_CURIES",
+            "predicates": [
+              "biolink:gene_associated_with_condition"
+            ]
+          }
+        }
+      }
+    }
+  }

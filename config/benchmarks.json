@@ -28,5 +28,11 @@
             "source": "PHAROS_Drug-target-disease_MOA",
             "templates": ["drugsAndDisease"]
         }
+    ],
+    "disease_gene": [
+        {
+            "source": "PHAROS_Drug-target-disease_MOA",
+            "templates": ["diseaseBenchmark"]
+        }
     ]
 }
