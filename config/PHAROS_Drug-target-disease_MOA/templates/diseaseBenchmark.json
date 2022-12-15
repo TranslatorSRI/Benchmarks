@@ -2,12 +2,15 @@
     "message": {
       "query_graph": {
         "nodes": {
-          "GENE_CURIES": {
+          "DISEASE_CURIES": {
+            "categories":[
+              "biolink:Disease"
+            ],
             "ids": []
           },
-          "DISEASE_CURIES": {
+          "GENE_CURIES": {
             "categories": [
-                "biolink:Disease"
+              "biolink:Gene"
             ]
           }
         },
@@ -16,7 +19,7 @@
             "object": "GENE_CURIES",
             "subject": "DISEASE_CURIES",
             "predicates": [
-              "biolink:gene_associated_with_condition"
+              "biolink:related_to"
             ]
           }
         }
