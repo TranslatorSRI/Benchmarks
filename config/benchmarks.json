@@ -22,5 +22,11 @@
             "source": "OrphanetJournalRareDiseases",
             "templates": ["treats"]
         }
+    ],
+    "drugs_and_disease": [
+        {
+            "source": "PHAROS_Drug-target-disease_MOA",
+            "templates": ["drugsAndDisease"]
+        }
     ]
 }
