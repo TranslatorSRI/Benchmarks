@@ -2,10 +2,10 @@
   "message": {
     "query_graph": {
       "nodes": {
-        "n0": {
+        "ConditionID": {
           "ids": []
         },
-        "n1": {
+        "DrugID": {
           "categories": [
             "biolink:SmallMolecule"
           ]
@@ -13,8 +13,8 @@
       },
       "edges": {
         "e01": {
-          "object": "n0",
-          "subject": "n1",
+          "object": "ConditionID",
+          "subject": "DrugID",
           "predicates": [
             "biolink:treats"
           ]

@@ -1,8 +1,0 @@
-{
-  "url":"http://aragorn-dev.apps.renci.org/1.2",
-  "workflow": [
-    {"id":"lookup"},
-    {"id":"overlay_connect_knodes"},
-    {"id":"score"}
-  ]
-}
