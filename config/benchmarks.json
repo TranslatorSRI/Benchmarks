@@ -16,5 +16,11 @@
             "source": "DrugMechDB",
             "templates": ["three_hop"]
         }
+    ],
+    "CPIC": [
+        {
+            "source": "CPIC",
+            "templates": ["drug-to-gene"]
+        }
     ]
 }
