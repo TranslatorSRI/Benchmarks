@@ -16,5 +16,14 @@
             "source": "DrugMechDB",
             "templates": ["three_hop"]
         }
+    ],
+    "orphadata": [
+        {
+            "source": "OrphaNet",
+            "templates": [
+                "raredisease-to-gene",
+                "gene-to-raredisease"
+            ]
+        }
     ]
 }
