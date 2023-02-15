@@ -3,7 +3,7 @@ import requests
 import xmltodict
 
 # use this if loading data from raw xml file (up-to-date as of 2/15/2023)
-# with open('en_product6.xml') as xml_file:
+# with open('../en_product6.xml') as xml_file:
 #    data_dict = xmltodict.parse(xml_file.read())
 
 # us this if extracting from link from http://www.orphadata.org/cgi-bin/index.php
@@ -30,7 +30,7 @@ for data in data_dict['JDBOR']['DisorderList']['Disorder']:
                     x.append([orpha_code, orpha_name, gene_curie, gene_name])
                     found = True
                     break
-with open('orphanet_benchmark.tsv', 'w', newline='') as f:
+with open('../data.tsv', 'w', newline='') as f:
     writer = csv.writer(f, delimiter='\t')
     writer.writerows(x)
 
