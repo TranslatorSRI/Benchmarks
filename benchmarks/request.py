@@ -2,6 +2,7 @@ import asyncio
 import json
 from copy import deepcopy
 from pathlib import Path
+import time
 from typing import Optional, Sequence
 
 import httpx
@@ -11,6 +12,7 @@ from .utils.asyncio import gather
 from .utils.benchmark import benchmark_messages
 from .utils.constants import CONFIG_DIR
 
+ARS_CHECK_INTERVAL = 5
 
 def fetch_results(
     benchmark: str,
@@ -70,15 +72,106 @@ def fetch_results(
         
         uids = u
         messages = m
-                
-    send_requests_store_results(
-        uids,
-        messages,
-        url,
-        results_dir,
-        num_concurrent_requests,
-        progress
-    )
+
+
+
+    if target == "ars":
+        send_requests_to_ars()
+
+    else:
+
+        send_requests_store_results(
+            uids,
+            messages,
+            url,
+            results_dir,
+            num_concurrent_requests,
+            progress
+        )
+
+
+def send_requests_to_ars(
+    uids: Sequence[str],
+    messages: Sequence[dict],
+    url: str,
+    results_dir: str,
+    num_concurrent_requests: int,
+    progress: bool
+):
+    pbar = None if progress == False else tqdm(total=len(uids))
+    coroutines = [
+        send_request_to_ars(uid, msg, url, results_dir, pbar)
+        for uid, msg in zip(uids, messages)
+    ]
+    asyncio.run(gather(*coroutines, limit=num_concurrent_requests))
+
+    if pbar is not None:
+        pbar.close()
+
+async def send_request(uid: str, url: str, msg: dict, request_type: str = "post"):
+    async with httpx.AsyncClient(timeout=None) as client:
+        attempts = 0
+        while True:
+            response = None
+            try:
+                response = await getattr(client, request_type)(url, json=msg)
+                response.raise_for_status()
+                response_json = response.json()
+            except:
+                if response is not None:
+                    print(f'{response.status_code} {response.reason_phrase}')
+                    print(uid)
+
+                attempts += 1
+                if attempts >= 3:
+                    response_json = deepcopy(msg)
+                    response_json['benchmarks'] = f'Fetch request failed {attempts} times.'
+                    break
+
+                print(f'Retrying in 5 seconds...')
+                await asyncio.sleep(5)
+                continue
+            break
+
+    return response_json
+
+async def send_request_to_ars(
+    uid: str,
+    msg: dict,
+    url: str,
+    results_dir: str,
+    pbar: Optional[tqdm]
+):
+    response = await send_request(uid, f"{url}/submit", msg)
+    parent_pk = response["pk"]
+
+
+    while True:
+        start = time.monotonic()
+        response = await send_request(uid, f"{url}/messages/{parent_pk}?trace=y", msg)
+
+        if response["status"] == "Done":
+            break
+
+        time.sleep(max(0, ARS_CHECK_INTERVAL - (time.monotonic() - start)))
+
+
+    for child in response["children"]:
+        if child["status"] != "Done":
+            continue
+
+        child_pk = child["message"]
+        response = await send_request(uid, "")
+
+
+
+    # Store results
+    with open(f'{results_dir}/{uid}.json', 'w') as file:
+        json.dump(response_json, file)
+
+    if pbar:
+        pbar.update()
+
 
 def score_results(
     unscored_results_dir: str,

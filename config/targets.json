@@ -1,7 +1,12 @@
 {
+    "ars": {
+        "fetch": {
+            "url": "https://ars-prod.transltr.io/ars/api"
+        }
+    },
     "aragorn": {
         "fetch": {
-            "url": "https://aragorn.renci.org/1.2/query",
+            "url": "https://aragorn.renci.org/aragorn/query",
             "workflow": [
                 {"id": "lookup"},
                 {"id": "overlay_connect_knodes"},
@@ -9,14 +14,14 @@
             ]
         },
         "fetch_unscored": {
-            "url": "https://aragorn.renci.org/1.2/query",
+            "url": "https://aragorn.renci.org/aragorn/query",
             "workflow": [
                 {"id": "lookup"},
                 {"id": "overlay_connect_knodes"}
             ]
         },
         "score": {
-            "url": "https://aragorn.renci.org/1.2/query",
+            "url": "https://aragorn.renci.org/aragorn/query",
             "workflow": [
                 {"id": "score"}
             ]
