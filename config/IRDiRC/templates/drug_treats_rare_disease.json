@@ -1,0 +1,26 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "Disease_Curie": {
+            "ids": [],
+          "categories": [
+            "biolink:DiseaseOrPhenotypicFeature"
+          ]
+
+        },
+        "Drug_Curie": {
+          "categories": [
+            "biolink:ChemicalMixture"
+          ]
+        }
+      },
+      "edges": {
+        "e01": {
+          "subject": "Drug_Curie",
+          "object": "Disease_Curie"
+        }
+      }
+    }
+  }
+}

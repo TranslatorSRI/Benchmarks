@@ -16,5 +16,11 @@
             "source": "DrugMechDB",
             "templates": ["three_hop"]
         }
+    ],
+    "drug_treats_rare_disease": [
+        {
+            "source": "IRDiRC",
+            "templates": ["drug_treats_rare_disease"]
+        }
     ]
 }
