@@ -9,7 +9,8 @@ setup(
         'matplotlib',
         'numpy',
         'requests',
-        'tqdm'
+        'tqdm',
+        'xmltodict'
     ],
     entry_points={
         'console_scripts': [
