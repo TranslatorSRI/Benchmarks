@@ -6,7 +6,6 @@
           "ids": []
         },
         "Protein": {
-          "ids": [],
           "categories": [
             "biolink:Protein"
           ]
