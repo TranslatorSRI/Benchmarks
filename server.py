@@ -86,7 +86,7 @@ async def get_available_benchmarks() -> AvailableBenchmarksResponse:
   return available_benchmarks
   
 
-@APP.get("/benchmark_results")
+@APP.get("/{benchmark}/{target}/{timestamp}")
 async def get_benchmark_results(benchmark: str, target: str, timestamp: str) -> BenchmarkResults:
   """
     Get benchmark results.
