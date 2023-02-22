@@ -1,0 +1,51 @@
+@import "../../Assets/Styles/variables";
+
+.sidebar {
+  background-color: $lightGray;
+  padding: 20px;
+  li {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.accordion, .accordionItem {
+  border: none;
+}
+.accordionPanel {
+  padding: 0 0 0 10px;
+}
+.accordionHeading {
+  padding: 15px;
+  user-select: none;
+}
+.accordionButton {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  color: #444;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  &:after {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);    
+    transition: all .25s ease;
+  }
+  &[aria-expanded='true'],&[aria-selected='true'] {
+    &:after {
+      transform: rotate(45deg);
+    }
+  }
+} 
+
+.checkboxes {
+  padding: 10px 0 0 25px;
+}

@@ -1,0 +1,87 @@
+
+// Colors //
+$red: #A62639;
+$red50: #D2939C;
+$red20: #EDD4D7;
+
+$yellow: #FBAF00;
+$yellow50: #FDD780;
+$yellow20: #FEEFCC;
+
+$green: #238571;
+$green50: #91C2B8;
+$green20: #D3E7E3;
+
+$blueOne: #003494;
+$blueOne50: #809AC9;
+$blueOne20: #CCD6EA;
+
+$blueTwo: #2D5492;
+$blueTwo50: #96A9C8;
+$blueTwo20: #D5DDE9;
+
+$purpleOne: #662E6B;
+$purpleOne50: #B397B5;
+$purpleOne20: #E0D5E1;
+
+$purpleTwo: #524F81;
+$purpleTwo50: #A8A7C0;
+$purpleTwo20: #DCDCE6;
+
+$darkGray: #606368;
+$midGray: #CED0D0;
+$lightGray: #F2F4F7;
+$black: #202124;
+$white: #ffffff;
+
+
+// Font //
+$h1Size: 80px;
+$h2Size: 64px; 
+$h3Size: 48px;
+$h4Size: 32px;
+$h5Size: 24px;
+$h6Size: 20px;
+$subOneSize: 16px;
+$subTwoSize: 14px;
+$bodyOneSize: 16px;
+$bodyTwoSize: 14px;
+$buttonSize: 16px;
+$captionSize: 12px;
+$overlineSize: 8px;
+
+$overpass: 'Overpass', sans-serif;
+$opensans: 'Open Sans', sans-serif;
+
+
+// Spacing //
+$xxs: 4px;
+$xs: 8px;
+$s: 16px;
+$m: 24px;
+$l: 32px;
+$xl: 48px;
+$xxl: 64px;
+$maxwidth: 1250px;
+
+$defaultBorderRadius: 5px;
+
+// Drop Shadow //
+$dropShadow: 0px 3px 10px  rgba(32, 33, 36, .2);
+$dropShadowHover: 0px 3px 10px  rgba(32, 33, 36, .5);
+$dropShadowPressed: inset 0px 3px 10px  rgba(32, 33, 36, .5);
+
+
+// Animations //
+$defaultAnim: all .25s ease;
+$defaultTransformAnim: transform .25s ease;
+$defaultBoxShadowAnim: box-shadow .25s ease;
+@keyframes clickedToggle {
+  from {
+    box-shadow: inset 0px 3px 10px rgba(32, 33, 36, .5);
+  }
+
+  to {
+    box-shadow:  0px 3px 10px rgba(136, 151, 196, 0);
+  }
+}
