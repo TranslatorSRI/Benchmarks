@@ -10,19 +10,19 @@ import exampleGraphData from './Utilities/benchmark_json_example.json';
 function App() {
 
   const [graphData, setGraphData] = useState(null);
-  const [sidebarLinks, setSidebarLinks] = useState(exampleBenchmarkList);
+  const [sidebarLinks, setSidebarLinks] = useState(null);
   const [selectedBenchmarks, setSelectedBenchmarks] = useState(null);
 
   const handleSidebarLinkClick = (link) => {
     console.log(link);
-    // fetch(`/${link.benchmark}/${link.target}/${link.timestamp}`,{method: 'GET', headers: { 'Content-Type': 'application/json' }})
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //   });
+    fetch(`/${link.benchmark}/${link.ara}/${link.timestamp}`,{method: 'GET', headers: { 'Content-Type': 'application/json' }})
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch((error) => {
+        console.log(error)
+      });
     setGraphData([exampleGraphData, exampleGraphData, exampleGraphData, exampleGraphData]);
   }
   
@@ -41,6 +41,8 @@ function App() {
       .then(response => response.json())
       .then(data => {
         console.log(data)
+        setSidebarLinks(data);
+        console.log(exampleBenchmarkList);
       })
       .catch((error) => {
         console.log(error)
@@ -55,7 +57,6 @@ function App() {
         title="Translator Benchmarks UI" 
         sidebarLinks={sidebarLinks}
         handleSidebarLinkClick={handleSidebarLinkClick}
-        handleShowBenchmarks={handleShowBenchmarks}
         >
         {
           !graphData &&

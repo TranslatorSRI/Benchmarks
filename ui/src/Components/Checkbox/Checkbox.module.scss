@@ -5,8 +5,8 @@ label.checkbox {
   display: flex;
   align-items: center;
   margin-bottom: $s;
-  .circle {
-
+  span {
+    font-size: 14px;
   }
   &:hover, &:focus {
     cursor: pointer;

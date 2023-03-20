@@ -10,7 +10,11 @@ import {
 import Checkbox from "../Checkbox/Checkbox";
 import { capitalizeFirstLetter } from "../../Utilities/utilities";
 
-const Sidebar = ({links, handleLinkClick = (link)=>console.log(link), handleShowBenchmarks}) => {
+const isObjectEmpty = (obj) => {
+  return Object.keys(obj).length === 0;
+}
+
+const Sidebar = ({links, handleLinkClick = (link)=>console.log(link)}) => {
 
   return (
     <div className={styles.sidebar}>
@@ -36,7 +40,7 @@ const Sidebar = ({links, handleLinkClick = (link)=>console.log(link), handleShow
                       <Accordion
                         allowMultipleExpanded={true}
                         allowZeroExpanded={true}
-                        className={`${styles.accordion}`}
+                        className={`${styles.accordion} ${styles.tierTwo}`}
                         >
                         {
                           Object.keys(links[key]).map((key2, j) => {
@@ -72,11 +76,10 @@ const Sidebar = ({links, handleLinkClick = (link)=>console.log(link), handleShow
                   </AccordionItemPanel>
                 </AccordionItem>
               );
-            })  
+            })        
           }
         </Accordion>
       }
-      <button onClick={handleShowBenchmarks} >Show Selected Benchmarks</button>
     </div>
   )
 };

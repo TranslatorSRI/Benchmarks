@@ -104,7 +104,22 @@
 }
 
 button {
-  box-shadow: $dropShadow;
+  font-size: $buttonSize;
+  font-weight: bold;
+  line-height: 1;
+  padding: 10px $xs;
+  border-radius: $defaultBorderRadius;
+  border: none;
+  cursor: pointer;
+  transition: $defaultBoxShadowAnim;
+  color: $white;
+  background-color: $purpleOne;
+  text-decoration: none;
+  display: inline-flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $s;
   &:hover {
     box-shadow: $dropShadowHover;
   }

@@ -9,14 +9,27 @@
   }
 }
 
+.accordion {
+  margin: 0 0 30px;
+  .tierTwo {
+    margin: 0;
+    .accordionHeading {
+      padding: 5px 0;
+    }
+    .accordionButton {
+      font-size: 16px;
+    }
+  }
+}
+
 .accordion, .accordionItem {
   border: none;
 }
 .accordionPanel {
-  padding: 0 0 0 10px;
+  padding: 0 0 0 20px;
 }
 .accordionHeading {
-  padding: 15px;
+  padding: 15px 0 5px;
   user-select: none;
 }
 .accordionButton {
@@ -31,8 +44,8 @@
   &:after {
     display: inline-block;
     content: '';
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     margin-right: 12px;
     border-bottom: 2px solid currentColor;
     border-right: 2px solid currentColor;
