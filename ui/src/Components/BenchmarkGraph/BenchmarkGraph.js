@@ -1,5 +1,9 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+  LineChart, Line, YAxis,
+  CartesianGrid, Tooltip, ResponsiveContainer,
+  Legend,
+} from 'recharts';
 import styles from './BenchmarkGraph.module.scss';
 import exampleData from '../../Utilities/benchmark_json_example.json';
 
@@ -11,7 +15,7 @@ const BenchmarkGraph = ({title, subtitle, data = exampleData}) => {
   const getFormattedData = useCallback((data) => {
     let newData = [];
     for(let i = 0; i < data.k; i++) {
-      let newItem = {name: i, value: 1}
+      let newItem = {};
       newItem.precision_at_k = data.metrics.precision_at_k[i];
       newItem.mean_average_precision_at_k = data.metrics.mean_average_precision_at_k[i];
       newItem.recall_at_k = data.metrics.recall_at_k[i];
@@ -69,12 +73,12 @@ const BenchmarkGraph = ({title, subtitle, data = exampleData}) => {
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis dataKey="value" />
+              <YAxis domain={[0, 1]} />
               <Tooltip />  
-              <Line type="monotone" dataKey="mean_average_precision_at_k" stroke="#e303fc" />
+              <Legend verticalAlign="top" height={50} />
               <Line type="monotone" dataKey="precision_at_k" stroke="#fc0303" />
               <Line type="monotone" dataKey="recall_at_k" stroke="#22c900" />
+              <Line type="monotone" dataKey="mean_average_precision_at_k" stroke="#e303fc" />
               <Line type="monotone" dataKey="top_k_accuracy" stroke="#0032fc" />
             </LineChart>
           </ResponsiveContainer>
