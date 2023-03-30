@@ -5,10 +5,9 @@ import {
   Legend,
 } from 'recharts';
 import styles from './BenchmarkGraph.module.scss';
-import exampleData from '../../Utilities/benchmark_json_example.json';
 
 
-const BenchmarkGraph = ({title, subtitle, data = exampleData}) => {
+const BenchmarkGraph = ({title, subtitle, data}) => {
 
   const [formattedData, setFormattedData] = useState(null);
 
