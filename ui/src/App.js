@@ -4,80 +4,43 @@ import styles from './App.module.scss';
 import Graph from './Components/BenchmarkGraph/BenchmarkGraph';
 import Header from './Components/Header/Header';
 import Page from './Components/Page/Page';
-import exampleBenchmarkList from './Utilities/available_benchmarks_example.json';
-import exampleGraphData from './Utilities/benchmark_json_example.json';
+// import exampleBenchmarkList from './Utilities/available_benchmarks_example.json';
+// import exampleGraphData from './Utilities/benchmark_json_example.json';
+import StoreContext from './Utilities/StoreContext';
+import useStore from './Utilities/useStore';
 
 function App() {
-
-  const [graphData, setGraphData] = useState(null);
-  const [sidebarLinks, setSidebarLinks] = useState(null);
-  const [selectedBenchmarks, setSelectedBenchmarks] = useState(null);
-
-  const handleSidebarLinkClick = (link) => {
-    console.log(link);
-    fetch(`/${link.benchmark}/${link.ara}/${link.timestamp}`,{method: 'GET', headers: { 'Content-Type': 'application/json' }})
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-    setGraphData([exampleGraphData, exampleGraphData, exampleGraphData, exampleGraphData]);
-  }
-  
-  const handleShowBenchmarks = () => {
-    
-  }
-
-
-  useEffect(() => {
-
-    const requestOptions = {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    };
-    fetch('/available_benchmarks', requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        setSidebarLinks(data);
-        console.log(exampleBenchmarkList);
-      })
-      .catch((error) => {
-        console.log(error)
-      });
-
-  }, [])
+  const store = useStore();
 
   return (
     <div className={`app`}>
       <Header/>
-      <Page 
-        title="Translator Benchmarks UI" 
-        sidebarLinks={sidebarLinks}
-        handleSidebarLinkClick={handleSidebarLinkClick}
+      <StoreContext.Provider value={store}>
+        <Page 
+          title="Translator Benchmarks UI" 
         >
-        {
-          !graphData &&
-          <h4>Use the sidebar menu on the left to select benchmarks to display.</h4>
-        }
-        <div className={styles.graphsContainer}>
           {
-            graphData &&
-            graphData.map((graph, i) => {
-
-              return(
-                <Graph 
-                  title="Example Graph" 
-                  subtitle="Graph Subtitle"
-                  data={graph}
-                />
-              );
-            })
+            !store.graphData &&
+            <h4>Use the sidebar menu on the left to select benchmarks to display.</h4>
           }
-        </div>
-      </Page>
+          <div className={styles.graphsContainer}>
+            {
+              Object.values(store.graphData).map((benchmark) => {
+                return Object.entries(benchmark).map(([target, graph]) => {
+                  return(
+                    <Graph
+                      key={target}
+                      title={target}
+                      subtitle={graph.benchmark.timestamp}
+                      data={graph}
+                    />
+                  );
+                });
+              })
+            }
+          </div>
+        </Page>
+      </StoreContext.Provider>
     </div>
   );
 }

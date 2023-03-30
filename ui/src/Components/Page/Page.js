@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import styles from './Page.module.scss';
 
 
-const Page = ({title, children, sidebarLinks, handleSidebarLinkClick, handleShowBenchmarks}) => {
+const Page = ({title, children}) => {
   
   useEffect(() => {
     document.title = title || "";
@@ -13,7 +13,7 @@ const Page = ({title, children, sidebarLinks, handleSidebarLinkClick, handleShow
     <div className={`body ${styles.body}`}>
       <div className={styles.bodyContainer}>
         <div className={styles.pageContainer}>
-          <Sidebar links={sidebarLinks} handleLinkClick={handleSidebarLinkClick} handleShowBenchmarks={handleShowBenchmarks} />
+          <Sidebar />
           <div className={styles.right}>
             {children}
           </div>
