@@ -11,7 +11,7 @@ const BenchmarkGraph = ({title, subtitle, data = exampleData}) => {
   const getFormattedData = useCallback((data) => {
     let newData = [];
     for(let i = 0; i < data.k; i++) {
-      let newItem = {name: i, value: .7}
+      let newItem = {name: i, value: 1}
       newItem.precision_at_k = data.metrics.precision_at_k[i];
       newItem.mean_average_precision_at_k = data.metrics.mean_average_precision_at_k[i];
       newItem.recall_at_k = data.metrics.recall_at_k[i];
