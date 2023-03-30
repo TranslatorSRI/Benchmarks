@@ -35,7 +35,7 @@ APP = FastAPI(
   },
 )
 
-@APP.get("/available_benchmarks")
+@APP.get("/api/available_benchmarks")
 async def get_available_benchmarks() -> AvailableBenchmarksResponse:
   """
     GET the file system results structure.
@@ -86,40 +86,40 @@ async def get_available_benchmarks() -> AvailableBenchmarksResponse:
   return available_benchmarks
   
 
-# @APP.get("/{benchmark}/{target}/{timestamp}")
-# async def get_benchmark_results(benchmark: str, target: str, timestamp: str) -> BenchmarkResults:
-#   """
-#     Get benchmark results.
+@APP.get("/api/{benchmark}/{target}/{timestamp}")
+async def get_benchmark_results(benchmark: str, target: str, timestamp: str) -> BenchmarkResults:
+  """
+    Get benchmark results.
 
-#     Return:
-#       {
-#         ara: {
-#           results
-#         },
-#         ara: {
-#           results,
-#         }
-#       }
-#   """
-#   results_path = os.getenv("RESULTS_PATH", ".")
-#   result_path = os.path.join(results_path, benchmark, target, timestamp)
-#   if target == "ars":
-#     ara_responses = {}
-#     aras = glob.glob(os.path.join(result_path, "*"))
-#     for ara in aras:
-#       ara_name = os.path.basename(os.path.normpath(ara))
-#       result_file = os.path.join(ara, "output.json")
-#       with open(result_file, "r") as f:
-#         result = json.load(f)
-#       ara_responses[ara_name] = result
-#     return ara_responses
-#   else:
-#     result_file = os.path.join(result_path, "output.json")
-#     with open(result_file, "r") as f:
-#       result = json.load(f)
-#     return {
-#       target: result
-#     }
+    Return:
+      {
+        ara: {
+          results
+        },
+        ara: {
+          results,
+        }
+      }
+  """
+  results_path = os.getenv("RESULTS_PATH", ".")
+  result_path = os.path.join(results_path, benchmark, target, timestamp)
+  if target == "ars":
+    ara_responses = {}
+    aras = glob.glob(os.path.join(result_path, "*"))
+    for ara in aras:
+      ara_name = os.path.basename(os.path.normpath(ara))
+      result_file = os.path.join(ara, "output.json")
+      with open(result_file, "r") as f:
+        result = json.load(f)
+      ara_responses[f"ars-{ara_name}"] = result
+    return ara_responses
+  else:
+    result_file = os.path.join(result_path, "output.json")
+    with open(result_file, "r") as f:
+      result = json.load(f)
+    return {
+      target: result
+    }
   
 
 # servers UI
