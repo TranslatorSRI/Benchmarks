@@ -13,11 +13,8 @@
     align-items: center;
   }
   .logo {
-    width: 150px;
-    @media (prefers-reduced-motion: no-preference) {
-      animation: App-logo-spin infinite 12s linear;
-
-    }
+    width: 250px;
+    margin-right: 20px;
     svg {
       width: 100%;
     }

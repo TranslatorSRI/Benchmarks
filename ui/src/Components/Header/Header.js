@@ -1,5 +1,5 @@
 import React from "react";
-import {ReactComponent as Logo} from '../../logo.svg';
+import {ReactComponent as Logo} from '../../Logo.svg';
 import styles from './Header.module.scss';
 
 const Header = ({children}) => {
@@ -10,7 +10,7 @@ const Header = ({children}) => {
         <div className={styles.container}>
           <div className={styles.left}>
             <div className={styles.logo}><Logo/></div>
-            <h1 className={styles.siteHead}>Translator Benchmarks</h1>
+            <h1 className={styles.siteHead}>Benchmarks</h1>
           </div>
           <div className={styles.right}>
             
