@@ -1,11 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './App.scss';
 import styles from './App.module.scss';
 import Graph from './Components/BenchmarkGraph/BenchmarkGraph';
 import Header from './Components/Header/Header';
 import Page from './Components/Page/Page';
-// import exampleBenchmarkList from './Utilities/available_benchmarks_example.json';
-// import exampleGraphData from './Utilities/benchmark_json_example.json';
 import StoreContext from './Utilities/StoreContext';
 import useStore from './Utilities/useStore';
 

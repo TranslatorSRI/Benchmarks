@@ -11,10 +11,6 @@ import Checkbox from "../Checkbox/Checkbox";
 import { capitalizeFirstLetter } from "../../Utilities/utilities";
 import StoreContext from '../../Utilities/StoreContext';
 
-const isObjectEmpty = (obj) => {
-  return Object.keys(obj).length === 0;
-}
-
 const Sidebar = () => {
   const store = useContext(StoreContext);
 
