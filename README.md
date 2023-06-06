@@ -47,12 +47,19 @@ evaluate_results('benchmark_name', 'results_dir OR results_dict')
 See the documentation of each function for more information.
 
 
-## Installation
+### Installation
 
 Install the repository as an editable package using `pip`.
 
 `pip install -e .`
 
+## UI
+These benchmarks come with a frontend for viewing the scored results.
 
-
-
+### Installation
+_Requires python 3.9._
+- Create a python virtual environment: `python3.9 -m venv benchmark_venv`
+- Activate your environment: `. ./benchmark_venv/bin/activate`
+- Install dependencies: `pip install -r requirements.txt`
+- Start the frontend server: `python server.py`
+- Open in your browser

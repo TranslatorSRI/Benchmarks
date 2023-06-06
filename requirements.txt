@@ -1,5 +1,8 @@
+fastapi
 httpx
 matplotlib
 numpy
+python-dotenv
 requests
 tqdm
+uvicorn

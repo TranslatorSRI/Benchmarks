@@ -1,0 +1,163 @@
+@import "./variables";
+@import "./typography";
+
+// Colors
+.bg-red {
+  background-color: $red;
+}
+.color-red {
+  color: $red;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
+.color-yellow {
+  color: $yellow;
+}
+.bg-green {
+  background-color: $green;
+}
+.color-green {
+  color: $green;
+}
+.bg-blue, .bg-blue-one {
+  background-color: $blueOne;
+}
+.color-blue, .color-blue-one  {
+  color: $blueOne;
+}
+.bg-blue-two {
+  background-color: $blueTwo;
+}
+.color-blue-two  {
+  color: $blueTwo;
+}
+.bg-purple, .bg-purple-one {
+  background-color: $purpleOne;
+}
+.color-purple, .color-purple-one  {
+  color: $purpleOne;
+}
+.bg-purple-two {
+  background-color: $purpleTwo;
+}
+.color-purple-two  {
+  color: $purpleTwo;
+}
+.bg-dark-grey {
+  background-color: $darkGray;
+}
+.color-dark-grey {
+  color: $darkGray;
+}
+.bg-mid-grey {
+  background-color: $midGray;
+}
+.color-mid-grey {
+  color: $midGray;
+}
+.bg-light-grey {
+  background-color: $lightGray;
+}
+.color-light-grey {
+  color: $lightGray;
+}
+.bg-black {
+  background-color: $black;
+}
+.color-black {
+  color: $black;
+}
+.bg-white {
+  background-color: $white;
+}
+.color-white {
+  color: $white;
+}
+
+// Drop Shadows
+.drop-shadow {
+  box-shadow: $dropShadow;
+  transition: box-shadow .25s ease;
+  &:hover {
+    box-shadow: $dropShadowHover;
+  }
+
+  &.pressed {
+    box-shadow: $dropShadowPressed;
+  }
+}
+
+// Circle
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 1px solid $black;
+}
+
+.container {
+  padding: 72px 20px;
+  margin: 0 auto;
+  max-width: $maxwidth;
+  width: 100%;
+}
+
+button {
+  font-size: $buttonSize;
+  font-weight: bold;
+  line-height: 1;
+  padding: 10px $xs;
+  border-radius: $defaultBorderRadius;
+  border: none;
+  cursor: pointer;
+  transition: $defaultBoxShadowAnim;
+  color: $white;
+  background-color: $purpleOne;
+  text-decoration: none;
+  display: inline-flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $s;
+  &:hover {
+    box-shadow: $dropShadowHover;
+  }
+}
+
+.link, a {
+  background-color: transparent;
+  box-shadow: none;
+  color: $purpleOne;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0;
+  &:hover {
+    text-decoration: underline;
+    box-shadow: none;
+  } 
+}
+
+.body {
+  .page-title {
+    color: $purpleTwo;
+  }
+}
+
+.header,.footer {
+  .container {
+    padding: 20px;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.highlight {
+  background-color: rgb(251, 247, 25);
+}
+
+.bold {
+  font-weight: 700;
+}

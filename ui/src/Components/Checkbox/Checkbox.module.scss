@@ -1,0 +1,54 @@
+@import "../../Assets/Styles/variables";
+
+// Checkbox 
+label.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: $s;
+  span {
+    font-size: 14px;
+  }
+  &:hover, &:focus {
+    cursor: pointer;
+    .circle {
+      box-shadow: $dropShadowHover;
+    }
+  } 
+  .circle {
+    display: grid;
+    place-content: center;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 2.5px;
+    transition: .5s transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: $white;
+    border: 1px solid $darkGray;
+    transition: $defaultBoxShadowAnim;
+    &:before {
+      display: grid;
+      place-content: center;
+      content: '\2713';
+      color: $white;
+      width: 18px;
+      height: 18px;
+      border-radius: 2.5px;
+      background-color: $purpleOne;
+      transition: all .25s ease ;
+      opacity: 0;
+    }
+  }
+  &.checked {
+    .circle {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  input[type="radio"], input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+}
