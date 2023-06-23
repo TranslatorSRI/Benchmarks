@@ -29,7 +29,7 @@
     },
     "bte": {
         "fetch": {
-            "url": "https://api.bte.ncats.io/v1/query"
+            "url": "https://bte.transltr.io/v1/query"
         }
     },
     "explanatory": {

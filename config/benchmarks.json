@@ -11,6 +11,12 @@
             "templates": ["treats"]
         }
     ],
+    "DrugCentral_creative": [
+        {
+            "source": "DrugCentral_creative",
+            "templates": ["treats"]
+        }
+    ],
     "three_hop": [
         {
             "source": "DrugMechDB",
