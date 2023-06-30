@@ -1,0 +1,20 @@
+@import "../../Assets/Styles/variables";
+
+.graph {
+  padding: 20px 0 20px 20px;
+}
+
+.graphTitle, .graphSubtitle {
+  text-align: center;
+}
+.graphSubtitle {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.graphContainer {
+  padding: 20px;
+  height: 400px;
+  box-shadow: $dropShadowHover;
+  border-radius: 5px;
+}

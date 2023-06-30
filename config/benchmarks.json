@@ -22,5 +22,11 @@
             "source": "IRDiRC",
             "templates": ["drug_treats_rare_disease"]
         }
+    ],
+    "CPIC": [
+        {
+            "source": "CPIC",
+            "templates": ["drug-to-gene"]
+        }
     ]
 }
