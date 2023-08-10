@@ -104,7 +104,7 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
                 with open(result_path) as file:
                     results_k = sorted(
                         json.load(file).get('message', {}).get('results', []),
-                        key=lambda r: r['score'],
+                        key=lambda r: r['analyses'][0]['score'],
                         reverse=True
                     )[:k]
         elif type(results) is dict:
@@ -115,7 +115,7 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
                 # Grab message from dict
                 results_k = sorted(
                     results.get(uid, {}).get('message', {}).get('results', []),
-                    key=lambda r: r['score'],
+                    key=lambda r: r['analyses'][0]['score'],
                     reverse=True
                 )[:k]
 
