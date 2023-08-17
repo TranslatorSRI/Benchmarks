@@ -1,0 +1,29 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "disease_id": {
+          "ids": [],
+	  "categories": [
+            "biolink:DiseaseOrPhenotypicFeature"
+	  ]
+        },
+        "drug_id": {
+          "categories": [
+            "biolink:SmallMolecule"
+          ]
+        }
+      },
+      "edges": {
+        "e01": {
+          "object": "disease_id",
+          "subject": "drug_id",
+          "predicates": [
+            "biolink:treats"
+          ],
+	  "knowledge_type": "inferred"
+        }
+      }
+    }
+  }
+}

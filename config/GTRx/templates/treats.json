@@ -1,0 +1,29 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "disease_omim": {
+          "ids": [],
+	  "categories": [
+            "biolink:DiseaseOrPhenotypicFeature"
+	  ]
+        },
+        "drug_inxight": {
+          "categories": [
+            "biolink:SmallMolecule"
+          ]
+        }
+      },
+      "edges": {
+        "e01": {
+          "object": "disease_omim",
+          "subject": "drug_inxight",
+          "predicates": [
+            "biolink:treats"
+          ],
+	  "knowledge_type": "inferred"
+        }
+      }
+    }
+  }
+}

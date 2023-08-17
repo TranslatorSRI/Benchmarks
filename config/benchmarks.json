@@ -34,5 +34,23 @@
             "source": "CPIC",
             "templates": ["drug-to-gene"]
         }
+    ],
+    "GTRx": [
+        {
+            "source": "GTRx",
+            "templates": ["treats"]
+        }
+    ],
+    "OOPD": [
+        {
+            "source": "OOPD",
+            "templates": ["treats"]
+        }
+    ],
+    "RareDisease": [
+        {
+            "source": "RareDisease",
+            "templates": ["treats"]
+        }
     ]
 }
