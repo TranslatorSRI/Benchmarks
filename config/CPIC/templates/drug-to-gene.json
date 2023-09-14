@@ -1,0 +1,25 @@
+{
+  "message": {
+    "query_graph": {
+      "nodes": {
+        "normalized_gene_id": {
+          "categories": [
+            "biolink:SmallMolecule"
+          ]
+        },
+        "normalized_drug_id": {
+          "ids": [],
+          "categories": [
+            "biolink:SmallMolecule"
+          ]
+        }
+      },
+      "edges": {
+        "e01": {
+          "object": "normalized_gene_id",
+          "subject": "normalized_drug_id"
+        }
+      }
+    }
+  }
+}

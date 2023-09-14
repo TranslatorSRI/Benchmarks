@@ -1,0 +1,23 @@
+@import "../../Assets/Styles/variables";
+
+.pageContainer {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: calc(100vh - 222px);
+  background-color: $white;
+  padding: 20px;
+}
+
+.body {
+  background-color: $lightGray;
+}
+
+.bodyContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.right {
+  padding: 20px;
+}

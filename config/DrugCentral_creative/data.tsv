@@ -1,0 +1,51 @@
+_id	chebi	drug_umls	disease_umls	drug_name	disease_name
+SQUNAWUMZGQQJD-UHFFFAOYSA-N	CHEBI:77069	UMLS:C0043606	UMLS:C0037763	eperisone,(+/-)-Eperisone,eperisone hydrochloride,eperisone HCl	Spasm
+STQGQHZAVUOBTE-VGBVRHCVSA-N	CHEBI:41977	UMLS:C0011015	UMLS:C0023465	daunorubicin,acetyladriamycin,cerubidin,daunoblastina,daunomycine,daunorubicine,Leukaemomycin C,rubidomycin,daunorubicin hydrochloride,daunorubicin citrate,daunorubicin HCl	Acute monocytic/monoblastic leukemia
+XEEYBQQBJWHFJM-UHFFFAOYSA-N	CHEBI:18248	UMLS:C0876769	UMLS:C0412694	iron,elemental iron (as carbonyl iron)	Magnetic resonance imaging of liver
+CJAVTWRYCDNHSM-UHFFFAOYSA-N	CHEBI:93826	UMLS:C0053105	UMLS:C0271638	benfluorex methanesulfonate,benfluorex maleate,benfluorex,benfluramate,benfluorex hydrochloride	Type 2 diabetes mellitus in obese
+JGSARLDLIJGVTE-MBNYWOFBSA-N	CHEBI:18208	UMLS:C0030827	UMLS:C0264515	penicillin g,benzylpenicillin,benzylpenicillin G,free penicillin G,benzylpenicillinic acid,penicillin G potassium,penicillin,penicillin G sodium,benzylpenicillin potassium,benzylpenicillin sodium	Gangrenous pneumonia
+AVAACINZEOAHHE-VFZPANTDSA-N	CHEBI:135928	UMLS:C0389169	UMLS:C0008325	doribax,doripenem,doripenem hydrate	Cholecystitis
+DKHGMERMDICWDU-GHDNBGIDSA-N	CHEBI:78277	UMLS:C0065936	UMLS:C0019088	menatetrenone,Menaquinone 4,Vitamin MK 4,vitamin k2	Hemorrhagic disease of the newborn due to vitamin K deficiency
+FDLYAMZZIXQODN-UHFFFAOYSA-N	CHEBI:83766	UMLS:C2347419	UMLS:C0341823	olaparib,lynparza,AZD2281	Epithelial tumor of ovary
+OIGNJSKKLXVSLS-VWUMJDOOSA-N	CHEBI:8378	UMLS:C0032950	UMLS:C0032533	prednisolone,prenolone,deltahydrocortisone,hydroretrocortin,hydroretrocortine,metacortandralone	Polymyalgia rheumatica
+ZXERDUOLZKYMJM-ZWECCWDJSA-N	CHEBI:43602	UMLS:C1143018	UMLS:C0267919	obeticholic acid,ocaliva,6-ECDCA,6ECDCA,INT-747	Primary cholangitis
+ANIAZGVDEUQPRI-ZJQCGQFWSA-N	CHEBI:134700	UMLS:C3712398	UMLS:C0020503	etelcalcetide,parsabiv,AMG 416,KAI-4169,etelcalcetide hydrochloride,etelcalcetide HCl,velcalcetide,velcalcetide hydrochloride	Secondary hyperparathyroidism
+XMAYWYJOQHXEEK-UHFFFAOYSA-N	CHEBI:47519	UMLS:C1517666	UMLS:C0030409	ketoconazole,(+/-)-ketoconazole,brizoral,fungarest,fungoral,ketoderm,ketoisdin,ketozoral,nizoral,nizral,panfungol,ketoconazol,R-41400	Paracoccidioidomycosis
+GMVPRGQOIOIIMI-DWKJAMRDSA-N	CHEBI:15544	UMLS:C0002335	UMLS:C0003492	alprostadil,prostaglandin E1,vasaprostan,PGE1,prostavasin	Coarctation of aorta
+ZULJGOSFKWFVRX-UHFFFAOYSA-N	CHEBI:135110	UMLS:C0071809	UMLS:C0233794	pramiracetam hydrochloride,pramiracetam HCl,pramistar,pramiracetam,amacetam,vinpotropil,pramiracetam sulfate,amacetam sulphate	Memory impairment
+ZOEFCCMDUURGSE-SQKVDDBVSA-N	CHEBI:3901	UMLS:C0010192	UMLS:C0010192	corticotropin (1-24),cosyntropin,tetracosactrin,tetracosapeptide,tetracosactide,tetracosactide acetate,tetracosactrin zinc	Cosyntropin preparation
+BJOLKYGKSZKIGU-UHFFFAOYSA-N	CHEBI:4753	UMLS:C0301366	UMLS:C0271093	echothiophate,ecothiopate,ecothiophate,phospholine,echothiophate iodide	Stargardt's disease
+ZGXJTSGNIOSYLO-UHFFFAOYSA-N	CHEBI:17549	UMLS:C0002563	UMLS:C0303920	ameluz,aminolevulinic acid,5-amino-4-oxopentanoic acid,aladerm,alasens,5-aminolevulinic acid,5-aminolevulinic acid hydrochloride,Gliolan,aminolevulinic acid hydrochloride,5-aminolevulinic acid HCl,aminolevulinic acid HCl	Fluorescent stain
+WJCNZQLZVWNLKY-UHFFFAOYSA-N	CHEBI:45979	UMLS:C0733597	UMLS:C0041648	thiabendazole,thiabendazol,thiabendole,thiabenzole,thibendole,thibenzol,thibenzole,tiabendazol,tiabendazole,bovizole,equizole,mintesol,mintezol,minzolum,omnizole	Infection by Uncinaria
+CHQOEHPMXSHGCL-UHFFFAOYSA-N	CHEBI:9728	UMLS:C0041040	UMLS:C0034063	trimethaphan,trimetaphan,trimetaphan camsilate,trimetaphan camsylate,trimethaphan camsylate	Pulmonary edema
+YSAUAVHXTIETRK-AATRIKPKSA-N	CHEBI:8654	UMLS:C0034235	UMLS:C0153303	pyrantel,pyrequan,pyrantel pamoate,pyrantel tartrate	Mixed intestinal infection due to Class Cestoda and/or Class Trematoda and/or Phylum Nemata
+XAGMUUZPGZWTRP-ZETCQYMHSA-N	CHEBI:31964	UMLS:C0175022	UMLS:C2887084	pazufloxacin mesilate,pazufloxacin mesylate,pazufloxacin	Sepsis due to Streptococcus pneumoniae
+NXFFJDQHYLNEJK-CYBMUJFWSA-N	CHEBI:135942	UMLS:C1956497	UMLS:C0242339	laropiprant,MK 0524,MK-0524	Dyslipidemia
+ZCGNOVWYSGBHAU-UHFFFAOYSA-N	CHEBI:134722	UMLS:C5392771	UMLS:C4304383	favipiravir,avigan,T-705	Influenza caused by pandemic influenza virus
+JZRWCGZRTZMZEH-UHFFFAOYSA-N	CHEBI:33283	UMLS:C0039840	UMLS:C0349464	thiamine,vitamin B1,thiamine hydrochloride,thiamine mononitrate,thiamine (vit B1),thiamine HCl	Korsakoff's psychosis
+MUMGGOZAMZWBJJ-DYKIIFRCSA-N	CHEBI:17347	UMLS:C0039601	UMLS:C0007347	testosterone,17beta-Testosterone	Bilateral orchidectomy
+GYHCTFXIZSNGJT-UHFFFAOYSA-N	CHEBI:32246	UMLS:C2710117	UMLS:C0085413	OPC 41061,jinarc,tolvaptan,samsca,OPC-41061	Polycystic kidney disease, adult type
+VVDGWALACJEJKG-UHFFFAOYSA-N	CHEBI:31703	UMLS:C0021961	UMLS:C0003515	iodamide,ametriodic acid,ametriodinic acid,iodamide meglumine	Aortography
+JAPHQRWPEGVNBT-UTUOFQBUSA-N	CHEBI:281056	UMLS:C0721422	UMLS:C0085697	loracarbef,lorabid,loribid,loracarbef hydrate	Chronic pyelonephritis
+UFULAYFCSOUIOV-UHFFFAOYSA-N	CHEBI:50386	UMLS:C0733368	UMLS:C2931187	mercaptamine hydrochloride,mercaptamine bitartrate,mercaptamine,cysteamine,thioethanolamine,2-mercaptoethylamine,mercamine,mercaptamin,mercaptoethylamine,cysteamine bitartrate,procysbi,cystagon,cysteamine hydrochloride,cysteamine HCl	Cystinosis
+DYKFCLLONBREIL-KVUCHLLUSA-N	CHEBI:50694	UMLS:C0026187	UMLS:C0275979	minocycline,minocycline hydrochloride,minocycline HCl	Infection by Campylobacter fetus
+LXMSZDCAJNLERA-ZHYRCANASA-N	CHEBI:9241	UMLS:C0591054	UMLS:C0003962	spironolactone,abbolactone,aldactone,aldopur,berlactone,euteberol,quimolactona,spirolactone	Ascites
+VVDGWALACJEJKG-UHFFFAOYSA-N	CHEBI:31703	UMLS:C0021961	UMLS:C0202691	iodamide,ametriodic acid,ametriodinic acid,iodamide meglumine	Computed tomography of entire head
+IMZMKUWMOSJXDT-UHFFFAOYSA-N	CHEBI:59773	UMLS:C0010347	UMLS:C0009769	sodium cromoglicate,cromolyn sodium,sodium cromolyn,sodium cromoglycate,cromoglicic acid,cromoglycic acid,cromolyn,cromoglycate,cromoglicate,intal,cromolyn disodium salt,cromolyn disodium,disodium cromoglycate	Giant papillary conjunctivitis
+GAWOVNGQYQVFLI-UHFFFAOYSA-N	CHEBI:135053	UMLS:C0082491	UMLS:C0423701	serenium,ethoxazene hydrochloride,ethoxazene,diamazol,etoxazene,ethoxazene HCl	Urinary tract pain
+MNIPYSSQXLZQLJ-UHFFFAOYSA-N	CHEBI:31159	UMLS:C0050403	UMLS:C1306835	aceclofenac,aceclofar,hifenac	Adhesive capsulitis of shoulder
+LQZAIAZUDWIVPM-NDQFZYFBSA-N	CHEBI:157598	UMLS:C2699888	UMLS:C0037952	taltirelin hydrate,ceredist,taltirelin tetrahydrate,TA-0910,TA 0910,taltirelin	Spinocerebellar disease
+DYKFCLLONBREIL-KVUCHLLUSA-N	CHEBI:50694	UMLS:C0026187	UMLS:C0031099	minocycline,minocycline hydrochloride,minocycline HCl	Periodontitis
+RCKMWOKWVGPNJF-UHFFFAOYSA-N	CHEBI:4527	UMLS:C0012191	UMLS:C0013882	diethylcarbamazine citrate,diethylcarbamazine,carbamazine,carbilazine,bitirazine,caricide,ethodryl,notezine	Lymphatic filariasis
+OBKXEAXTFZPCHS-UHFFFAOYSA-N	CHEBI:41500	UMLS:C0170531	UMLS:C0751753	phenylbutyrate,sodium 4-phenylbutanoate,sodium 4-phenylbutyrate,phenylbutanoic acid,buphenyl,pheburane,benzenebutyric acid,4-Phenylbutanoic acid,4-Phenylbutyric acid,gamma-Phenylbutanoic acid,sodium phenylbutyrate	Congenital hyperammonemia, type I
+DOAKLVKFURWEDJ-QCMAZARJSA-N	CHEBI:600103	UMLS:C1330170	UMLS:C1960924	daptomycin,cidecin,cubicin,dapcin,daptomicina,daptomycine,daptomycinum,LY146032,LY-146032,deptomycin	Right-sided Staphylococcus aureus endocarditis
+DHMTURDWPRKSOA-RUZDIDTESA-N	CHEBI:47097	UMLS:C1257385	UMLS:C0033300	lonafarnib,zokinvy,SCH 66336,SCH66336	Hutchinson-Gilford syndrome
+AVKUERGKIZMTKX-NJBDSQKTSA-N	CHEBI:28971	UMLS:C0002680	UMLS:C0275761	ampicillin hydrate,ampicillin,ampicillin sodium,ampicillin trihydrate	Pneumococcal pharyngitis
+GPXBXXGIAQBQNI-UHFFFAOYSA-N	CHEBI:63637	UMLS:C1832009	UMLS:C0878675	PLX-4032,RO 5185426,RG 7204,vemurafenib,zelboraf,Ro 51-85426	Erdheim-Chester Disease
+QFVAWNPSRQWSDU-UHFFFAOYSA-N	CHEBI:31477	UMLS:C0101804	UMLS:C0032024	dibenzthionum,sulbentine,afungin,carbothialdine,dibenzthion,dibenzthione,sulbentin	Pityriasis
+DLGOEMSEDOSKAD-UHFFFAOYSA-N	CHEBI:3423	UMLS:C1516301	UMLS:C0555198	carmustine,becenun,carmubris,carmustin,nitrumon	Glioma, malignant
+OIGNJSKKLXVSLS-VWUMJDOOSA-N	CHEBI:8378	UMLS:C0032950	UMLS:C0406486	prednisolone,prenolone,deltahydrocortisone,hydroretrocortin,hydroretrocortine,metacortandralone	Ocular rosacea
+VVDGWALACJEJKG-UHFFFAOYSA-N	CHEBI:31703	UMLS:C0021961	UMLS:C0020709	iodamide,ametriodic acid,ametriodinic acid,iodamide meglumine	Hysterosalpingogram
+APKFDSVGJQXUKY-INPOYWNPSA-N	CHEBI:2682	UMLS:C0281209	UMLS:C0276648	amphotericin B,abelcet,abelecet,amphocin,amphozone,apothecon,fungilin,Amphotericin B liposome	Mycotic endocarditis
+DTXXSJZBSTYZKE-ZDQKKZTESA-N	CHEBI:31801	UMLS:C0043872	UMLS:C0152081	22-oxacalcitriol,maxacalcitol,oxarol	Pustular psoriasis
+PUDHBTGHUJUUFI-PURAGXGVSA-N	CHEBI:135901	UMLS:C0051846	UMLS:C0001207	lanreotide,angiopeptin,ipstyl,lanreotide autogel,somatulin-autogel,somatuline,lanreotide acetate	Hypersomatotropic gigantism

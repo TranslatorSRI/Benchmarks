@@ -11,10 +11,46 @@
             "templates": ["treats"]
         }
     ],
+    "DrugCentral_creative": [
+        {
+            "source": "DrugCentral_creative",
+            "templates": ["treats"]
+        }
+    ],
     "three_hop": [
         {
             "source": "DrugMechDB",
             "templates": ["three_hop"]
+        }
+    ],
+    "drug_treats_rare_disease": [
+        {
+            "source": "IRDiRC",
+            "templates": ["drug_treats_rare_disease"]
+        }
+    ],
+    "CPIC": [
+        {
+            "source": "CPIC",
+            "templates": ["drug-to-gene"]
+        }
+    ],
+    "GTRx": [
+        {
+            "source": "GTRx",
+            "templates": ["treats"]
+        }
+    ],
+    "OOPD": [
+        {
+            "source": "OOPD",
+            "templates": ["treats"]
+        }
+    ],
+    "RareDisease": [
+        {
+            "source": "RareDisease",
+            "templates": ["treats"]
         }
     ]
 }

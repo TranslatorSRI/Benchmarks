@@ -1,0 +1,6 @@
+@import "./Assets/Styles/variables";
+
+.graphsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,121 @@
+@import "../../Assets/Styles/variables";
+
+.header {
+  box-shadow: $dropShadow;
+  position: relative;
+  z-index: 10;
+  .siteHead {
+    font-size: 35px;
+  }
+  .right, .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    width: 250px;
+    margin-right: 20px;
+    svg {
+      width: 100%;
+    }
+  }
+  .topBar {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      h5,h1,.h1 {
+        margin-bottom: 0;
+      }
+      .right {
+        button, a {
+          color: $darkGray;
+          font-size: 16px;
+          background-color: transparent;
+          text-decoration: none;
+          font-weight: 700;
+          margin-bottom: 0;
+          margin-right: $m;
+          display: inline-flex;
+          align-items: center;
+          line-height: 1;
+          padding: 10px 8px;
+          width: fit-content;
+          box-shadow: none;
+          svg {
+            margin-right: 8px;
+          }
+          &:hover {
+            box-shadow: none;
+          }
+        }
+        a:last-of-type {
+          margin-right: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  .toolbar {
+    background-color: $lightGray;
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .left {
+      button,label {
+        margin-bottom: 0;
+      }
+
+    }
+    .right {
+      a {
+        font-size: $bodyOneSize;
+        color: $darkGray;
+        text-decoration: none;
+        margin-right: $m;
+        margin-bottom: 0;
+        position: relative;
+        &:after {
+          position: absolute;
+          top: 110%;
+          left: 50%;
+          transform: translateX(-50%);
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: $purpleOne;
+          opacity: 0;
+          transition: $defaultAnim;
+        }
+        &.active {
+          color: $purpleOne;
+          font-weight: bold;
+          &:after {
+            opacity: 1;
+          }
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+        &:hover {
+          color: $black;
+          &:after {
+            background-color: $black;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
