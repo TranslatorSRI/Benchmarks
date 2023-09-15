@@ -1,7 +1,7 @@
 {
     "ars": {
         "fetch": {
-            "url": "https://ars-prod.transltr.io/ars/api"
+            "url": "https://ars.ci.transltr.io/ars/api"
         }
     },
     "aragorn": {
@@ -29,7 +29,7 @@
     },
     "arax": {
         "fetch": {
-            "url": "https://arax.ncats.io/api/arax/v1.2/query"
+            "url": "https://arax.ci.transltr.io/api/arax/v1.4/query"
         }
     },
     "bte": {
