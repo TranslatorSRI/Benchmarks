@@ -140,7 +140,7 @@ def benchmark_messages(benchmark: str) -> Tuple[List[str], List[dict]]:
 
     return list(messages.keys()), list(messages.values())
 
-def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict]]:
+def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict], Dict[str, str]]:
     """
     For each query in the specified benchmark, compute its UID and the set of
     (qnode_id, CURIE) pairs for each unpinned qnode, which is need to discern
@@ -153,12 +153,12 @@ def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict]]:
     Returns
         (uids, gts, normalizer)
             uids: UIDs of each query in the benchmark.
-            gts: set of a list of tuple pairs (qnode_id, CURIE) that represent
+            ground_truths: set of a list of tuple pairs (qnode_id, CURIE) that represent
                 the set of relevant results.
             normalizer: Map from CURIEs to the equivalent, preferred CURIE
                 representing the same entity (from Node Normalizer).
     """
-    uid_gts = defaultdict(list)
+    uid_ground_truths = defaultdict(list)
     curies = []
     for source in BENCHMARKS[benchmark]:
         source_dir = CONFIG_DIR / source['source']
@@ -189,18 +189,18 @@ def benchmark_ground_truth(benchmark: str) -> Tuple[List[str], List[dict]]:
                     qnode_id: curie for qnode_id, curie in zip(qnode_ids, datum)
                 }
                 uid = get_uid(source['source'], template, datum_dict, template_dict)
-                gt = [(slot_id, datum_dict[slot_id]) for slot_id in slot_ids]
-                uid_gts[uid].append(gt)
+                ground_truth = [(slot_id, datum_dict[slot_id]) for slot_id in slot_ids]
+                uid_ground_truths[uid].append(ground_truth)
                 curies.extend([datum_dict[slot_id] for slot_id in slot_ids])
 
     # Normalize CURIEs and put the results in a set (for quick contains check)
     normalizer = get_normalizer(curies)
-    uids, gts = [], []
-    for uid, gt in uid_gts.items():
+    uids, ground_truths = [], []
+    for uid, ground_truth in uid_ground_truths.items():
         uids.append(uid)
         results = set()
-        for result in gt:
+        for result in ground_truth:
             results.add(tuple(sorted([(slot_id, normalizer.get(curie, curie)) for slot_id, curie in result])))
-        gts.append(results)
+        ground_truths.append(results)
 
-    return uids, gts, normalizer
+    return uids, ground_truths, normalizer
