@@ -24,7 +24,7 @@
     },
     "arax": {
         "fetch": {
-            "url": "https://arax.ncats.io/api/arax/v1.2/query"
+            "url": "https://arax.ncats.io/api/arax/v1.4/query"
         }
     },
     "bte": {
