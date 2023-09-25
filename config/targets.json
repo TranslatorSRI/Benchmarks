@@ -6,7 +6,7 @@
     },
     "aragorn": {
         "fetch": {
-            "url": "https://aragorn.renci.org/aragorn/query",
+            "url": "https://aragorn.renci.org/1.4/query",
             "workflow": [
                 {"id": "lookup"},
                 {"id": "overlay_connect_knodes"},
@@ -14,14 +14,14 @@
             ]
         },
         "fetch_unscored": {
-            "url": "https://aragorn.renci.org/aragorn/query",
+            "url": "https://aragorn.renci.org/1.4/query",
             "workflow": [
                 {"id": "lookup"},
                 {"id": "overlay_connect_knodes"}
             ]
         },
         "score": {
-            "url": "https://aragorn.renci.org/aragorn/query",
+            "url": "https://aragorn.renci.org/1.4/query",
             "workflow": [
                 {"id": "score"}
             ]
@@ -29,7 +29,7 @@
     },
     "arax": {
         "fetch": {
-            "url": "https://arax.ci.transltr.io/api/arax/v1.4/query"
+            "url": "https://arax.ncats.io/api/arax/v1.4/query"
         }
     },
     "bte": {
@@ -37,14 +37,9 @@
             "url": "https://bte.transltr.io/v1/query"
         }
     },
-    "explanatory": {
-        "fetch": {
-            "url": "https://explanatory-agent.azurewebsites.net/v1.2/query"
-        }
-    },
     "improving": {
         "fetch": {
-            "url": "https://ia.healthdatascience.cloud/api/v1.2/query"
+            "url": "https://ia.healthdatascience.cloud/api/v1.4/query"
         }
     }
 }
