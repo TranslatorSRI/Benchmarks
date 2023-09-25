@@ -15,7 +15,8 @@ from .utils.asyncio import gather
 from .utils.benchmark import benchmark_messages
 from .utils.constants import CONFIG_DIR
 
-MAX_QUERY_TIME = os.getenv("MAX_QUERY_TIME", 300)
+# double the ARS timeout, just in case. The ARS should set all queries to error after 5 mins
+MAX_QUERY_TIME = os.getenv("MAX_QUERY_TIME", 600)
 
 def fetch_results(
     benchmark: str,
@@ -162,10 +163,10 @@ async def send_request_to_ars(
     # Get all children queries
     response = await send_request(uid, f"{url}/messages/{parent_pk}?trace=y", msg, request_type="get")
 
+    start_time = time.time()
     for child in response.get("children", []):
         child_pk = child["message"]
         infores = child["actor"]["inforesid"].split("infores:")[1]
-        start_time = time.time()
         current_time = time.time()
         # while we stay within the query max time
         while current_time - start_time <= MAX_QUERY_TIME:
@@ -184,6 +185,17 @@ async def send_request_to_ars(
         Path(os.path.join(output_dir, infores)).mkdir(parents=True, exist_ok=True)
         with open(os.path.join(output_dir, infores, f"{uid}.json"), "w") as file:
             json.dump(response, file)
+    
+    # After getting all individual ARA responses, get and save the merged version
+    response = await send_request(uid, f"{url}/messages/{parent_pk}", msg, request_type="get")
+    merged_pk = response.get("fields", {}).get("merged_version")
+    if merged_pk is None:
+        raise Exception("Failed to get the ARS merged message.")
+    
+    merged_message = await send_request(uid, f"{url}/messages/{merged_pk}", msg, request_type="get")
+    Path(os.path.join(output_dir, "ars")).mkdir(parents=True, exist_ok=True)
+    with open(os.path.join(output_dir, "ars", f"{uid}.json"), "w") as file:
+        json.dump(merged_message, file)
 
     if pbar:
         pbar.update()
