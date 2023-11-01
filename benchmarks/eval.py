@@ -3,6 +3,7 @@ import collections.abc
 import json
 from itertools import zip_longest
 from pathlib import Path
+import os
 from typing import Sequence, Tuple, Union
 import warnings
 
@@ -13,7 +14,12 @@ from matplotlib.axes import Axes
 from benchmarks.utils.benchmark import benchmark_ground_truth
 
 
-def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use_xref=True) -> 'BenchmarkResults':
+def evaluate_results(
+    benchmark: str,
+    results_dir: Union[str, dict],
+    k: int = 50,
+    use_xref=True,
+) -> 'BenchmarkResults':
     """
     Computes metrics on the query results associated with the specified
     benchmark. See BenchmarkResults for the complete list of metrics.
@@ -30,40 +36,7 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
     Returns:
         BenchmarkResults object with functions for getting and plotting metrics.
     """
-    uids, gts, normalizer = benchmark_ground_truth(benchmark)
-
-    if type(results) is str:
-        results_dir = Path(results)
-
-    if use_xref:
-        # Use the biolink:xref attribute to add additional aliases to the normalizer
-        for uid in uids:
-            if type(results) is str:
-                result_path = results_dir / f'{uid}.json'
-                if result_path.exists():
-                    with open(result_path) as file:
-                        knowledge_graph = json.load(file).get('message', {}).get('knowledge_graph', None)
-                else:
-                    knowledge_graph = None
-            else:
-                knowledge_graph = results.get(uid, {}).get('message', {}).get('knowledge_graph', None)
-
-            if knowledge_graph is None:
-                continue
-
-            for curie, curie_info in knowledge_graph['nodes'].items():
-                for attribute in curie_info.get('attributes', []):
-                    if attribute.get('attribute_type_id', None) != 'biolink:xref':
-                        continue
-                    
-                    aliases = set([curie] + [alias for alias in attribute.get('value', [])])
-                    for alias in aliases:
-                        if alias not in normalizer:
-                            continue
-
-                        for a in aliases:
-                            normalizer[a] = normalizer[alias]
-                        break
+    uids, ground_truths, normalizer = benchmark_ground_truth(benchmark)
 
     output_dict = {
         'k': k,
@@ -78,7 +51,7 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
                 'recall_at_k': [],
                 'average_precision_at_k': [],
                 'relevant_result_ranks': []
-            } 
+            }
             for uid in uids
         }
     }
@@ -87,46 +60,65 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
     tp_k = np.zeros(k)
     map_k = np.zeros(k)
     mrr = 0
-    for uid, gt in zip(uids, gts):
+    for uid, ground_truth in zip(uids, ground_truths):
         """
-        `gt` is a set of a list of (qnode_id, CURIE) pairs. Each list of 
+        `ground_truth` is a set of a list of (qnode_id, CURIE) pairs. Each list of 
         (qnode_id, CURIE) pairs defines a relevant result. A result is
-        linked/matched to a list of (qnode_id, CURIE) pairs iff the bound
+        linked/matched to a list of (qnode_id, CURIE) pairs if the bound
         CURIE equals the ground truth CURIE for each (qnode_id, CURIE) pair.
         """
-        if type(results) is str:
+        message = {}
+
+        if type(results_dir) is str:
             # Load precomputed result for this query
-            result_path = results_dir / f'{uid}.json'
+            result_path = Path(results_dir, f'{uid}.json')
             if not result_path.exists():
                 warnings.warn(f'Results for query {uid} were not found in {results_dir}.')
-                results_k = []
             else:
                 with open(result_path) as file:
-                    results_k = sorted(
-                        json.load(file).get('message', {}).get('results', []),
-                        key=lambda r: r['analyses'][0]['score'],
-                        reverse=True
-                    )[:k]
-        elif type(results) is dict:
-            if uid not in results:
+                    response = json.load(file)
+                    message = response.get('message', None)
+                    if message is None:
+                        # most likely came from the ARS
+                        message = ((response.get('fields') or {}).get('data') or {}).get('message', {})
+        elif type(results_dir) is dict:
+            if uid not in results_dir:
                 warnings.warn(f'Results for query {uid} were not found.')
-                results_k = []
             else:
                 # Grab message from dict
-                results_k = sorted(
-                    results.get(uid, {}).get('message', {}).get('results', []),
-                    key=lambda r: r['analyses'][0]['score'],
-                    reverse=True
-                )[:k]
+                message = results_dir.get(uid, {}).get("message", {})
+
+        results_k = sorted(
+            message.get('results', []),
+            key=lambda r: r['analyses'][0].get('score', 0),
+            reverse=True
+        )[:k]
+
+        if use_xref:
+            # Use the biolink:xref attribute to add additional aliases to the normalizer
+            knowledge_graph = message.get("knowledge_graph", {})
+            for curie, curie_info in knowledge_graph.get('nodes', {}).items():
+                for attribute in curie_info.get('attributes', []):
+                    if attribute.get('attribute_type_id', None) != 'biolink:xref':
+                        continue
+                    
+                    aliases = set([curie] + [alias for alias in attribute.get('value', [])])
+                    for alias in aliases:
+                        if alias not in normalizer:
+                            continue
+
+                        for a in aliases:
+                            normalizer[a] = normalizer[alias]
+                        break
 
         uid_info = output_dict['queries'][uid]
 
         # Compute unpinned qnode_ids (aka template slot_ids)
-        slot_ids = [slot_id for slot_id, _ in next(iter(gt))]
+        slot_ids = [slot_id for slot_id, _ in next(iter(ground_truth))]
 
         # Compute metrics for each query
         tp_count, ap_numerator = 0, 0
-        num_relevant = len(gt)
+        num_relevant = len(ground_truth)
         ap_k = np.zeros(k)
         rr = 0
         for index, result in zip_longest(range(k), results_k):
@@ -136,7 +128,7 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
                 # For now, only considers first CURIE bound to slot_id
                 pred = [(slot_id, node_bindings[slot_id][0]['id']) for slot_id in slot_ids]
                 normalized_pred = tuple(sorted((slot_id, normalizer.get(curie, curie)) for slot_id, curie in pred))
-                if normalized_pred in gt:
+                if normalized_pred in ground_truth:
                     tp_count += 1
                     ap_numerator += tp_count / (index + 1)
 
@@ -145,8 +137,8 @@ def evaluate_results(benchmark: str, results: Union[str, dict], k: int = 50, use
 
                     uid_info['relevant_result_ranks'].append(index + 1)
 
-                    # Remove result from gt to prevent double counting
-                    gt.remove(normalized_pred)
+                    # Remove result from ground_truth to prevent double counting
+                    ground_truth.remove(normalized_pred)
 
             # Update once per result
             tp_k[index] += tp_count
@@ -327,8 +319,9 @@ class BenchmarkResults:
     def plot_top_k_accuracy(self, ax: Axes = None, label: str = None) -> Axes:
         self._plot_metric('k', 'top_k_acc', ax, label=label, xlabel='$k$', ylabel='Top-$k$ Accuracy', ylim=(0,1))
 
-    def to_json(self, path, indent=4):
-        with open(path, 'w') as file:
+    def to_json(self, output_dir, indent=4):
+        output_path = os.path.join(output_dir, "output.json")
+        with open(output_path, 'w') as file:
             json.dump(self.output_dict, file, indent=indent)
 
     @property

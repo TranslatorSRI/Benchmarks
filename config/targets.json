@@ -1,4 +1,9 @@
 {
+    "ars": {
+        "fetch": {
+            "url": "https://ars.ci.transltr.io/ars/api"
+        }
+    },
     "aragorn": {
         "fetch": {
             "url": "https://aragorn.renci.org/1.4/query",

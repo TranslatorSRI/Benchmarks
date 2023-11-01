@@ -1,7 +1,8 @@
 from argparse import ArgumentParser
-from pathlib import Path
-
 from matplotlib import pyplot as plt
+from pathlib import Path
+import os
+
 
 from benchmarks.eval import evaluate_results
 
@@ -16,41 +17,15 @@ metrics = {
     'Mean Reciprocal Rank\t': 'mean_reciprocal_rank'
 }
 
-def main():
-    parser = ArgumentParser(description="Run a benchmark on a set of results.")
-    parser.add_argument(
-        'benchmark',
-        type=str,
-        help='Name of benchmark to run; see benchmarks.json for a list.'
-    )
-    parser.add_argument(
-        'results_dir',
-        type=str,
-        help='Directory containing results of the benchmark queries.'
-    )
-    parser.add_argument(
-        '--k',
-        default=20,
-        type=int,
-        help='Number of results of each query to consider.'
-    )
-    parser.add_argument(
-        '--plots_dir',
-        type=str,
-        help='Directory to save plots that visualize the results.'
+def evaluate_ara_results(results_dir, args):
+    results = evaluate_results(
+        args.benchmark,
+        results_dir,
+        k=args.k
     )
 
-    parser.add_argument(
-        '--json',
-        type=str,
-        help='Path to save a JSON file summarizing evaluation.'
-    )
-    args = parser.parse_args()
-
-    results = evaluate_results(args.benchmark, args.results_dir, k=args.k)
-
-    if args.plots_dir is not None:
-        plots_dir = Path(args.plots_dir)
+    if args.plots:
+        plots_dir = Path(results_dir)
         assert plots_dir.exists(), f"{plots_dir} does not exist."
 
         results.plot_precision()
@@ -70,13 +45,13 @@ def main():
         ks.pop()
     ks.append(args.k)
 
-    if args.json is not None:
-        results.to_json(args.json)
+    if args.json:
+        results.to_json(results_dir)
 
     output = [
         '',
         "Benchmark: {}".format(args.benchmark),
-        "Results Directory: {}\n".format(args.results_dir),
+        "Results Directory: {}\n".format(results_dir),
         "\t\t\t{}".format('\t'.join(['k={}'.format(k) for k in ks]))
     ]
 
@@ -94,3 +69,46 @@ def main():
     output.append('')
 
     print("\n".join(output))
+
+def main():
+    parser = ArgumentParser(description="Run a benchmark on a set of results.")
+    parser.add_argument(
+        'benchmark',
+        type=str,
+        help='Name of benchmark to run; see benchmarks.json for a list.'
+    )
+    parser.add_argument(
+        'target',
+        type=str,
+        help='Name of target of query; see targets.json for a list.'
+    )
+    parser.add_argument(
+        'results_dir',
+        type=str,
+        help='Directory containing results of the benchmark queries. Should be a timestamp folder.'
+    )
+    parser.add_argument(
+        '--k',
+        default=20,
+        type=int,
+        help='Number of results of each query to consider.'
+    )
+    parser.add_argument(
+        '--plots',
+        action='store_true',
+        help='If true, save plots that visualize the results. Defaults to false.'
+    )
+    parser.add_argument(
+        '--json',
+        action='store_false',
+        help='If true, save a JSON file summarizing evaluation. Defaults to true.'
+    )
+    args = parser.parse_args()
+
+    if args.target == 'ars':
+        # evaluate results for each ARA
+        for ara in [ara for ara in os.listdir(args.results_dir) if os.path.isdir(args.results_dir)]:
+            results_dir = os.path.join(args.results_dir, ara)
+            evaluate_ara_results(results_dir, args)
+    else:
+        evaluate_ara_results(args.results_dir, args)

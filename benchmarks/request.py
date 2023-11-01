@@ -1,16 +1,22 @@
 import asyncio
+from datetime import datetime
 import json
 from copy import deepcopy
 from pathlib import Path
+import time
 from typing import Optional, Sequence
+import os
 
 import httpx
 from tqdm import tqdm
+from reasoner_pydantic import Response
 
 from .utils.asyncio import gather
 from .utils.benchmark import benchmark_messages
 from .utils.constants import CONFIG_DIR
 
+# double the ARS timeout, just in case. The ARS should set all queries to error after 5 mins
+MAX_QUERY_TIME = os.getenv("MAX_QUERY_TIME", 600)
 
 def fetch_results(
     benchmark: str,
@@ -70,15 +76,130 @@ def fetch_results(
         
         uids = u
         messages = m
-                
-    send_requests_store_results(
-        uids,
-        messages,
-        url,
-        results_dir,
-        num_concurrent_requests,
-        progress
-    )
+
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_dir = os.path.join(results_dir, benchmark, target, timestamp)
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+
+    if target == "ars":
+        send_requests_to_ars(
+            uids,
+            messages,
+            url,
+            output_dir,
+            num_concurrent_requests,
+            progress,
+        )
+
+    else:
+
+        send_requests_store_results(
+            uids,
+            messages,
+            url,
+            output_dir,
+            num_concurrent_requests,
+            progress,
+        )
+
+
+def send_requests_to_ars(
+    uids: Sequence[str],
+    messages: Sequence[dict],
+    url: str,
+    output_dir: str,
+    num_concurrent_requests: int,
+    progress: bool
+):
+    pbar = None if progress == False else tqdm(total=len(uids))
+    coroutines = [
+        send_request_to_ars(uid, msg, url, output_dir, pbar)
+        for uid, msg in zip(uids, messages)
+    ]
+    asyncio.run(gather(*coroutines, limit=num_concurrent_requests))
+
+    if pbar is not None:
+        pbar.close()
+
+async def send_request(uid: str, url: str, msg: dict, request_type: str = "post"):
+    async with httpx.AsyncClient(timeout=None) as client:
+        attempts = 0
+        while True:
+            response = None
+            try:
+                if request_type == "get":
+                    response = await getattr(client, request_type)(url)
+                else:
+                    response = await getattr(client, request_type)(url, json=msg)
+                response.raise_for_status()
+                response_json = response.json()
+                break
+            except Exception as e:
+                print(e)
+
+                attempts += 1
+                if attempts >= 3:
+                    response_json = deepcopy(msg)
+                    response_json['benchmarks'] = f'Fetch request failed {attempts} times.'
+                    break
+
+                print(f'Retrying in 5 seconds...')
+                await asyncio.sleep(5)
+
+    return response_json
+
+async def send_request_to_ars(
+    uid: str,
+    msg: dict,
+    url: str,
+    output_dir: str,
+    pbar: Optional[tqdm]
+):
+    # submit query to ARS
+    response = await send_request(uid, f"{url}/submit", msg)
+    # get parent pk
+    parent_pk = response["pk"]
+
+    # Get all children queries
+    response = await send_request(uid, f"{url}/messages/{parent_pk}?trace=y", msg, request_type="get")
+
+    start_time = time.time()
+    for child in response.get("children", []):
+        child_pk = child["message"]
+        infores = child["actor"]["inforesid"].split("infores:")[1]
+        current_time = time.time()
+        # while we stay within the query max time
+        while current_time - start_time <= MAX_QUERY_TIME:
+            # get query status of child query
+            response = await send_request(uid, f"{url}/messages/{child_pk}", msg, request_type="get")
+            status = response.get("fields", {}).get("status")
+            if status == "Done":
+                break
+            if status == "Error":
+                # query errored, need to capture
+                break
+            current_time = time.time()
+            await asyncio.sleep(5)
+        
+        # Store results
+        Path(os.path.join(output_dir, infores)).mkdir(parents=True, exist_ok=True)
+        with open(os.path.join(output_dir, infores, f"{uid}.json"), "w") as file:
+            json.dump(response, file)
+    
+    # After getting all individual ARA responses, get and save the merged version
+    response = await send_request(uid, f"{url}/messages/{parent_pk}", msg, request_type="get")
+    merged_pk = response.get("fields", {}).get("merged_version")
+    if merged_pk is None:
+        raise Exception("Failed to get the ARS merged message.")
+    
+    merged_message = await send_request(uid, f"{url}/messages/{merged_pk}", msg, request_type="get")
+    Path(os.path.join(output_dir, "ars")).mkdir(parents=True, exist_ok=True)
+    with open(os.path.join(output_dir, "ars", f"{uid}.json"), "w") as file:
+        json.dump(merged_message, file)
+
+    if pbar:
+        pbar.update()
+
 
 def score_results(
     unscored_results_dir: str,
@@ -133,13 +254,13 @@ def send_requests_store_results(
     uids: Sequence[str],
     messages: Sequence[dict],
     url: str,
-    results_dir: str,
+    output_dir: str,
     num_concurrent_requests: int,
     progress: bool
 ):
     pbar = None if progress == False else tqdm(total=len(uids))
     coroutines = [
-        send_request_store_result(uid, msg, url, results_dir, pbar)
+        send_request_store_result(uid, msg, url, output_dir, pbar)
         for uid, msg in zip(uids, messages)
     ]
     asyncio.run(gather(*coroutines, limit=num_concurrent_requests))
@@ -151,7 +272,7 @@ async def send_request_store_result(
     uid: str,
     msg: dict,
     url: str,
-    results_dir: str,
+    output_dir: str,
     pbar: Optional[tqdm]
 ):
     # Make network call
@@ -163,7 +284,9 @@ async def send_request_store_result(
                 response = await client.post(url, json=msg)
                 response.raise_for_status()
                 response_json = response.json()
-            except:
+                Response.parse_obj(response_json)
+            except Exception as e:
+                print(e)
                 if response is not None:
                     print(f'{response.status_code} {response.reason_phrase}')
                     print(uid)
@@ -180,7 +303,7 @@ async def send_request_store_result(
             break
 
     # Store results
-    with open(f'{results_dir}/{uid}.json', 'w') as file:
+    with open(f'{output_dir}/{uid}.json', 'w') as file:
         json.dump(response_json, file)
 
     if pbar:

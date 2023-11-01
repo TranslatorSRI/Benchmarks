@@ -1,12 +1,12 @@
 
 import time
-from typing import Sequence
+from typing import Sequence, Dict
 
 import requests
 
 node_normalizer_url = 'https://nodenormalization-sri.renci.org/get_normalized_nodes'
 
-def get_normalizer(curies: Sequence[str]):
+def get_normalizer(curies: Sequence[str]) -> Dict[str, str]:
     """
     Given a list of CURIEs `curies`, build and return a `normalizer` dictionary,
     which maps all the CURIEs equivalent to those in `curies` each to its
