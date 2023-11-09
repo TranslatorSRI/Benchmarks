@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+import asyncio
 
 from benchmarks.request import score_results
 
@@ -28,11 +29,9 @@ def main():
     )
     args = parser.parse_args()
 
-    score_results(
+    asyncio.run(score_results(
         args.unscored_results_dir,
         args.target,
         args.scored_results_dir,
         num_concurrent_requests=args.n
-    )
-
-
+    ))

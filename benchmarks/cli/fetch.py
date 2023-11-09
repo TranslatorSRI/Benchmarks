@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+import asyncio
 
 from benchmarks.request import fetch_results
 
@@ -38,13 +39,13 @@ def main():
     )
     args = parser.parse_args()
 
-    fetch_results(
+    output_dir = asyncio.run(fetch_results(
         args.benchmark,
         args.target,
         args.results_dir,
         overwrite=args.overwrite,
         scored=not args.unscored,
         num_concurrent_requests=args.n
-    )
+    ))
 
-
+    print(f"Results saved to: {output_dir}")

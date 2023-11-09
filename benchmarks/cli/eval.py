@@ -1,4 +1,6 @@
 from argparse import ArgumentParser
+import base64
+import io
 from matplotlib import pyplot as plt
 from pathlib import Path
 import os
@@ -17,40 +19,63 @@ metrics = {
     'Mean Reciprocal Rank\t': 'mean_reciprocal_rank'
 }
 
-def evaluate_ara_results(results_dir, args):
+def evaluate_ara_results(
+    benchmark,
+    results_dir,
+    k: int = 20,
+    save_plots: bool = False,
+    save_json: bool = False,
+):
     results = evaluate_results(
-        args.benchmark,
+        benchmark,
         results_dir,
-        k=args.k
+        k=k,
     )
+    imgs = {}
 
-    if args.plots:
+    if save_plots:
         plots_dir = Path(results_dir)
         assert plots_dir.exists(), f"{plots_dir} does not exist."
 
         results.plot_precision()
         plt.gcf().savefig(plots_dir / 'precision.png')
+        with io.BytesIO() as buffer:
+            plt.gcf().savefig(buffer, format="png")
+            buffer.seek(0)
+            imgs["precision"] = base64.b64encode(buffer.read()).decode()
         
         results.plot_recall()
         plt.gcf().savefig(plots_dir / 'recall.png')
+        with io.BytesIO() as buffer:
+            plt.gcf().savefig(buffer, format="png")
+            buffer.seek(0)
+            imgs["recall"] = base64.b64encode(buffer.read()).decode()
         
         results.plot_mAP()
         plt.gcf().savefig(plots_dir / 'mAP.png')
+        with io.BytesIO() as buffer:
+            plt.gcf().savefig(buffer, format="png")
+            buffer.seek(0)
+            imgs["mAP"] = base64.b64encode(buffer.read()).decode()
 
         results.plot_top_k_accuracy()
         plt.gcf().savefig(plots_dir / 'top_k_accuracy.png')
+        with io.BytesIO() as buffer:
+            plt.gcf().savefig(buffer, format="png")
+            buffer.seek(0)
+            imgs["top_k_accuracy"] = base64.b64encode(buffer.read()).decode()
 
     ks = [1, 5, 10, 20, 50, 100, 200, 500]
-    while ks[-1] >= args.k:
+    while ks[-1] >= k:
         ks.pop()
-    ks.append(args.k)
+    ks.append(k)
 
-    if args.json:
+    if save_json:
         results.to_json(results_dir)
 
     output = [
         '',
-        "Benchmark: {}".format(args.benchmark),
+        "Benchmark: {}".format(benchmark),
         "Results Directory: {}\n".format(results_dir),
         "\t\t\t{}".format('\t'.join(['k={}'.format(k) for k in ks]))
     ]
@@ -69,6 +94,7 @@ def evaluate_ara_results(results_dir, args):
     output.append('')
 
     print("\n".join(output))
+    return results.output_dict, imgs
 
 def main():
     parser = ArgumentParser(description="Run a benchmark on a set of results.")
@@ -109,6 +135,6 @@ def main():
         # evaluate results for each ARA
         for ara in [ara for ara in os.listdir(args.results_dir) if os.path.isdir(args.results_dir)]:
             results_dir = os.path.join(args.results_dir, ara)
-            evaluate_ara_results(results_dir, args)
+            evaluate_ara_results(args.benchmark, results_dir, args.k, args.plots, args.json)
     else:
-        evaluate_ara_results(args.results_dir, args)
+        evaluate_ara_results(args.benchmark, args.results_dir, args.k, args.plots, args.json)

@@ -1,15 +1,25 @@
 from setuptools import find_packages, setup
 
+with open("README.md", encoding="utf-8") as readme_file:
+    readme = readme_file.read()
+
 setup(
     name='benchmarks',
     version='0.1.0',
+    author="Max Wang",
+    author_email="max@covar.com",
+    url="https://github.com/TranslatorSRI/Benchmarks",
+    description="Translator Benchmarks Runner",
+    long_description_content_type="text/markdown",
+    long_description=readme,
+    include_package_data=True,
     packages=find_packages(),
     install_requires=[
         'httpx',
         'matplotlib',
         'numpy',
         'requests',
-        'tqdm'
+        'tqdm',
     ],
     entry_points={
         'console_scripts': [
