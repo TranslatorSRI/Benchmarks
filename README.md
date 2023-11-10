@@ -69,8 +69,9 @@ The benchmarks can be installed from pypi and used as part of the Translator-wid
 - `pip install benchmarks-runner`
 To run benchmarks:
 ```python
+import asyncio
 from benchmarks_runner import run_benchmarks
 
-run_benchmarks(<benchmark>, <target>)
+out = asyncio.run(run_benchmarks(<benchmark>, <target>))
 ```
 where benchmark is the name of a benchmark that is specified in config/benchmarks.json, and a target that is specified in config/targets.json
