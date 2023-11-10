@@ -6,3 +6,4 @@ python-dotenv
 requests
 tqdm
 uvicorn
+reasoner_pydantic
