@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 import asyncio
 
-from benchmarks.request import score_results
+from benchmarks_runner.request import score_results
 
 
 def main():

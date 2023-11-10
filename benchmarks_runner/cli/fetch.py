@@ -1,7 +1,7 @@
 from argparse import ArgumentParser
 import asyncio
 
-from benchmarks.request import fetch_results
+from benchmarks_runner.request import fetch_results
 
 
 def main():

@@ -3,8 +3,8 @@ import asyncio
 import os
 import tempfile
 
-from benchmarks.request import fetch_results
-from benchmarks.cli.eval import evaluate_ara_results
+from benchmarks_runner.request import fetch_results
+from benchmarks_runner.cli.eval import evaluate_ara_results
 
 
 async def run_benchmarks(

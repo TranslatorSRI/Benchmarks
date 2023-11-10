@@ -4,7 +4,7 @@ with open("README.md", encoding="utf-8") as readme_file:
     readme = readme_file.read()
 
 setup(
-    name='benchmarks',
+    name='benchmarks-runner',
     version='0.1.0',
     author="Max Wang",
     author_email="max@covar.com",
