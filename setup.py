@@ -24,11 +24,11 @@ setup(
     entry_points={
         'console_scripts': [
             'benchmarks_eval = '
-            'benchmarks.cli.eval:main',
+            'benchmarks_runner.cli.eval:main',
             'benchmarks_fetch = '
-            'benchmarks.cli.fetch:main',
+            'benchmarks_runner.cli.fetch:main',
             'benchmarks_score = '
-            'benchmarks.cli.score:main',
+            'benchmarks_runner.cli.score:main',
         ]
     }
 )

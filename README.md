@@ -69,8 +69,21 @@ The benchmarks can be installed from pypi and used as part of the Translator-wid
 - `pip install benchmarks-runner`
 To run benchmarks:
 ```python
+import asyncio
 from benchmarks_runner import run_benchmarks
 
-run_benchmarks(<benchmark>, <target>)
+output = asyncio.run(run_benchmarks(<benchmark>, <target>))
 ```
 where benchmark is the name of a benchmark that is specified in config/benchmarks.json, and a target that is specified in config/targets.json
+
+### Sample Output
+```
+Benchmark: GTRx
+Results Directory: /tmp/tmpaf10m9_q/GTRx/bte/2023-11-10_13-03-11
+                        k=1     k=5     k=10    k=20
+Precision @ k           0.0000  0.0500  0.0250  0.0125
+Recall @ k              0.0000  0.2500  0.2500  0.2500
+mAP @ k                 0.0000  0.0833  0.0833  0.0833
+Top-k Accuracy          0.0000  0.2500  0.2500  0.2500
+Mean Reciprocal Rank    0.08333333333333333
+```
