@@ -5,7 +5,7 @@ from collections import defaultdict
 from copy import deepcopy
 from typing import Dict, List, Sequence, Tuple
 
-from benchmarks.utils.constants import BENCHMARKS, CONFIG_DIR
+from benchmarks_runner.utils.constants import BENCHMARKS, CONFIG_DIR
 
 from .normalize import get_normalizer
 

@@ -18,7 +18,7 @@ from .utils.constants import CONFIG_DIR
 # double the ARS timeout, just in case. The ARS should set all queries to error after 5 mins
 MAX_QUERY_TIME = os.getenv("MAX_QUERY_TIME", 600)
 
-def fetch_results(
+async def fetch_results(
     benchmark: str,
     target: str,
     results_dir: str,
@@ -82,7 +82,7 @@ def fetch_results(
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
     if target == "ars":
-        send_requests_to_ars(
+        await send_requests_to_ars(
             uids,
             messages,
             url,
@@ -93,7 +93,7 @@ def fetch_results(
 
     else:
 
-        send_requests_store_results(
+        await send_requests_store_results(
             uids,
             messages,
             url,
@@ -101,9 +101,11 @@ def fetch_results(
             num_concurrent_requests,
             progress,
         )
+    
+    return output_dir
 
 
-def send_requests_to_ars(
+async def send_requests_to_ars(
     uids: Sequence[str],
     messages: Sequence[dict],
     url: str,
@@ -116,7 +118,7 @@ def send_requests_to_ars(
         send_request_to_ars(uid, msg, url, output_dir, pbar)
         for uid, msg in zip(uids, messages)
     ]
-    asyncio.run(gather(*coroutines, limit=num_concurrent_requests))
+    await gather(*coroutines, limit=num_concurrent_requests)
 
     if pbar is not None:
         pbar.close()
@@ -190,18 +192,18 @@ async def send_request_to_ars(
     response = await send_request(uid, f"{url}/messages/{parent_pk}", msg, request_type="get")
     merged_pk = response.get("fields", {}).get("merged_version")
     if merged_pk is None:
-        raise Exception("Failed to get the ARS merged message.")
-    
-    merged_message = await send_request(uid, f"{url}/messages/{merged_pk}", msg, request_type="get")
-    Path(os.path.join(output_dir, "ars")).mkdir(parents=True, exist_ok=True)
-    with open(os.path.join(output_dir, "ars", f"{uid}.json"), "w") as file:
-        json.dump(merged_message, file)
+        print(f"Failed to get the ARS merged message from pk: {parent_pk}.")
+    else:
+        merged_message = await send_request(uid, f"{url}/messages/{merged_pk}", msg, request_type="get")
+        Path(os.path.join(output_dir, "ars")).mkdir(parents=True, exist_ok=True)
+        with open(os.path.join(output_dir, "ars", f"{uid}.json"), "w") as file:
+            json.dump(merged_message, file)
 
     if pbar:
         pbar.update()
 
 
-def score_results(
+async def score_results(
     unscored_results_dir: str,
     target: str,
     scored_results_dir: str,
@@ -241,7 +243,7 @@ def score_results(
                 message['workflow'] = workflow
             messages.append(message)
 
-    send_requests_store_results(
+    await send_requests_store_results(
         uids,
         messages,
         url,
@@ -250,7 +252,7 @@ def score_results(
         progress
     )
 
-def send_requests_store_results(
+async def send_requests_store_results(
     uids: Sequence[str],
     messages: Sequence[dict],
     url: str,
@@ -263,7 +265,7 @@ def send_requests_store_results(
         send_request_store_result(uid, msg, url, output_dir, pbar)
         for uid, msg in zip(uids, messages)
     ]
-    asyncio.run(gather(*coroutines, limit=num_concurrent_requests))
+    await gather(*coroutines, limit=num_concurrent_requests)
     
     if pbar is not None:
         pbar.close()

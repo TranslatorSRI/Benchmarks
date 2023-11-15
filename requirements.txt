@@ -3,6 +3,7 @@ httpx
 matplotlib
 numpy
 python-dotenv
+reasoner_pydantic
 requests
 tqdm
 uvicorn
