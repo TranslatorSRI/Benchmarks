@@ -96,7 +96,7 @@ def evaluate_ara_results(
     output.append('')
 
     print("\n".join(output))
-    return results.output_dict, imgs
+    return output, imgs
 
 def main():
     parser = ArgumentParser(description="Run a benchmark on a set of results.")
