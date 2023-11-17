@@ -44,28 +44,28 @@ def evaluate_ara_results(
         with io.BytesIO() as buffer:
             plt.gcf().savefig(buffer, format="png")
             buffer.seek(0)
-            imgs["precision"] = base64.b64encode(buffer.read()).decode()
+            imgs["precision"] = buffer.read()
         
         results.plot_recall()
         plt.gcf().savefig(plots_dir / 'recall.png')
         with io.BytesIO() as buffer:
             plt.gcf().savefig(buffer, format="png")
             buffer.seek(0)
-            imgs["recall"] = base64.b64encode(buffer.read()).decode()
+            imgs["recall"] = buffer.read()
         
         results.plot_mAP()
         plt.gcf().savefig(plots_dir / 'mAP.png')
         with io.BytesIO() as buffer:
             plt.gcf().savefig(buffer, format="png")
             buffer.seek(0)
-            imgs["mAP"] = base64.b64encode(buffer.read()).decode()
+            imgs["mAP"] = buffer.read()
 
         results.plot_top_k_accuracy()
         plt.gcf().savefig(plots_dir / 'top_k_accuracy.png')
         with io.BytesIO() as buffer:
             plt.gcf().savefig(buffer, format="png")
             buffer.seek(0)
-            imgs["top_k_accuracy"] = base64.b64encode(buffer.read()).decode()
+            imgs["top_k_accuracy"] = buffer.read()
 
     ks = [1, 5, 10, 20, 50, 100, 200, 500]
     while ks[-1] >= k:
