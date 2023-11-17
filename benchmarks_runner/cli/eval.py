@@ -22,6 +22,7 @@ metrics = {
 def evaluate_ara_results(
     benchmark,
     results_dir,
+    target: str,
     k: int = 20,
     save_plots: bool = False,
     save_json: bool = False,
@@ -29,6 +30,7 @@ def evaluate_ara_results(
     results = evaluate_results(
         benchmark,
         results_dir,
+        target,
         k=k,
     )
     imgs = {}
