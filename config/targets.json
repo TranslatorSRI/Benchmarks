@@ -39,7 +39,7 @@
     },
     "improving": {
         "fetch": {
-            "url": "https://ia.healthdatascience.cloud/api/v1.4/query"
+            "url": "https://ia.transltr.io/api/v1.4/query"
         }
     }
 }
