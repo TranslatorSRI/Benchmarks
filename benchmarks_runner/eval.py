@@ -17,6 +17,7 @@ from benchmarks_runner.utils.benchmark import benchmark_ground_truth
 def evaluate_results(
     benchmark: str,
     results_dir: Union[str, dict],
+    target: str,
     k: int = 50,
     use_xref=True,
 ) -> 'BenchmarkResults':
@@ -172,7 +173,7 @@ def evaluate_results(
     metrics['mean_reciprocal_rank'] = mrr
     output_dict['benchmark']['num_relevant_results'] = total_num_relevant
 
-    return BenchmarkResults(k, p_k, r_k, map_k, r_k, mrr, output_dict) 
+    return BenchmarkResults(target, k, p_k, r_k, map_k, r_k, mrr, output_dict) 
 
 
 class BenchmarkResults:
@@ -219,7 +220,8 @@ class BenchmarkResults:
         Equivalently, MRR is the reciprocal of the harmonic mean (across all
         queries) of the rank of the first relevant result.
     """
-    def __init__(self, k, p_k, r_k, map_k, top_k_acc,  mrr, output_dict):
+    def __init__(self, target, k, p_k, r_k, map_k, top_k_acc,  mrr, output_dict):
+        self.target = target
         self.k = k
         self.p_k = p_k
         self.r_k = r_k
@@ -287,6 +289,8 @@ class BenchmarkResults:
 
         if ax is None:
             _, ax = plt.subplots(figsize=(8, 6))
+        
+        ax.set_title(f"{self.target}: {ylabel}")
 
         ax.plot(x, y, label=label)
 

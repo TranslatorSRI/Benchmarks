@@ -5,19 +5,21 @@ with open("README.md", encoding="utf-8") as readme_file:
 
 setup(
     name='benchmarks-runner',
-    version='0.1.0',
+    version='0.1.1',
     author="Max Wang",
     author_email="max@covar.com",
     url="https://github.com/TranslatorSRI/Benchmarks",
     description="Translator Benchmarks Runner",
     long_description_content_type="text/markdown",
     long_description=readme,
+    package_data={'benchmarks_runnner': ['config/*']},
     include_package_data=True,
     packages=find_packages(),
     install_requires=[
         'httpx',
         'matplotlib',
         'numpy',
+        'reasoner_pydantic',
         'requests',
         'tqdm',
     ],
