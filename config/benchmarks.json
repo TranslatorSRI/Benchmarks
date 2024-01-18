@@ -11,6 +11,11 @@
             "templates": ["treats"]
         }
     ],
+    "DrugCentral_subset": [
+        {
+            "source": "DrugCentral_subset",
+            "templates": ["treats"]
+        }
     "DrugCentral_creative": [
         {
             "source": "DrugCentral_creative",

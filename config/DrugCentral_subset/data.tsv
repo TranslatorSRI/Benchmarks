@@ -1,0 +1,31 @@
+_id	chebi	drug_umls	disease_umls	drug_name	disease_name
+ZZHLYYDVIOPZBE-UHFFFAOYSA-N	CHEBI:9725	UMLS:C0041031	UMLS:C0002994	alimemazine,alimemazine tartrate,temaril,trimeprazine tartrate,trimeprazine,alimezine,methylpromazine,teralene	Angioedema
+UREBDLICKHMUKA-DVTGEIKXSA-N	CHEBI:3077	UMLS:C0005308	UMLS:C0002994	betamethasone,betadexamethasone,betametasone,betamethazone,bethamethasone	Angioedema
+ITRJWOMZKQRYTA-RFZYENFJSA-N	CHEBI:3897	UMLS:C0056391	UMLS:C0002994	cortisone acetate,cortone acetate,irisone acetate,adrenalex	Angioedema
+UREBDLICKHMUKA-CXSFZGCWSA-N	CHEBI:41879	UMLS:C0011777	UMLS:C0002994	dexamethasone,dexasone,dexmethsone	Angioedema
+ALEXXDVDDISNDU-JZYPGELDSA-N	CHEBI:17609	UMLS:C0063077	UMLS:C0002994	hydrocortisone acetate,cortisol acetate,hydroxycorticosterone acetate	Angioedema
+VWQWXZAWFPZJDA-CGVGKPPMSA-N	CHEBI:5782	UMLS:C0056387	UMLS:C0002994	hydrocortisone sodium succinate,hydrocortisone succinate,hydrocortisone hemisuccinate	Angioedema
+JYGXADMDTFJGBT-VWUMJDOOSA-N	CHEBI:17650	UMLS:C0020268	UMLS:C0002994	hydrocortisone,17-hydroxycorticosterone,acticort,cetacort,hydracort,hydrasson,hydrocortisyl,cortisol	Angioedema
+CBHCDHNUZWWAPP-UHFFFAOYSA-N	CHEBI:135324	UMLS:C0065954	UMLS:C0002994	mepazine,mepazin,mepazine base,meprazine,mesapin,nothiazine,pecazine,mepazine acetate	Angioedema
+HTMIBDQKFHUPSX-UHFFFAOYSA-N	CHEBI:6823	UMLS:C0066101	UMLS:C0002994	methdilazine,methdilazine hydrochloride,methdilazine HCl	Angioedema
+VHRSUDSXCMQTMA-PJHHCJLFSA-N	CHEBI:6888	UMLS:C0721647	UMLS:C0002994	methylprednisolone,medralone,metilbetasone	Angioedema
+YNDXUCZADRHECN-JNQJZLCISA-N	CHEBI:71418	UMLS:C2608734	UMLS:C0002994	nasacort,triamcinolone acetonide,aristicort,allernaze	Angioedema
+OIGNJSKKLXVSLS-VWUMJDOOSA-N	CHEBI:8378	UMLS:C0032950	UMLS:C0002994	prednisolone,prenolone,deltahydrocortisone,hydroretrocortin,hydroretrocortine,metacortandralone	Angioedema
+XOFYZVNMUHMLCC-ZPOLXVRWSA-N	CHEBI:8382	UMLS:C0032952	UMLS:C0002994	prednisone anhydrous,prednisone,1,2-dehydrocortisone,dehydrocortisone	Angioedema
+ZGUGWUXLJSTTMA-UHFFFAOYSA-N	CHEBI:8459	UMLS:C0033399	UMLS:C0002994	promazine,prazin,prazine,romtiazin,promazine hydrochloride,promazine HCl	Angioedema
+XGMPVBXKDAHORN-RBWIMXSLSA-N	CHEBI:9669	UMLS:C0137442	UMLS:C0002994	triamcinolone diacetate,aristocort diacetate,polcortolon	Angioedema
+GFNANZIMVAIWHM-OBYCQNJPSA-N	CHEBI:9667	UMLS:C0040864	UMLS:C0002994	triamcinolone,triamcinlon,triamcinolon,rodinolone	Angioedema
+KDLRVYVGXIQJDK-AWPVFWJPSA-N	CHEBI:3745	UMLS:C0008947	UMLS:C0014013	clindamycin hydrochloride hydrate,clindamycin,7-Chloro-7-deoxylincomycin,7-Chlorolincomycin,7-Deoxy-7(S)-chlorolincomycin,chlolincocin,clincin,clinimycin,Dalacin C,dalacine,clindamycin hydrochloride,clindamycin HCl	Empyema of pleura
+UFUVLHLTWXBHGZ-MGZQPHGTSA-N	CHEBI:3746	UMLS:C1119917	UMLS:C0014013	clindamycin phosphate,cleocin phosphate,clindagel,clindamycin-2-phosphate	Empyema of pleura
+OHKOGUYZJXTSFX-KZFFXBSXSA-N	CHEBI:9587	UMLS:C0040193	UMLS:C0014013	ticarcillin,ticarcillin disodium,ticarcillin sodium	Empyema of pleura
+JCQLYHFGKNRPGE-RUKGUBFJSA-N	CHEBI:6359	UMLS:C0719221	UMLS:C0019151	lactulose,bifiteral,cephulac,D-Lactulose,isolactose,lactulose hydrate	Hepatic encephalopathy
+057Y626693	CHEBI:7507	UMLS:C0027607	UMLS:C0019151	neomycin sulfate,neomycin,bykomycin,endomixin,fradiomycin sulfate,mycerin sulfate,neomycin sulphate	Hepatic encephalopathy
+C0027607	CHEBI:7507	UMLS:C0027607	UMLS:C0019151	neomycin sulfate,neomycin,bykomycin,endomixin,fradiomycin sulfate,mycerin sulfate,neomycin sulphate	Hepatic encephalopathy
+I16QD7X297	CHEBI:7507	UMLS:C0027607	UMLS:C0019151	neomycin sulfate,neomycin,bykomycin,endomixin,fradiomycin sulfate,mycerin sulfate,neomycin sulphate	Hepatic encephalopathy
+NZCRJKRKKOLAOJ-XRCRFVBUSA-N	CHEBI:75246	UMLS:C0073374	UMLS:C0019151	rifaximine,rifaximin,xifaxan,refaximin	Hepatic encephalopathy
+BJOLKYGKSZKIGU-UHFFFAOYSA-N	CHEBI:4753	UMLS:C0301366	UMLS:C0271093	echothiophate,ecothiopate,ecothiophate,phospholine,echothiophate iodide	Stargardt's disease
+ZKHQWZAMYRWXGA-KQYNXXCUSA-N	CHEBI:15422	UMLS:C0001480	UMLS:C0428974	adenosine triphosphate,ATP,triphosphoric acid adenosine ester,adenosine triphosphate disodium hydrate	Supraventricular arrhythmia
+CJDRUOGAGYHKKD-RQBLFBSQSA-N	CHEBI:28462	UMLS:C0001888	UMLS:C0428974	ajmaline hydrochloride,ajmaline HCl,aritmina,rauverid,ajmaline,(+)-Ajmaline,ajmalin,cardiorythmine,gilurytmal,raugalline	Supraventricular arrhythmia
+NZLBHDRPUJLHCE-UHFFFAOYSA-N	CHEBI:135370	UMLS:C1448442	UMLS:C0428974	aprindine,aprindin,aprinidine,aprindine hydrochloride,aprindine HCl,amidonal,fiboran	Supraventricular arrhythmia
+IXLGLCQSNUMEGQ-PYJPINIGSA-N	CHEBI:135740	UMLS:C0075765	UMLS:C0428974	detajmium,detajmium bitartrate,tachmalcor,detajmium bitartrate hydrate	Supraventricular arrhythmia
+PQXGNJKJMFUPPM-UHFFFAOYSA-N	CHEBI:134732	UMLS:C0059688	UMLS:C0428974	ethacizine,ethacizine hydrochloride,etacizin,ethacizin,ethacizine HCl	Supraventricular arrhythmia
