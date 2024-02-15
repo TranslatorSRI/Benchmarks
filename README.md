@@ -1,17 +1,17 @@
-# Translator Benchmarks
+# Translator Benchmarks Runner
 
 This repository provides a set of benchmarks as well as the code to send the queries and evaluate the returned results of a benchmark.
 
-`benchmarks` contains the code to query targets and evaluate results.
+`benchmarks-runner` contains the code to query targets and evaluate results.
 
-`config` contains the data sets, query templates, targets, and benchmark definitions necessary to run a benchmark. See `config/README.md` for details about targets and benchmarks.
+`benchmarks-runner.config` contains the data sets, query templates, targets, and benchmark definitions necessary to run a benchmark. See `config/README.md` for details about targets and benchmarks.
 
 ## Usage
 Running a benchmark is a two-step process:
 1. Execute the queries of a benchmark and store the scored results.
 2. Evaluate the scored results against the set of ground-truth relevant results.
 
-[Installation](#installation) of the `benchmarks` package provides access to the functions and command-line interface necessary to run benchmarks.
+[Installation](#installation) of the `benchmarks-runner` package provides access to the functions and command-line interface necessary to run benchmarks.
 ### CLI
 The command-line interface is the easiest way to run a benchmark.
 
