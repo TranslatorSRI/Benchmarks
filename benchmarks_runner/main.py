@@ -28,7 +28,7 @@ async def run_benchmarks(
             output_imgs[target] = imgs
             output_results.extend(output_result)
 
-    return output_results, imgs
+    return output_results, output_imgs
 
 
 if __name__ == "__main__":
