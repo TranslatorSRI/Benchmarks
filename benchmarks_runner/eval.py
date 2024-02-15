@@ -90,7 +90,7 @@ def evaluate_results(
                 message = results_dir.get(uid, {}).get("message", {})
 
         results_k = sorted(
-            message.get('results') or [],
+            [] if message.get('results') is None else message['results'],
             key=lambda r: r.get('analyses', [{ 'score': 0 }])[0].get('score', 0),
             reverse=True
         )[:k]
