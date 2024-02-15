@@ -90,8 +90,8 @@ def evaluate_results(
                 message = results_dir.get(uid, {}).get("message", {})
 
         results_k = sorted(
-            message.get('results', []),
-            key=lambda r: r['analyses'][0].get('score', 0),
+            message.get('results') or [],
+            key=lambda r: r.get('analyses', [{ 'score': 0 }])[0].get('score', 0),
             reverse=True
         )[:k]
 
