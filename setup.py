@@ -6,7 +6,7 @@ with open("README.md", encoding="utf-8") as readme_file:
 
 setup(
     name='benchmarks-runner',
-    version='0.1.1',
+    version='0.1.3',
     author="Max Wang",
     author_email="max@covar.com",
     url="https://github.com/TranslatorSRI/Benchmarks",
