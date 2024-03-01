@@ -82,13 +82,13 @@ def evaluate_results(
                     message = response.get('message', None)
                     if message is None:
                         # most likely came from the ARS
-                        message = reduce(lambda val, key: val.get(key) if val else {}, ["fields", "data", "message"], response)
+                        message = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["fields", "data", "message"], response)
         elif type(results_dir) is dict:
             if uid not in results_dir:
                 warnings.warn(f'Results for query {uid} were not found.')
             else:
                 # Grab message from dict
-                message = reduce(lambda val, key: val.get(key) if val else {}, [uid, "message"], results_dir)
+                message = reduce(lambda val, key: {} if val.get(key) is None else val[key], [uid, "message"], results_dir)
 
         results_k = sorted(
             [] if message.get('results') is None else message["results"],
@@ -98,7 +98,7 @@ def evaluate_results(
 
         if use_xref:
             # Use the biolink:xref attribute to add additional aliases to the normalizer
-            kgraph_nodes = reduce(lambda val, key: val.get(key) if val else {}, ["knowledge_graph", "nodes"], message)
+            kgraph_nodes = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["knowledge_graph", "nodes"], message)
             for curie, curie_info in (kgraph_nodes).items():
                 node_attributes = [] if curie_info.get("attributes") is None else curie_info["attributes"]
                 for attribute in node_attributes:
