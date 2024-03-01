@@ -99,7 +99,7 @@ def evaluate_results(
         if use_xref:
             # Use the biolink:xref attribute to add additional aliases to the normalizer
             kgraph_nodes = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["knowledge_graph", "nodes"], message)
-            for curie, curie_info in (kgraph_nodes).items():
+            for curie, curie_info in kgraph_nodes.items():
                 node_attributes = [] if curie_info.get("attributes") is None else curie_info["attributes"]
                 for attribute in node_attributes:
                     if attribute.get('attribute_type_id') != 'biolink:xref':
