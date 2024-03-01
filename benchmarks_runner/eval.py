@@ -90,9 +90,15 @@ def evaluate_results(
                 # Grab message from dict
                 message = reduce(lambda val, key: {} if val.get(key) is None else val[key], [uid, "message"], results_dir)
 
+        def key_fcn(result):
+            analyses = result.get("analyses")
+            if analyses is None or not isinstance(analyses, list) or len(analyses) == 0:
+                return 0
+            return 0 if analyses[0].get("score") is None else analyses[0]["score"]
+
         results_k = sorted(
             [] if message.get('results') is None else message["results"],
-            key=lambda r: (r.get('analyses') or [{ 'score': 0 }])[0].get('score') or 0,
+            key=key_fcn,
             reverse=True
         )[:k]
 
