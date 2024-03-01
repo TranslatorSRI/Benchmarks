@@ -1,5 +1,6 @@
 
 import collections.abc
+from functools import reduce
 import json
 from itertools import zip_longest
 from pathlib import Path
@@ -81,29 +82,37 @@ def evaluate_results(
                     message = response.get('message', None)
                     if message is None:
                         # most likely came from the ARS
-                        message = ((response.get('fields') or {}).get('data') or {}).get('message', {})
+                        message = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["fields", "data", "message"], response)
         elif type(results_dir) is dict:
             if uid not in results_dir:
                 warnings.warn(f'Results for query {uid} were not found.')
             else:
                 # Grab message from dict
-                message = results_dir.get(uid, {}).get("message", {})
+                message = reduce(lambda val, key: {} if val.get(key) is None else val[key], [uid, "message"], results_dir)
+
+        def key_fcn(result):
+            analyses = result.get("analyses")
+            if analyses is None or not isinstance(analyses, list) or len(analyses) == 0:
+                return 0
+            return 0 if analyses[0].get("score") is None else analyses[0]["score"]
 
         results_k = sorted(
-            [] if message.get('results') is None else message['results'],
-            key=lambda r: r.get('analyses', [{ 'score': 0 }])[0].get('score', 0),
+            [] if message.get('results') is None else message["results"],
+            key=key_fcn,
             reverse=True
         )[:k]
 
         if use_xref:
             # Use the biolink:xref attribute to add additional aliases to the normalizer
-            knowledge_graph = message.get("knowledge_graph", {})
-            for curie, curie_info in knowledge_graph.get('nodes', {}).items():
-                for attribute in curie_info.get('attributes', []):
-                    if attribute.get('attribute_type_id', None) != 'biolink:xref':
+            kgraph_nodes = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["knowledge_graph", "nodes"], message)
+            for curie, curie_info in kgraph_nodes.items():
+                node_attributes = [] if curie_info.get("attributes") is None else curie_info["attributes"]
+                for attribute in node_attributes:
+                    if attribute.get('attribute_type_id') != 'biolink:xref':
                         continue
                     
-                    aliases = set([curie] + [alias for alias in attribute.get('value', [])])
+                    attribute_values = [] if attribute.get("value") is None else attribute["value"]
+                    aliases = set([curie] + [alias for alias in attribute_values])
                     for alias in aliases:
                         if alias not in normalizer:
                             continue
