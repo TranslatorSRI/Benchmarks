@@ -24,7 +24,6 @@ setup(
         'httpx',
         'matplotlib',
         'numpy',
-        'reasoner_pydantic',
         'requests',
         'tqdm',
     ],
