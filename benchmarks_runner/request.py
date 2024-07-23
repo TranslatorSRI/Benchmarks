@@ -9,7 +9,6 @@ import os
 
 import httpx
 from tqdm import tqdm
-from reasoner_pydantic import Response
 
 from .utils.asyncio import gather
 from .utils.benchmark import benchmark_messages
@@ -286,7 +285,6 @@ async def send_request_store_result(
                 response = await client.post(url, json=msg)
                 response.raise_for_status()
                 response_json = response.json()
-                Response.parse_obj(response_json)
             except Exception as e:
                 print(e)
                 if response is not None:

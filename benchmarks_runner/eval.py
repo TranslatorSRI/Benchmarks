@@ -71,98 +71,102 @@ def evaluate_results(
         """
         message = {}
 
-        if type(results_dir) is str:
-            # Load precomputed result for this query
-            result_path = Path(results_dir, f'{uid}.json')
-            if not result_path.exists():
-                warnings.warn(f'Results for query {uid} were not found in {results_dir}.')
-            else:
-                with open(result_path) as file:
-                    response = json.load(file)
-                    message = response.get('message', None)
-                    if message is None:
-                        # most likely came from the ARS
-                        message = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["fields", "data", "message"], response)
-        elif type(results_dir) is dict:
-            if uid not in results_dir:
-                warnings.warn(f'Results for query {uid} were not found.')
-            else:
-                # Grab message from dict
-                message = reduce(lambda val, key: {} if val.get(key) is None else val[key], [uid, "message"], results_dir)
+        try:
+            if type(results_dir) is str:
+                # Load precomputed result for this query
+                result_path = Path(results_dir, f'{uid}.json')
+                if not result_path.exists():
+                    warnings.warn(f'Results for query {uid} were not found in {results_dir}.')
+                else:
+                    with open(result_path) as file:
+                        response = json.load(file)
+                        message = response.get('message', None)
+                        if message is None:
+                            # most likely came from the ARS
+                            message = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["fields", "data", "message"], response)
+            elif type(results_dir) is dict:
+                if uid not in results_dir:
+                    warnings.warn(f'Results for query {uid} were not found.')
+                else:
+                    # Grab message from dict
+                    message = reduce(lambda val, key: {} if val.get(key) is None else val[key], [uid, "message"], results_dir)
 
-        def key_fcn(result):
-            analyses = result.get("analyses")
-            if analyses is None or not isinstance(analyses, list) or len(analyses) == 0:
-                return 0
-            return 0 if analyses[0].get("score") is None else analyses[0]["score"]
+            def key_fcn(result):
+                analyses = result.get("analyses")
+                if analyses is None or not isinstance(analyses, list) or len(analyses) == 0:
+                    return 0
+                return 0 if analyses[0].get("score") is None else analyses[0]["score"]
 
-        results_k = sorted(
-            [] if message.get('results') is None else message["results"],
-            key=key_fcn,
-            reverse=True
-        )[:k]
+            results_k = sorted(
+                [] if message.get('results') is None else message["results"],
+                key=key_fcn,
+                reverse=True
+            )[:k]
 
-        if use_xref:
-            # Use the biolink:xref attribute to add additional aliases to the normalizer
-            kgraph_nodes = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["knowledge_graph", "nodes"], message)
-            for curie, curie_info in kgraph_nodes.items():
-                node_attributes = [] if curie_info.get("attributes") is None else curie_info["attributes"]
-                for attribute in node_attributes:
-                    if attribute.get('attribute_type_id') != 'biolink:xref':
-                        continue
-                    
-                    attribute_values = [] if attribute.get("value") is None else attribute["value"]
-                    aliases = set([curie] + [alias for alias in attribute_values])
-                    for alias in aliases:
-                        if alias not in normalizer:
+            if use_xref:
+                # Use the biolink:xref attribute to add additional aliases to the normalizer
+                kgraph_nodes = reduce(lambda val, key: {} if val.get(key) is None else val[key], ["knowledge_graph", "nodes"], message)
+                for curie, curie_info in kgraph_nodes.items():
+                    node_attributes = [] if curie_info.get("attributes") is None else curie_info["attributes"]
+                    for attribute in node_attributes:
+                        if attribute.get('attribute_type_id') != 'biolink:xref':
                             continue
+                        
+                        attribute_values = [] if attribute.get("value") is None else attribute["value"]
+                        aliases = set([curie] + [alias for alias in attribute_values])
+                        for alias in aliases:
+                            if alias not in normalizer:
+                                continue
 
-                        for a in aliases:
-                            normalizer[a] = normalizer[alias]
-                        break
+                            for a in aliases:
+                                normalizer[a] = normalizer[alias]
+                            break
 
-        uid_info = output_dict['queries'][uid]
+            uid_info = output_dict['queries'][uid]
 
-        # Compute unpinned qnode_ids (aka template slot_ids)
-        slot_ids = [slot_id for slot_id, _ in next(iter(ground_truth))]
+            # Compute unpinned qnode_ids (aka template slot_ids)
+            slot_ids = [slot_id for slot_id, _ in next(iter(ground_truth))]
 
-        # Compute metrics for each query
-        tp_count, ap_numerator = 0, 0
-        num_relevant = len(ground_truth)
-        ap_k = np.zeros(k)
-        rr = 0
-        for index, result in zip_longest(range(k), results_k):
-            if result is not None:
-                # Check if result is relevant
-                node_bindings = result['node_bindings']
-                # For now, only considers first CURIE bound to slot_id
-                pred = [(slot_id, node_bindings[slot_id][0]['id']) for slot_id in slot_ids]
-                normalized_pred = tuple(sorted((slot_id, normalizer.get(curie, curie)) for slot_id, curie in pred))
-                if normalized_pred in ground_truth:
-                    tp_count += 1
-                    ap_numerator += tp_count / (index + 1)
+            # Compute metrics for each query
+            tp_count, ap_numerator = 0, 0
+            num_relevant = len(ground_truth)
+            ap_k = np.zeros(k)
+            rr = 0
+            for index, result in zip_longest(range(k), results_k):
+                if result is not None:
+                    # Check if result is relevant
+                    node_bindings = result['node_bindings']
+                    # For now, only considers first CURIE bound to slot_id
+                    pred = [(slot_id, node_bindings[slot_id][0]['id']) for slot_id in slot_ids]
+                    normalized_pred = tuple(sorted((slot_id, normalizer.get(curie, curie)) for slot_id, curie in pred))
+                    if normalized_pred in ground_truth:
+                        tp_count += 1
+                        ap_numerator += tp_count / (index + 1)
 
-                    if rr == 0:
-                        rr = 1 / (index + 1)
+                        if rr == 0:
+                            rr = 1 / (index + 1)
 
-                    uid_info['relevant_result_ranks'].append(index + 1)
+                        uid_info['relevant_result_ranks'].append(index + 1)
 
-                    # Remove result from ground_truth to prevent double counting
-                    ground_truth.remove(normalized_pred)
+                        # Remove result from ground_truth to prevent double counting
+                        ground_truth.remove(normalized_pred)
 
-            # Update once per result
-            tp_k[index] += tp_count
-            ap_k[index] = ap_numerator / min(index + 1, num_relevant)
+                # Update once per result
+                tp_k[index] += tp_count
+                ap_k[index] = ap_numerator / min(index + 1, num_relevant)
 
-            # Update output dict
-            uid_info['precision_at_k'].append(tp_count / (index + 1))
-            uid_info['recall_at_k'].append(tp_count / num_relevant)
-            uid_info['average_precision_at_k'].append(ap_k[index])
+                # Update output dict
+                uid_info['precision_at_k'].append(tp_count / (index + 1))
+                uid_info['recall_at_k'].append(tp_count / num_relevant)
+                uid_info['average_precision_at_k'].append(ap_k[index])
 
-        # Update once per UID
-        total_num_relevant += num_relevant
-        map_k += ap_k
-        mrr += rr
+            # Update once per UID
+            total_num_relevant += num_relevant
+            map_k += ap_k
+            mrr += rr
+
+        except Exception as e:
+            print(f"Something went wrong when trying to perform benchmark analysis: {e}")
     
     # Convert mAP @ k and MRR sums to means
     map_k /= len(uids)
